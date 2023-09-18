@@ -25,16 +25,33 @@
                         </div>
                     </div>
                     <div class="box-body">
-
+                        <div class="box-body-container">
+                            <div class="box-form">
+                                <h3>General information</h3>
+                                <p>Please check the data we already have and fill in required fields</p>
+                               
+                            </div>
+                            <div class="route-buttons">
+                                <nuxt-link to="/auth/password">
+                                    <button class="transparent">
+                                        <i class='bx bx-chevron-left'></i>
+                                        Previous step
+                                    </button>
+                                </nuxt-link>
+                                <nuxt-link to="/auth/general-info">
+                                    <button class="next-step">
+                                        Continue
+                                    </button>
+                                </nuxt-link>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </template>
 <script>
-
 </script>
 <style scoped>
 h1 {
@@ -79,6 +96,9 @@ h3 {
     flex-shrink: 0;
     border-radius: 12px;
     background: #F4F3F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box-head-progress {
@@ -107,7 +127,7 @@ h3 {
     justify-content: center;
     align-items: center;
     color: #FFF;
-    font-family: Figtree;
+    font-family: 'Figtree', ;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -135,7 +155,8 @@ h3 {
 
 .line {
     width: 150px;
-    border: 1px solid #CECECE;
+    border: 2px solid #CECECE;
+
 }
 
 .second-step {
@@ -155,7 +176,7 @@ h3 {
     justify-content: center;
     align-items: center;
     color: #999;
-    font-family: Figtree;
+    font-family: 'Figtree', ;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -165,11 +186,97 @@ h3 {
 
 .second-step p {
     color: #999;
-    font-family: Figtree;
+    font-family: 'Figtree', ;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
+}
+
+.box-body-container {
+    width: 96%;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box-form {
+    width: 100%;
+    height: 300px;
+}
+
+
+label {
+    margin-top: 10px;
+    color: #000;
+    font-family: 'Figtree', ;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+.box-form h3 {
+    color: #000;
+    font-family: 'Figtree', ;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 24px;
+}
+
+.box-form p {
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'Figtree', ;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+
+
+
+.route-buttons {
+    width: 100%;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.transparent,
+.next-step {
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    font-family: 'Figtree', ;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.transparent {
+    color: #027DFC;
+    height: 46px;
+    display: flex;
+    align-items: center;
+}
+
+.next-step {
+    border-radius: 10px;
+    background: #027DFC;
+    color: #FFF;
+    height: 46px;
 }
 </style>
