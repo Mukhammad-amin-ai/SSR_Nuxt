@@ -9,7 +9,7 @@
                         <div class="box-head-progress">
                             <div class="first-step">
                                 <div class="one">
-                                    1
+                                    <i class='bx bx-check-circle'></i>
                                 </div>
                                 <p>password</p>
                             </div>
@@ -29,7 +29,15 @@
                             <div class="box-form">
                                 <h3>General information</h3>
                                 <p>Please check the data we already have and fill in required fields</p>
-                               
+                                <div class="name-birth">
+                                    <div class="name">
+                                        <div class="label">
+                                            <label for="name">Name</label> 
+                                            <input type="text">
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                </div>
                             </div>
                             <div class="route-buttons">
                                 <nuxt-link to="/auth/password">
@@ -128,7 +136,7 @@ h3 {
     align-items: center;
     color: #FFF;
     font-family: 'Figtree', ;
-    font-size: 12px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -155,7 +163,7 @@ h3 {
 
 .line {
     width: 150px;
-    border: 2px solid #CECECE;
+    border: 2px solid #027DFC;
 
 }
 
@@ -170,12 +178,12 @@ h3 {
 .second {
     width: 24px;
     height: 24px;
-    background-color: #D9D9D9;
+    background-color: #027DFC;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #999;
+    color: #fff;
     font-family: 'Figtree', ;
     font-size: 12px;
     font-style: normal;
@@ -278,5 +286,32 @@ label {
     background: #027DFC;
     color: #FFF;
     height: 46px;
+}
+
+.name-birth {
+    width: 760px;
+    height: 71px;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+}
+.label{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+.label input[type='text']{
+    
 }
 </style>
