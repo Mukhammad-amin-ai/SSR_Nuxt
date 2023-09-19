@@ -31,11 +31,11 @@
                                 <p>Please check the data we already have and fill in required fields</p>
                                 <div class="name-birth">
                                     <div class="name">
+                                        <label for="name">Name</label>
                                         <div class="label">
-                                            <label for="name">Name</label> 
-                                            <input type="text">
+                                            <input type="text" placeholder="Firstname">
+                                            <input type="text" placeholder="Lastname">
                                         </div>
-                                        <input type="text">
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +215,6 @@ h3 {
     height: 300px;
 }
 
-
 label {
     margin-top: 10px;
     color: #000;
@@ -226,7 +225,6 @@ label {
     line-height: normal;
     text-transform: uppercase;
 }
-
 
 .box-form h3 {
     color: #000;
@@ -247,11 +245,6 @@ label {
     font-weight: 400;
     line-height: normal;
 }
-
-
-
-
-
 
 .route-buttons {
     width: 100%;
@@ -299,19 +292,25 @@ label {
 .name {
     width: 100%;
     height: 100%;
-    /* background-color: aqua; */
-    display: flex;
-    align-items: center;
-}
-.label{
-    width: 30%;
-    height: 100%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    /* background-color: aqua; */
 }
-.label input[type='text']{
-    
+
+.label {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.label input[type='text'] {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    background: #FFF;
+}
+.label input[type='text']:focus{
+    outline: none;
 }
 </style>
