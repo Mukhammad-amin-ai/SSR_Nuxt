@@ -1,10 +1,10 @@
 <script>
 </script>
 <template>
-    <div class="w-screen h-screen flex justify-center items-center bg-[#EEEDF2]">
-        <div class="w-[95%] flex-col h-[90%] flex  justify-center items-start  gap-10">
+    <div class="w-[100%] h-[960px] flex justify-center items-center bg-[#EEEDF2]">
+        <div class="w-[100%] h-[100%] p-10  flex-col  flex  justify-center items-start">
             <h1>DLA</h1>
-            <div class="w-full h-[800px] flex justify-center items-center bg-[#027DFC] boxBorder">
+            <div class="w-full h-[800px] mt-[18px] flex justify-center items-center bg-[#027DFC] boxBorder">
                 <div class="box2">
                     <img src="../../assets/svg/box2.svg" alt="#">
                 </div>
@@ -36,6 +36,9 @@
                 <div class="gear-shadow">
                     <img src="../../assets/svg/gear-shadow.svg" alt="#">
                 </div>
+                <div class="box-small">
+                    <img src="../../assets/svg/box-small.svg" alt="#">
+                </div>
             </div>
         </div>
     </div>
@@ -52,7 +55,7 @@ h1 {
 
 h2 {
     color: #EEEDF2;
-    font-family: Figtree;
+    font-family: 'Figtree', ;
     font-size: 48px;
     font-style: normal;
     font-weight: 500;
@@ -62,7 +65,7 @@ h2 {
 p {
     color: #EEEDF2;
     text-align: center;
-    font-family: Figtree;
+    font-family: 'Figtree', ;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -75,8 +78,8 @@ p {
 }
 
 .box {
-    width: 500px;
-    height: 200px;
+    width: 701px;
+    height: 238px;
 }
 
 .box2 {
@@ -84,8 +87,8 @@ p {
     height: 81.291px;
     flex-shrink: 0;
     position: absolute;
-    left: 170px;
-    top: 100px;
+    left: 197px;
+    top: 207px;
 }
 
 .begin {
@@ -101,8 +104,8 @@ p {
     height: 116.289px;
     flex-shrink: 0;
     position: absolute;
-    bottom: 30px;
-    left: 40px;
+    bottom: 109.71px;
+    left: 81px;
 }
 
 .boxx {
@@ -110,8 +113,8 @@ p {
     height: 59.052px;
     flex-shrink: 0;
     position: absolute;
-    bottom: 70px;
-    left: 250px;
+    bottom: 151.27px;
+    left: 293.78px;
 }
 
 .gears-two {
@@ -119,8 +122,8 @@ p {
     height: 141.437px;
     flex-shrink: 0;
     position: absolute;
-    bottom: 160px;
-    right: 190px;
+    bottom: 268.14px;
+    right: 124.09px;
     z-index: 2;
 }
 
@@ -131,8 +134,8 @@ p {
     fill: #002143;
     opacity: 0.6;
     position: absolute;
-    bottom: 190px;
-    right: 250px;
+    bottom: 298.76px;
+    right: 193.44px;
 }
 
 .gear-two-shadow2 {
@@ -142,8 +145,8 @@ p {
     fill: #002143;
     opacity: 0.6;
     position: absolute;
-    bottom: 140px;
-    right: 200px;
+    bottom: 247.36px;
+    right: 141.25px;
 }
 
 .gear {
@@ -151,8 +154,8 @@ p {
     height: 90.402px;
     flex-shrink: 0;
     position: absolute;
-    bottom: 70px;
-    right: 300px;
+    bottom: 149.67px;
+    right: 253.29px;
     z-index: 2;
 }
 
@@ -163,7 +166,16 @@ p {
     fill: #002143;
     opacity: 0.6;
     position: absolute;
-    bottom: 45px;
-    right: 310px;
+    bottom: 128.98px;
+    right: 270.45px;
+}
+
+.box-small {
+    width: 58.033px;
+    height: 43.012px;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 65.66px;
+    right: 42.97px;
 }
 </style>
