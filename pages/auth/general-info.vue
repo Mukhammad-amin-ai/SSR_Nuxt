@@ -22,6 +22,7 @@
                                 </div>
                                 <p>general info</p>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="box-body">
@@ -35,6 +36,12 @@
                                         <div class="label">
                                             <input type="text" placeholder="Firstname">
                                             <input type="text" placeholder="Lastname">
+                                        </div>
+                                    </div>
+                                    <div class="birthday">
+                                        <label for="birth">Birthday</label>
+                                        <div class="label">
+                                            <input type="text" placeholder='01/01/2000'>
                                         </div>
                                     </div>
                                 </div>
@@ -310,7 +317,19 @@ label {
     border-radius: 6px;
     background: #FFF;
 }
-.label input[type='text']:focus{
+
+.label input[type='text']:focus {
     outline: none;
 }
-</style>
+
+.birthday {
+    width: 280px;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+</style> 

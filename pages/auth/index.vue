@@ -18,7 +18,7 @@
                 <div class="box flex flex-col justify-between items-center">
                     <h2>Welcome to DLA</h2>
                     <p>Let’s set up your account together</p>
-                    <nuxt-link to="/auth/password">
+                    <nuxt-link to="/auth/general-info">
                         <button class="begin">Let’s begin</button>
                     </nuxt-link>
                 </div>

@@ -1,9 +1,12 @@
 <template >
     <div>
-        hello world 
+        hello world
         <i class='bx bxs-balloon'></i>
     </div>
 </template>
 <script>
+export default {
+    
+}
 </script>
-<style></style>
+<style scoped></style>
