@@ -4,9 +4,9 @@
         <div class="loginPageContent">
             <div class="loginPageColForm loginPageCol">
                 <div class="loginPageColFormHead">
-                    <h1>Kirish</h1>
+                    <h1>Parolingizni unutdingizmi?</h1>
                     <span>
-                        Platformaga kirish uchun telefon raqam va parolingizni kiriting
+                        Parolingizni tiklash uchun telefon raqamingizni kiriting
                     </span>
                 </div>
                 <form class="el-form el-form--label-top">
@@ -18,7 +18,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="el-form-item">
+                    <!-- <div class="el-form-item">
                         <label for="password" class="el-form-item__label">Parol</label>
                         <div class="el-form-item__content">
                             <div class="el-input">
@@ -26,16 +26,15 @@
                                     class="el-input__inner">
                             </div>
                         </div>
-                    </div>
-                    <div class="text-end">
-                        <nuxt-link to="./reset-password.vue" class="link">Parolingizni unutdingizmi?</nuxt-link>
-                    </div>
+                    </div> -->
+                    <!-- <div class="text-end">
+                        <nuxt-link to="/reset-password" class="link">Parolingizni unutdingizmi?</nuxt-link>
+                    </div> -->
                     <div class="loginPageColFormFooter">
-                        <button class="btn btn-success w-100">Kirish</button>
+                        <button class="btn btn-success w-100">Kod jo'natish</button>
                     </div>
                     <div class="text-center pt-4">
-                        Sizda shaxsiy kabinet mavjud emasmi? <nuxt-link to="/#enterForm" class="link">Ro’yxatdan
-                            o’tish</nuxt-link></div>
+                         <nuxt-link to="/login" class="link">Orqaga</nuxt-link></div>
                 </form>
             </div>
         </div>
@@ -247,7 +246,7 @@ button:not(:disabled) {
 }
 
 .pt-4 {
-    padding-top: 1.5rem !important;
+    padding-top: 3rem !important;
 }
 
 @media screen and (max-width: 700px) {
