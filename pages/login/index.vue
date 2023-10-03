@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="text-end">
-                        <nuxt-link to="/reset-password" class="link">Parolingizni unutdingizmi?</nuxt-link>
+                        <nuxt-link to="./reset-password.vue" class="link">Parolingizni unutdingizmi?</nuxt-link>
                     </div>
                     <div class="loginPageColFormFooter">
                         <button class="btn btn-success w-100">Kirish</button>
@@ -130,7 +130,7 @@ export default {
 }
 
 .el-input__inner {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     background-color: #fff;
     background-image: none;
     border: 1px solid #dcdfe6;
