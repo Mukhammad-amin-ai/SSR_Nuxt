@@ -34,8 +34,36 @@
                         <h4>Aloqa ma'lumotlari</h4>
                         <h4 style="color: #49ba04 !important; ;">To'lov formasi</h4>
                     </div>
+                    <div class="form-input">
+                        <div class="form">
+                            <div class="input-container">
+                                <div class="name-input">
+                                    <input type="text">
+                                    <span>Ismingizni kiriting</span>
+                                </div>
+                                <div class="input-telephone">
+                                    <input type="text">
+                                    <span>Telefon raqam</span>
+                                </div>
+                                <div class="check-box">
+                                    <input type="checkbox">
+                                    <span>
+                                        <nuxt-link to="#" class="link">
+                                            Offerta
+                                        </nuxt-link>
+                                        shartlariga roziman
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button>
+                                    SINFXONAGA QO'SHILISH
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+
             </div>
         </div>
         <FooterComponent />
@@ -223,5 +251,90 @@ export default {
     font-size: 16px;
     font-weight: 600;
     color: rgba(0, 0, 0, .5) !important;
+}
+
+
+.form-input {
+    width: 100%;
+    height: 127px;
+    padding: 25px 30px 0;
+}
+
+.form {
+    width: 810px;
+    height: 102px;
+    display: flex;
+}
+
+.input-container {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button-container {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button-container button {
+    width: 254px;
+    height: 49px;
+    background-color: #49ba04;
+    color: #fff;
+    font-size: 14px !important;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+.name-input,.input-telephone{
+    width: 254px;
+    height: 54px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+.name-input input[type="text"],.input-telephone input[type="text"]{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+}
+.name-input span{
+    display: none;
+    width: 148.63px;
+    height: 16.8px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 99;
+    margin-left: 10px;
+}
+.check-box{
+    width: 100%;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.check-box input[type='checkbox']{
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+}
+.check-box .link{
+    text-decoration: none !important;
+    color:#006aff !important ;
+}
+.check-box span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #606266;
 }
 </style>
