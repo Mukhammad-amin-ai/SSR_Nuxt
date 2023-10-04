@@ -95,7 +95,7 @@
                 <div class="bannerSliderItem-image bannerSliderItem-top"
                     style="background-image: url('https://sinfxona.uz/img/slider/5.png')"></div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                    style="background-image: url('/img/slider/6.png')"></div>
+                    style="background-image: url('https://sinfxona.uz/img/slider/6.png')"></div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top"

@@ -63,8 +63,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+          <CoursesComponent/>
         </div>
         <FooterComponent />
     </div>
@@ -75,13 +75,14 @@ export default {
         return {
             bgProp: '#eef1e8',
             dinamic: true,
-        }
+        };
     },
     methods: {
         makeDinamic() {
-            this.dinamic = !this.dinamic
+            this.dinamic = !this.dinamic;
         }
-    }
+    },
+
 }
 </script>
 <style scoped>
@@ -176,11 +177,6 @@ export default {
     color: #212529;
 }
 
-.main-content {
-    width: 100%;
-    height: 100vh;
-    background-color: #f5f8ff;
-}
 
 .registration {
     width: 950px;
@@ -292,7 +288,9 @@ export default {
     border: none;
     cursor: pointer;
 }
-.name-input,.input-telephone{
+
+.name-input,
+.input-telephone {
     width: 254px;
     height: 54px;
     position: relative;
@@ -300,14 +298,17 @@ export default {
     align-items: center;
 
 }
-.name-input input[type="text"],.input-telephone input[type="text"]{
+
+.name-input input[type="text"],
+.input-telephone input[type="text"] {
     width: 100%;
     height: 100%;
     padding: 10px;
     border-radius: 10px;
     position: absolute;
 }
-.name-input span{
+
+.name-input span {
     display: none;
     width: 148.63px;
     height: 16.8px;
@@ -316,25 +317,36 @@ export default {
     z-index: 99;
     margin-left: 10px;
 }
-.check-box{
+
+.check-box {
     width: 100%;
     height: 26px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.check-box input[type='checkbox']{
+
+.check-box input[type='checkbox'] {
     width: 24px;
     height: 24px;
     border-radius: 5px;
 }
-.check-box .link{
+
+.check-box .link {
     text-decoration: none !important;
-    color:#006aff !important ;
+    color: #006aff !important;
 }
+
 .check-box span {
     font-size: 14px;
     font-weight: 500;
     color: #606266;
 }
+
+.main-content {
+    width: 100%;
+    height: auto;
+    background-color: #f5f8ff;
+}
+
 </style>
