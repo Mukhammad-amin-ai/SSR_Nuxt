@@ -18,175 +18,25 @@
                         </div>
                     </div>
                     <div class="banner-slider">
-                        <div id="bannerSlider">
-                            <div class="bannerSliderContainer" style="animation-play-state: running;">
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/1.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/2.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/3.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/4.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/5.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/6.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/7.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/8.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/9.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/10.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/13.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/12.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/1.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/14.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/3.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/2.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/5.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/4.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/7.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/6.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/9.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/8.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/10.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/12.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/13.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/14.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/1.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/2.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/3.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/4.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/5.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('/img/slider/6.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/7.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/8.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/9.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/10.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/13.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/12.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/1.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/14.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/3.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/2.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/5.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/4.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/7.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/6.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/9.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/8.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/10.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/12.png')"></div>
-                                </div>
-                                <div class="bannerSliderItem">
-                                    <div class="bannerSliderItem-image bannerSliderItem-top"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/13.png')"></div>
-                                    <div class="bannerSliderItem-image bannerSliderItem-bottom"
-                                        style="background-image: url('https://sinfxona.uz/img/slider/14.png')"></div>
-                                </div>
-                            </div>
-                            <button class="sliderToggleBtn">
-                                <img src="https://sinfxona.uz/img/icons/play2.svg" alt="play-button">
-                            </button>
-                        </div>
+                        <CaruselComponent />
                     </div>
                 </div>
             </div>
         </div>
         <div class="main-content">
-
+            <div class="registration">
+                <div class="registration-form">
+                    <div class="form-top" v-if="dinamic">
+                        <h4 style="color: #49ba04 !important; ;">Aloqa ma'lumotlari</h4>
+                        <h4>To'lov formasi</h4>
+                    </div>
+                    <div class="form-top2" v-else>
+                        <h4>Aloqa ma'lumotlari</h4>
+                        <h4 style="color: #49ba04 !important; ;">To'lov formasi</h4>
+                    </div>
+                </div>
+                
+            </div>
         </div>
         <FooterComponent />
     </div>
@@ -195,126 +45,18 @@
 export default {
     data() {
         return {
-            bgProp: '#eef1e8'
+            bgProp: '#eef1e8',
+            dinamic: true,
         }
     },
-    methods:{
-
+    methods: {
+        makeDinamic() {
+            this.dinamic = !this.dinamic
+        }
     }
 }
 </script>
 <style scoped>
-
-
-
-@media screen and (max-width: 1550px) {
-    .bannerSliderItem-image {
-        height: auto;
-        padding: 56% 0 0;
-    }
-}
-
-/* @media screen and (max-width: 1550px) {
-    .bannerSliderItem-image {
-        height: auto;
-        padding: 56% 0 0;
-    }
-} */
-
-.sliderToggleBtn {
-    background: none;
-    border: none;
-    bottom: 0;
-    padding: 5px;
-    position: absolute;
-    right: 0;
-    z-index: 99;
-    cursor: pointer;
-}
-
-
-.bannerSliderItem-image {
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    border-radius: 10px;
-    height: 180px;
-    max-width: 320px;
-    width: 100%;
-}
-
-.bannerSliderItem-bottom {
-    transform: translateX(-50%);
-}
-.bannerSliderItem-top {
-    margin-bottom: 16px;
-}
-/* .bannerSliderItem-image {
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    border-radius: 10px;
-    height: 180px;
-    max-width: 320px;
-    width: 100%;
-} */
-
-
-
-.bannerSliderItem {
-    flex: 0 0 320px;
-    margin: 0 8px;
-}
-
-.bannerSliderContainer {
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-duration: 50s;
-    animation-fill-mode: none;
-    animation-iteration-count: infinite;
-    animation-name:scrollingXXL ;
-    animation-play-state: running;
-    animation-timing-function: linear;
-    display: flex;
-}
-
-@keyframes scrollingXXL {
-
-0% {
-    transform: translateX(0);
-}
-
-100% {
-    transform: translateX(-126vw);
-}
-
-}
-
-#bannerSlider,
-#bannerSlider:after {
-    left: 0;
-    position: absolute;
-    width: 100%;
-}
-
-#bannerSlider {
-    overflow: hidden;
-    top: 10px;
-}
-#bannerSlider:after {
-    background: linear-gradient(78.83deg,#eef1e8 40.15%,transparent 66.93%);
-    bottom: -5px;
-    content: "";
-    top: -5px;
-}
-
-#bannerSlider, #bannerSlider:after {
-    left: 0;
-    position: absolute;
-    width: 100%;
-}
-
-
 .container {
     width: 100vw;
     max-width: 100%;
@@ -347,7 +89,6 @@ export default {
     width: 100%;
     height: 100%;
     display: flex;
-
 }
 
 
@@ -356,7 +97,6 @@ export default {
     height: 100%;
     display: flex;
     justify-content: flex-end;
-    /* background: #eef1e8; */
     z-index: 1;
 }
 
@@ -412,5 +152,76 @@ export default {
     width: 100%;
     height: 100vh;
     background-color: #f5f8ff;
+}
+
+.registration {
+    width: 950px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 25px 25px hsla(214, 4%, 65%, .06);
+    margin: -100px auto 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form {
+    width: 91%;
+    height: 85%;
+
+}
+
+.form-top {
+    width: 100%;
+    height: 40px;
+    border-bottom: 0.5px solid #585f65;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.form-top h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .5) !important;
+}
+
+.form-top::before {
+    content: "";
+    width: 160px;
+    height: 3px;
+    position: absolute;
+    top: 51px;
+    left: 33%;
+    border: 1px solid #49ba04 !important;
+    background-color: #49ba04 !important;
+}
+
+.form-top2::before {
+    content: "";
+    width: 160px;
+    height: 3px;
+    position: absolute;
+    top: 51px;
+    left: 52%;
+    border: 1px solid #49ba04 !important;
+    background-color: #49ba04 !important;
+}
+
+.form-top2 {
+    width: 100%;
+    height: 40px;
+    border-bottom: 0.5px solid #585f65;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.form-top2 h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .5) !important;
 }
 </style>
