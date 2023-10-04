@@ -2,7 +2,9 @@
     <div class="header" :style="{ backgroundColor: bgColor }">
         <div class="header-content">
             <div class="logo">
-
+                <nuxt-link to="#">
+                    <img src="https://sinfxona.uz/img/Sinfxona_logo.png" alt="logo">
+                </nuxt-link>
             </div>
             <nuxt-link to="login" class="btn btn-success">
                 <button>
@@ -54,6 +56,10 @@ export default {
     cursor: pointer;
 }
 .logo{
-    
+    width: 147px;
+    height: 29.4px;
+}
+.logo img{
+    width: 100%;
 }
 </style>
