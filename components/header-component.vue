@@ -2,7 +2,7 @@
     <div class="header" :style="{ backgroundColor: bgColor }">
         <div class="header-content">
             <div class="logo">
-                <nuxt-link to="#">
+                <nuxt-link to="/">
                     <img src="https://sinfxona.uz/img/Sinfxona_logo.png" alt="logo">
                 </nuxt-link>
             </div>
@@ -29,6 +29,7 @@ export default {
     top: 0;
     display: flex;
     justify-content: center;
+    z-index: 99;
 }
 
 .header-content {
