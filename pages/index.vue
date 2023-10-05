@@ -1,7 +1,7 @@
 <template >
     <div class="container">
         <HeaderComponent :bgColor="bgProp" />
-        <div class="home-banner" >
+        <div class="home-banner">
             <div class="banner-main-container">
                 <div class="banner-content-wrap">
                     <div class="banner-text">
@@ -243,13 +243,90 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (max-width:768px) {
-    .home-banner{
-        display: none !important;
-    }
-    .home-banner2 {
-        display: block !important;
-    }
+.container {
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+}
+
+.home-banner {
+    width: 100%;
+    height: 600px;
+    background: #eef1e8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.banner-main-container {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 9;
+
+}
+
+.banner-content-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.banner-text {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.banner-text-cover {
+    width: 78%;
+}
+
+.banner-text-one {
+    width: 100%;
+    height: 39px;
+    margin-bottom: 10px;
+}
+
+.banner-text-one p {
+    font-size: 26px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.banner-text-two {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.banner-text-two h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.banner-text-three {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+
+}
+
+.banner-text-three p {
+    font-size: 26px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.banner-slider {
+    width: 60%;
+    height: 100%;
 }
 
 .home-banner2 {
@@ -283,8 +360,7 @@ export default {
 }
 
 .banner-text-one2,
-.banner-text-three2,
-.banner-text-two2 {
+.banner-text-two2 .banner-text-three2 {
     width: 95%;
     margin-left: 10px;
     text-align: center;
@@ -302,6 +378,263 @@ export default {
     font-size: 20px;
     font-weight: 700;
     color: rgb(33, 37, 41);
+}
+
+.banner-slider2 {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 80vh;
+}
+
+
+.main-content {
+    width: 100%;
+    height: auto;
+    background-color: #f5f8ff;
+}
+
+.registration {
+    width: 950px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 25px 25px hsla(214, 4%, 65%, .06);
+    margin: -100px auto 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form {
+    width: 91%;
+    height: 85%;
+
+}
+
+.form-top {
+    width: 100%;
+    height: 40px;
+    border-bottom: 0.5px solid #585f65;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.form-top h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .5) !important;
+}
+
+.form-top::before {
+    content: "";
+    width: 160px;
+    height: 3px;
+    position: absolute;
+    top: 51px;
+    left: 33%;
+    border: 1px solid #49ba04 !important;
+    background-color: #49ba04 !important;
+}
+
+.form-top2 {
+    width: 100%;
+    height: 40px;
+    border-bottom: 0.5px solid #585f65;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.form-top2::before {
+    content: "";
+    width: 160px;
+    height: 3px;
+    position: absolute;
+    top: 51px;
+    left: 52%;
+    border: 1px solid #49ba04 !important;
+    background-color: #49ba04 !important;
+}
+
+.form-top2 h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .5) !important;
+}
+
+.form-input {
+    width: 100%;
+    height: 127px;
+    padding: 25px 30px 0;
+}
+
+.form {
+    width: 810px;
+    height: 102px;
+    display: flex;
+}
+
+.input-container {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.name-input,
+.input-telephone {
+    width: 254px;
+    height: 54px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+.name-input span,
+.input-telephone span {
+    display: none;
+    width: 148.63px;
+    height: 16.8px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 99;
+    margin-left: 10px;
+}
+
+
+.name-input input[type="text"],
+.input-telephone input[type="text"] {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+
+.check-box {
+    width: 100%;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-box span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #606266;
+}
+
+.check-box input[type='checkbox'] {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+}
+
+.check-box .link {
+    text-decoration: none !important;
+    color: #006aff !important;
+}
+.button-container {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.button-container button {
+    width: 254px;
+    height: 49px;
+    background-color: #49ba04;
+    color: #fff;
+    font-size: 14px !important;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.text-section {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+}
+
+.text-section-cover {
+    width: 80%;
+    height: 100%;
+}
+
+.text-header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.text-text-one {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(33, 37, 41);
+}
+.section-button {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-button button {
+    width: 253.93px;
+    height: 49px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #49ba04 !important;
+    color: #fff;
+    border: none;
+}
+.faq {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-cover {
+    width: 80%;
+    height: auto;
+
+}
+
+.faq-header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 46px;
+    font-weight: 600;
+    color: rgb(33, 37, 41);
+}
+
+.faq-accordion {
+    width: 100%;
+    height: auto;
 }
 
 
@@ -355,348 +688,6 @@ export default {
     border-bottom: 1px solid #ebeef5;
     box-sizing: border-box;
     height: 100%;
-}
-
-.container {
-    width: 100vw;
-    max-width: 100%;
-    height: auto;
-
-}
-
-.home-banner {
-    width: 100%;
-    height: 600px;
-    background: #eef1e8;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-}
-
-.banner-main-container {
-    width: 100%;
-    height: 400px;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    z-index: 9;
-
-}
-
-.banner-content-wrap {
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-
-.banner-text {
-    width: 50%;
-    height: auto;
-    display: flex;
-    justify-content: flex-end;
-    z-index: 1;
-}
-
-.banner-text-cover {
-    width: 78%;
-
-}
-
-.banner-slider {
-    width: 60%;
-    height: 100%;
-    /* background-color: red; */
-    overflow: hidden;
-}
-
-.banner-text-one {
-    width: 100%;
-    height: 39px;
-    margin-bottom: 10px;
-}
-
-.banner-text-one p {
-    font-size: 26px;
-    font-weight: 400;
-    color: #212529;
-}
-
-.banner-text-two {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.banner-text-two h1 {
-    font-size: 40px;
-    font-weight: 700;
-}
-
-.banner-text-three {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-
-}
-
-.banner-text-three p {
-    font-size: 26px;
-    font-weight: 400;
-    color: #212529;
-}
-
-
-.registration {
-    width: 950px;
-    height: 200px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 25px 25px hsla(214, 4%, 65%, .06);
-    margin: -100px auto 0;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.registration-form {
-    width: 91%;
-    height: 85%;
-
-}
-
-.form-top {
-    width: 100%;
-    height: 40px;
-    border-bottom: 0.5px solid #585f65;
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-}
-
-.form-top h4 {
-    font-size: 16px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, .5) !important;
-}
-
-.form-top::before {
-    content: "";
-    width: 160px;
-    height: 3px;
-    position: absolute;
-    top: 51px;
-    left: 33%;
-    border: 1px solid #49ba04 !important;
-    background-color: #49ba04 !important;
-}
-
-.form-top2::before {
-    content: "";
-    width: 160px;
-    height: 3px;
-    position: absolute;
-    top: 51px;
-    left: 52%;
-    border: 1px solid #49ba04 !important;
-    background-color: #49ba04 !important;
-}
-
-.form-top2 {
-    width: 100%;
-    height: 40px;
-    border-bottom: 0.5px solid #585f65;
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-}
-
-.form-top2 h4 {
-    font-size: 16px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, .5) !important;
-}
-
-
-.form-input {
-    width: 100%;
-    height: 127px;
-    padding: 25px 30px 0;
-}
-
-.form {
-    width: 810px;
-    height: 102px;
-    display: flex;
-}
-
-.input-container {
-    width: 65%;
-    height: 100%;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.button-container {
-    width: 35%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.button-container button {
-    width: 254px;
-    height: 49px;
-    background-color: #49ba04;
-    color: #fff;
-    font-size: 14px !important;
-    font-weight: 600;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-}
-
-.name-input,
-.input-telephone {
-    width: 254px;
-    height: 54px;
-    position: relative;
-    display: flex;
-    align-items: center;
-
-}
-
-.name-input input[type="text"],
-.input-telephone input[type="text"] {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    position: absolute;
-}
-
-.name-input span {
-    display: none;
-    width: 148.63px;
-    height: 16.8px;
-    background-color: #fff;
-    position: absolute;
-    z-index: 99;
-    margin-left: 10px;
-}
-
-.check-box {
-    width: 100%;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.check-box input[type='checkbox'] {
-    width: 24px;
-    height: 24px;
-    border-radius: 5px;
-}
-
-.check-box .link {
-    text-decoration: none !important;
-    color: #006aff !important;
-}
-
-.check-box span {
-    font-size: 14px;
-    font-weight: 500;
-    color: #606266;
-}
-
-.main-content {
-    width: 100%;
-    height: auto;
-    background-color: #f5f8ff;
-}
-
-.text-section {
-    width: 100%;
-    height: 650px;
-    display: flex;
-    justify-content: center;
-}
-
-.text-section-cover {
-    width: 80%;
-    height: 100%;
-}
-
-.text-header {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: flex-start;
-    font-size: 26px;
-    font-weight: 500;
-    margin-top: 10px;
-}
-
-.text-text-one {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: 500;
-    color: rgb(33, 37, 41);
-}
-
-.section-button {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.section-button button {
-    width: 253.93px;
-    height: 49px;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
-    background: #49ba04 !important;
-    color: #fff;
-    border: none;
-}
-
-.faq {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.faq-cover {
-    width: 80%;
-    height: auto;
-
-}
-
-.faq-header {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 46px;
-    font-weight: 600;
-    color: rgb(33, 37, 41);
-}
-
-.faq-accordion {
-    width: 100%;
-    height: auto;
 }
 
 @media screen and (max-width : 1024px) {
@@ -762,5 +753,85 @@ export default {
         height: 76px;
 
     }
+
+    .home-banner {
+        display: none !important;
+    }
+
+    .home-banner2 {
+        height: 1200px !important;
+        display: block !important;
+    }
 }
+
+@media screen and (max-width:425px) {
+    .home-banner2 {
+        height: 1200px !important;
+    }
+
+    .banner-slider2 {
+        top: 85vh !important;
+
+    }
+
+    .registration {
+        width: 395.6px !important;
+        height: 327.8px !important;
+    }
+
+    .registration-form {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .form-top {
+        height: 50px !important;
+        align-items: center;
+    }
+
+    .form-top::before {
+        top: 46px !important;
+        left: 10% !important;
+    }
+
+    .form-input {
+        margin-left: 10px;
+        width: 95% !important;
+        height: 80% !important;
+    }
+
+    .form {
+        width: 100% !important;
+        height: 100% !important;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .input-container {
+        width: 100% !important;
+        height: 50% !important;
+        justify-content: center;
+    }
+
+    .button-container {
+        width: 100% !important;
+        height: 69px !important;
+        align-items: flex-end;
+    }
+
+    .button-container button {
+        width: 90% !important;
+        height: 70% !important;
+
+    }
+
+    .check-box {
+        justify-content: center;
+    }
+}
+
+
+
+
+
 </style>

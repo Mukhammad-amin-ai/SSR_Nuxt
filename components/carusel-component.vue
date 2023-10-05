@@ -187,61 +187,20 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (max-width: 1550px) {
-    .bannerSliderItem-image {
-        height: auto;
-        padding: 56% 0 0;
-    }
+#bannerSlider {
+    overflow: hidden;
+    top: 10px;
 }
 
-@media screen and (max-width: 900px) {
-
-    #bannerSlider {
-        position: relative;
-        top: 5vh;
-    }
-}
-@media screen and (max-width: 768px) {
-    #bannerSlider{
-        top:70vh !important;
-    }
-    #bannerSlider:after{
-        display: none !important;
-    }
-}
-.sliderToggleBtn {
-    background: none;
-    border: none;
-    bottom: 0;
-    padding: 5px;
+#bannerSlider,
+#bannerSlider:after {
+    content: "";
     position: absolute;
-    right: 0;
-    z-index: 99;
-    cursor: pointer;
-}
-
-
-.bannerSliderItem-image {
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    border-radius: 10px;
-    height: 180px;
-    max-width: 320px;
+    top: -5px;
+    left: 0;
+    bottom: -5px;
     width: 100%;
-}
-
-.bannerSliderItem-bottom {
-    transform: translateX(-50%);
-}
-
-.bannerSliderItem-top {
-    margin-bottom: 16px;
-}
-
-.bannerSliderItem {
-    flex: 0 0 320px;
-    margin: 0 8px;
+    background: linear-gradient(78.83deg, #eef1e8 40.15%, transparent 66.93%);
 }
 
 .bannerSliderContainer {
@@ -256,6 +215,44 @@ export default {
     display: flex;
 }
 
+
+.bannerSliderItem {
+    flex: 0 0 320px;
+    margin: 0 8px;
+}
+
+.bannerSliderItem-image {
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    border-radius: 10px;
+    height: 180px;
+    max-width: 320px;
+    width: 100%;
+}
+
+
+.bannerSliderItem-top {
+    margin-bottom: 16px;
+}
+
+.bannerSliderItem-bottom {
+    transform: translateX(-50%);
+}
+
+
+
+.sliderToggleBtn {
+    background: none;
+    border: none;
+    bottom: 0;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
 @keyframes scrollingXXL {
 
     0% {
@@ -268,29 +265,68 @@ export default {
 
 }
 
-#bannerSlider,
-#bannerSlider:after {
-    left: 0;
-    position: absolute;
-    width: 100%;
+@media screen and (max-width: 1550px) {
+    .bannerSliderItem-image {
+        height: auto;
+        padding: 56% 0 0 !important;
+    }
 }
 
-#bannerSlider {
-    overflow: hidden;
-    top: 10px;
+@media screen and (max-width: 900px) {
+
+    #bannerSlider {
+        position: relative !important;
+        top: 5vh !important;
+
+    }
+
+    .bannerSliderItem {
+        flex: 0 0 30vw !important;
+        margin: 0 5px !important;
+    }
+
+    .bannerSliderItem-top {
+        margin-bottom: 10px !important;
+    }
 }
 
+@media screen and (max-width: 800px) {
+
+    .bannerSliderItem {
+        flex: 0 0 40vw !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* #bannerSlider {
+        top: 40vh !important;
+    } */
+
+    #bannerSlider:after {
+        display: none !important;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .bannerSliderItem {
+        flex: 0 0 50vw !important;
+    }
+}
+
+@media screen and (max-width:425px) {
+    /* #bannerSlider {
+        top: 40vh !important;
+    } */
+}
+
+/* 
 #bannerSlider:after {
     background: linear-gradient(78.83deg, #eef1e8 40.15%, transparent 66.93%);
     bottom: -5px;
     content: "";
     top: -5px;
-}
-
-#bannerSlider,
-#bannerSlider:after {
-    left: 0;
-    position: absolute;
-    width: 100%;
-}
+} */
 </style>
