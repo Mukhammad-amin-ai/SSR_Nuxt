@@ -64,7 +64,104 @@
                     </div>
                 </div>
             </div>
-          <CoursesComponent/>
+            <CoursesComponent />
+            <div class="text-section">
+                <div class="text-section-cover">
+                    <div class="text-header">
+                        Har Oy Yangi Darslar Qo’shib Boriladi!
+                    </div>
+                    <div class="text-text-one">
+                        Sinfxonaning maqsadi hamisha o’sishni va muvaffaqiyatli inson bo’lishni xohlaganlarni “ishlaydigan”
+                        ko’nikmalar bilan ta’minlash.
+                    </div>
+                    <div class="text-text-one">
+                        Hozirgacha 100+ ustozlar bilan muzokaralar olib bordik va sizlar bilan o’z tajribalarini
+                        bo’lishishlariga rozilik oldik. (va bu bilan to’xtab qolmoqchi emasmiz)
+                    </div>
+                    <div class="text-text-one">
+                        Har kuni yangi ustozlar bilan yangi darslar olinmoqda.
+                    </div>
+                    <div class="text-text-one">
+                        Jamoamiz bilan siz tezroq o’sishingiz va boshqalarni ham hayotini o’zgartirishga hissa qo’shishingiz
+                        uchun tinmay mehnat qilmoqdamiz.
+                    </div>
+                    <div class="text-text-one">
+                        Lekin bir narsani tushunishingizni xohlaymiz.
+                    </div>
+                    <div class="text-text-one">
+                        Biz hozircha million dollarlik kompaniya emasmiz. Resurslarimiz cheklangan.
+                    </div>
+                    <div class="text-text-one">
+                        Kuchimiz yetganicha har oy yangi ustozlarni kurslarini joylab boramiz
+                    </div>
+                    <div class="text-text-one">
+                        Hozir sizni yordamingiz bizga judayam muhim.
+                    </div>
+                    <div class="text-text-one">
+                        Sinfxonaga qo’shiling. Ilmga chanqoq insonlar ko’pligini ko’rsating.
+                    </div>
+                    <div class="text-text-one">
+                        Bu bizni siz bilan birgalikda o’sishimizni va yanada ko’proq ustozlardan ta’lim olish imkoniyatiga
+                        ega bo’lishimizni tezlashtiradi.
+                    </div>
+                    <div class="text-text-one">
+                        Yurtimiz kelajagi siz bilan bizni qo’limizda.
+                    </div>
+                    <div class="text-text-one">
+                        Birgalikda eng yuqori cho’qqilarni zabt etamiz.
+                    </div>
+                    <div class="text-text-one">
+                        Sinfxonada ko’rishguncha!
+                    </div>
+                </div>
+            </div>
+            <div class="section-button">
+                <button>
+                    SINFXONAGA KIRISH
+                </button>
+            </div>
+            <div class="faq">
+                <div class="faq-cover">
+                    <div class="faq-header">
+                        Tez so'raladigan savollar
+                    </div>
+                    <div class="faq-accordion">
+                        <div class="el-collapse-item" v-for="(faq, index) in frAsQu " :key="faq.id">
+                            <div role="tab" aria-controls="el-collapse-content-1229" @click="activated(faq.id)"
+                                aria-describedby="el-collapse-content-1229">
+                                <div role="button" id="el-collapse-head-2540" tabindex="0"
+                                    class="el-collapse-item__header ">
+                                    {{ faq.name }}<i class="el-collapse-item__arrow el-icon-arrow-right"></i></div>
+                            </div>
+                            <div role="tabpanel" aria-labelledby="el-collapse-head-2540" id="el-collapse-content-2540"
+                                class="el-collapse-item__wrap is-active" v-if="isActive[faq.id]">
+                                <div class="el-collapse-item__content">
+                                    <div>{{ faq.descript }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div>
+                            <div class="el-collapse-item" v-for="(faq, index) in frAsQu" :key="faq.id">
+                                <div role="tab" :aria-controls="'el-collapse-content-' + faq.id" @click="activated(faq.id)"
+                                    :aria-describedby="'el-collapse-content-' + faq.id">
+                                    <div role="button" :id="'el-collapse-head-' + faq.id" tabindex="0"
+                                        class="el-collapse-item__header" :class="{ 'is-active': isActive[faq.id] }">
+                                        {{ faq.name }}
+                                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" :aria-labelledby="'el-collapse-head-' + faq.id"
+                                    :id="'el-collapse-content-' + faq.id" class="el-collapse-item__wrap"
+                                    :class="{ 'is-active': isActive[faq.id] }">
+                                    <div class="el-collapse-item__content">
+                                        <div>{{ faq.descript }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
         <FooterComponent />
     </div>
@@ -75,17 +172,127 @@ export default {
         return {
             bgProp: '#eef1e8',
             dinamic: true,
+            isActive: {},
+            frAsQu: [
+                {
+                    id: 1,
+                    name: '1. Sinfxona nima?',
+                    descript: 'Sinfxona bu sizga O’zbekistonning oldi mutaxassislaridan ta’lim olish imkoniyatni beradigan, video darslar jamlangan platforma.'
+                },
+                {
+                    id: 2,
+                    name: "2. Oylik 97,000 so’mlik obuna to’lovim evaziga nima olaman?",
+                    descript: "Oylik obuna to’lovingiz evaziga platformamizda joylangan barcha kurslardan foydalanish imkoniyatiga ega bo’lasiz."
+                },
+                {
+                    id: 3,
+                    name: '3. Yillik tarifda qo’shilsam qancha tejab qolaman?',
+                    descript: 'Sinfxonaga bir yillik obunani 814,800 so’m evaziga olishingiz va 349,200 so’m tejab qolishingiz mumkin. Bu tarif hamisha o’sishni xohlaydigan va berilgan imkoniyatdan maksimal foyda chiqaradigan insonlar uchun.'
+                },
+                {
+                    id: 4,
+                    name: "4. 14 kunlik to’lovni qaytarish kafolati qanday ishlaydi?",
+                    descript: "Bizning maqsadimiz sizning to’xtovsiz rivojlanishingiz. Agar darslar sarmoya qilgan pulingizga arzishini sezmasaniz, obuna bo’lgan kuningizdan boshlab 14 kun ichida murojaat qilasiz va to’lovingizni qaytarib beramiz."
+                },
+                {
+                    id: 5,
+                    name: '5. Obunani qanday to’xtataman?',
+                    descript: 'Agar davom ettirishni istamasangiz, xohlagan vaqtingiz profilingiz sozlamalariga kirib obunani to’xtatishingiz, yoki qayta aktivlashtirishingiz mumkin.'
+                },
+                {
+                    id: 6,
+                    name: "6. Oylik eksklyuziv jonli efirlar nima?",
+                    descript: "Har oyda bir marta O’z sohasining mutaxassisi bilan maxsus jonli efirlar o’tkazami. Sinfxona o’quvchilari bu jonli efirga qo’shilishlari va ustozlardan o’z savollariga javob olishlari mumkin."
+                },
+                {
+                    id: 7,
+                    name: '7. Nega to’lov qilish uchun karta muddati va sms kod kerak?',
+                    descript: 'Sinfxona platformamiz oylik obuna tizimida ishlaydi. Ya’ni platformadan foydalanish uchun har oy 97,000 so’mdan to’lab borasiz.Karta muddati va sms kod orqali obuna bo’lsangiz, har oy kartangizdan avtomatik tarzda 97,000 so’m yechib boriladi va sinfxona siz uchun yopilib qolmaydi.'
+                },
+                {
+                    id: 8,
+                    name: "8. Darslar o’zi kim uchun:",
+                    descript: "Sinfxona darslari bir nuqtada qolmasdan rivojlanishni va hayotda katta yuqutlarga erishishni xohlagan insonlar uchun."
+                },
+                {
+                    id: 9,
+                    name: '9. Barcha darslar darhol ochiladimi?',
+                    descript: 'Ha, sinfxonaga qo’shilishingiz bilanoq barcha darslardan foydalanishingiz mumkin bo’ladi.'
+                },
+                {
+                    id: 10,
+                    name: "10. Kartada yangi oy uchun yetarlicha pul bo’lmasa nima bo’ladi:",
+                    descript: "Kartangizda yangi oy uchun yetarli mablag’ bo’lmasa Sinfxona akkauntingiz qoladi, lekin darslar yopiladi."
+                },
+
+            ]
         };
     },
     methods: {
         makeDinamic() {
             this.dinamic = !this.dinamic;
-        }
+        },
+        activated(id) {
+            // Toggle the isActive state for the clicked item id
+            this.isActive[id] = !this.isActive[id];
+        },
     },
 
 }
 </script>
 <style scoped>
+.el-collapse-item {
+    background: #fff !important;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.is-active {
+    padding: 15px !important;
+    border-bottom-color: transparent;
+}
+
+.el-collapse-item .el-collapse-item__header {
+    background: none;
+    border: none !important;
+    color: #000 !important;
+    font-size: 18px;
+    font-weight: 600;
+    height: auto;
+    line-height: normal;
+    padding: 10px 15px;
+    /* transition: all .2s linear; */
+}
+
+.el-collapse-item__header {
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ebeef5;
+    color: #303133;
+    cursor: pointer;
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    outline: 0;
+    transition: border-bottom-color .3s;
+}
+
+.el-collapse-item .el-collapse-item__wrap {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.el-collapse-item__wrap {
+    background-color: #fff;
+    border-bottom: 1px solid #ebeef5;
+    box-sizing: border-box;
+    height:100%;
+}
+
 .container {
     width: 100vw;
     max-width: 100%;
@@ -155,7 +362,7 @@ export default {
 
 .banner-text-two {
     width: 100%;
-    height: 244px;
+    height: auto;
     margin-bottom: 10px;
 }
 
@@ -166,7 +373,7 @@ export default {
 
 .banner-text-three {
     width: 100%;
-    height: 78px;
+    height: auto;
     margin-bottom: 10px;
 
 }
@@ -349,4 +556,82 @@ export default {
     background-color: #f5f8ff;
 }
 
+.text-section {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+}
+
+.text-section-cover {
+    width: 80%;
+    height: 100%;
+}
+
+.text-header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.text-text-one {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(33, 37, 41);
+}
+
+.section-button {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-button button {
+    width: 253.93px;
+    height: 49px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #49ba04 !important;
+    color: #fff;
+    border: none;
+}
+
+.faq {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-cover {
+    width: 80%;
+    height: auto;
+
+}
+
+.faq-header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 46px;
+    font-weight: 600;
+    color: rgb(33, 37, 41);
+}
+
+.faq-accordion {
+    width: 100%;
+    height: auto;
+}
 </style>
