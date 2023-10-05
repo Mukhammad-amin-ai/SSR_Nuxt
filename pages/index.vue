@@ -140,25 +140,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div>
-                            <div class="el-collapse-item" v-for="(faq, index) in frAsQu" :key="faq.id">
-                                <div role="tab" :aria-controls="'el-collapse-content-' + faq.id" @click="activated(faq.id)"
-                                    :aria-describedby="'el-collapse-content-' + faq.id">
-                                    <div role="button" :id="'el-collapse-head-' + faq.id" tabindex="0"
-                                        class="el-collapse-item__header" :class="{ 'is-active': isActive[faq.id] }">
-                                        {{ faq.name }}
-                                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" :aria-labelledby="'el-collapse-head-' + faq.id"
-                                    :id="'el-collapse-content-' + faq.id" class="el-collapse-item__wrap"
-                                    :class="{ 'is-active': isActive[faq.id] }">
-                                    <div class="el-collapse-item__content">
-                                        <div>{{ faq.descript }}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

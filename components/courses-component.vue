@@ -5,160 +5,185 @@
                 <h2>Bugunoq O’rganishni Boshlashingiz Mumkin Bo’lgan Darslar:</h2>
             </div>
             <div class="courses-cards">
-                <div class="card">
-                    <div class="card-wrapper">
-                        <div class="card-header">
-                            <img src="https://sinfxona.uz/api/uploads/courses/images/8hwOXpx36j9BgQ1g3a5RCchruDiISEud5HpHjyaO.jpg"
-                                alt="Kozimxon Turayev">
-                        </div>
-                        <div class="course-mentor">
-                            <div class="course-mentor-photo"
-                                :style="{ backgroundImage: `url(https://sinfxona.uz/api/uploads/mentors/WVRyEN6oYh1w59txw1z2JIpy8RHumWjbCHPy3u9E.jpg)` }">
+                <ul>
+                    <li v-for="card in dataCourses.data" :key="card">
+                        <div class="courseItem">
+                            <div class="course-image c-pointer"
+                                :style="{ backgroundImage: `url(https://sinfxona.uz/api${card.image})` }">
+                                <div class="course-category">{{ card.category.name }}</div>
                             </div>
-                            <p>
-                                Kozimxon Turayev
-                            </p>
-                        </div>
-                        <div class="course-name">
-                            Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
-                        </div>
-                        <div class="course-description">
-                            Mijozlar sadoqatliligini oshirish kompaniyangiz daromadini 2x-3x ga oshirishi mumkinligini
-                            bilasizmi?
-                        </div>
-                        <div class="course-footer">
-                            <div class="course-users">
-                                <i class="icon-users"></i>
-                                O`quvchilar:123
+                            <div class="course-mentor">
+                                <div class="course-mentor-photo"
+                                    :style="{ backgroundImage: `url(https://sinfxona.uz/api${card.mentor.image})` }">
+                                </div>
+                                <div class="course-mentor-fullname">
+                                    {{ card.mentor.fullname }}
+                                </div>
                             </div>
-                            <div class="course-show">
-                                <NuxtLink to="/">
-                                    <button>
-                                        Ko'rish
-                                    </button>
-                                </NuxtLink>
+                            <div class="course-name c-pointer">
+                                {{ card.name }}
+                            </div>
+                            <div class="course-desc">
+                                <!-- {{ card.description }} -->
+                                <p v-html="card.description"></p>
+                            </div>
+                            <div class="courseItemFooter">
+                                <div class="courseUsers">
+                                    <i class="icon-users">
+                                    </i> O`quvchilar: {{ card.customers_count }}
+                                </div>
+                                <!-- <a href="/courses/28" ></a> -->
+                                <nuxt-link :to="'/courses/' + card.category_id" class="btn btn-primary">Ko'rish</nuxt-link>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-wrapper">
-                        <div class="card-header">
-                            <img src="https://sinfxona.uz/api/uploads/courses/images/8hwOXpx36j9BgQ1g3a5RCchruDiISEud5HpHjyaO.jpg"
-                                alt="Kozimxon Turayev">
-                        </div>
-                        <div class="course-mentor">
-                            <div class="course-mentor-photo"
-                                :style="{ backgroundImage: `url(https://sinfxona.uz/api/uploads/mentors/WVRyEN6oYh1w59txw1z2JIpy8RHumWjbCHPy3u9E.jpg)` }">
-                            </div>
-                            <p>
-                                Kozimxon Turayev
-                            </p>
-                        </div>
-                        <div class="course-name">
-                            Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
-                        </div>
-                        <div class="course-description">
-                            Mijozlar sadoqatliligini oshirish kompaniyangiz daromadini 2x-3x ga oshirishi mumkinligini
-                            bilasizmi?
-                        </div>
-                        <div class="course-footer">
-                            <div class="course-users">
-                                <i class="icon-users"></i>
-                                O`quvchilar:123
-                            </div>
-                            <div class="course-show">
-                                <NuxtLink to="/">
-                                    <button>
-                                        Ko'rish
-                                    </button>
-                                </NuxtLink>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-wrapper">
-                        <div class="card-header">
-                            <img src="https://sinfxona.uz/api/uploads/courses/images/8hwOXpx36j9BgQ1g3a5RCchruDiISEud5HpHjyaO.jpg"
-                                alt="Kozimxon Turayev">
-                        </div>
-                        <div class="course-mentor">
-                            <div class="course-mentor-photo"
-                                :style="{ backgroundImage: `url(https://sinfxona.uz/api/uploads/mentors/WVRyEN6oYh1w59txw1z2JIpy8RHumWjbCHPy3u9E.jpg)` }">
-                            </div>
-                            <p>
-                                Kozimxon Turayev
-                            </p>
-                        </div>
-                        <div class="course-name">
-                            Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
-                        </div>
-                        <div class="course-description">
-                            Mijozlar sadoqatliligini oshirish kompaniyangiz daromadini 2x-3x ga oshirishi mumkinligini
-                            bilasizmi?
-                        </div>
-                        <div class="course-footer">
-                            <div class="course-users">
-                                <i class="icon-users"></i>
-                                O`quvchilar:123
-                            </div>
-                            <div class="course-show">
-                                <NuxtLink to="/">
-                                    <button>
-                                        Ko'rish
-                                    </button>
-                                </NuxtLink>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-wrapper">
-                        <div class="card-header">
-                            <img src="https://sinfxona.uz/api/uploads/courses/images/8hwOXpx36j9BgQ1g3a5RCchruDiISEud5HpHjyaO.jpg"
-                                alt="Kozimxon Turayev">
-                        </div>
-                        <div class="course-mentor">
-                            <div class="course-mentor-photo"
-                                :style="{ backgroundImage: `url(https://sinfxona.uz/api/uploads/mentors/WVRyEN6oYh1w59txw1z2JIpy8RHumWjbCHPy3u9E.jpg)` }">
-                            </div>
-                            <p>
-                                Kozimxon Turayev
-                            </p>
-                        </div>
-                        <div class="course-name">
-                            Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
-                        </div>
-                        <div class="course-description">
-                            Mijozlar sadoqatliligini oshirish kompaniyangiz daromadini 2x-3x ga oshirishi mumkinligini
-                            bilasizmi?
-                        </div>
-                        <div class="course-footer">
-                            <div class="course-users">
-                                <i class="icon-users"></i>
-                                O`quvchilar:123
-                            </div>
-                            <div class="course-show">
-                                <NuxtLink to="/">
-                                    <button>
-                                        Ko'rish
-                                    </button>
-                                </NuxtLink>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </template>
 <script>
 export default {
-
+    data() {
+        return {
+            dataCourses: ''
+        }
+    },
+    mounted() {
+        this.getCourses()
+    },
+    methods: {
+        async getCourses() {
+            this.dataCourses = await $fetch('https://sinfxona.uz/api/api/v1/courses').catch((error) => error.data)
+            console.log(this.dataCourses);
+        }
+    }
 }
 </script>
 <style scoped>
+.courseItemFooter .btn {
+    padding-left: 18px;
+    padding-right: 18px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #ebf8e1 !important;
+    color: #49ba04 !important;
+}
+
+.btn {
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 11px 30px;
+}
+
+.courses-cards ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+    padding: 0;
+}
+
+.courses-cards ul li {
+    flex: 0 0 33.3333333333%;
+    list-style: none;
+    padding: 10px;
+}
+
+
+.courseUsers {
+    color: #696984;
+    font-size: 14px;
+}
+
+.courseItemFooter {
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 12px;
+}
+
+.course-desc {
+    color: #696984;
+    font-size: 14px;
+    white-space: pre-line;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+.course-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.course-mentor-fullname {
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+.course-mentor-photo {
+    background-size: cover;
+    border-radius: 50%;
+    flex: 0 0 30px;
+    height: 30px;
+    width: 30px;
+}
+
+
+.course-mentor {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+.course-category {
+    background: hsla(0, 0%, 100%, .5);
+    border-radius: 5px;
+    font-weight: 500;
+    left: 10px;
+    line-height: 34px;
+    padding: 0 10px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 10px;
+}
+
+
+
+.c-pointer {
+    cursor: pointer;
+}
+
+.course-image {
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+    height: 200px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.courseItem {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+}
+
 .courses {
     width: 100%;
     height: auto;
@@ -183,127 +208,5 @@ export default {
 .courses-heading h2 {
     font-size: 26px;
     font-weight: 700;
-}
-
-.courses-cards {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-bottom: 20px;
-}
-
-.card {
-    width: 386.66px;
-    height: 467.8px;
-    background-color: #fff;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-wrapper {
-    width: 94%;
-    height: 94%;
-}
-
-.card-header {
-    width: 100%;
-    height: 200px;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.card-header img {
-    width: 100%;
-}
-
-.course-mentor {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    gap: 10px;
-}
-
-.course-mentor-photo {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-size: cover;
-}
-
-.course-mentor p {
-    font-style: 14px;
-    font-weight: 500;
-}
-
-.course-name {
-    width: 100%;
-    height: auto;
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-.course-description {
-    width: 100%;
-    height: auto;
-    font-size: 14px;
-    font-weight: 400;
-    color: #696984;
-    margin-top: 10px;
-    white-space: pre-line;
-}
-
-.course-footer {
-    width: 100%;
-    height: 61px;
-    margin-top: 10px;
-    border-top: 1px solid #696984;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.course-users {
-    width: 278px;
-    height: 61px;
-    display: flex;
-    align-items: center;
-    color: #696984;
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-.icon-users {
-    font-size: 18px;
-    margin-right: 3px;
-}
-
-.icon-users:before {
-    content: "\e90a";
-}
-
-.course-show {
-    width: 98.29px;
-    height: 49px;
-    margin-top: 10px;
-}
-
-.course-show button {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: #ebf8e1 !important;
-    color: #49ba04 !important;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-
 }
 </style>
