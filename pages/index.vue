@@ -1,7 +1,7 @@
 <template >
     <div class="container">
         <HeaderComponent :bgColor="bgProp" />
-        <div class="home-banner">
+        <div class="home-banner" >
             <div class="banner-main-container">
                 <div class="banner-content-wrap">
                     <div class="banner-text">
@@ -18,6 +18,28 @@
                         </div>
                     </div>
                     <div class="banner-slider">
+                        <CaruselComponent />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home-banner2">
+            <div class="banner-main-container2">
+                <div class="banner-content-wrap2">
+                    <div class="banner-text2">
+                        <div class="banner-text-cover2">
+                            <div class="banner-text-one2">
+                                <p> Vanihoyat O’zbekistonda!</p>
+                            </div>
+                            <div class="banner-text-two2">
+                                <h1>Kichik Oylik Obuna To’lovi Evaziga Yurtimizning Oldi Mutaxassislaridan Ta’lim Oling</h1>
+                            </div>
+                            <div class="banner-text-three2">
+                                <p>97,000 so’m oylik to’lov evaziga barcha darslarga ega bo’lasiz</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-slider2">
                         <CaruselComponent />
                     </div>
                 </div>
@@ -221,6 +243,68 @@ export default {
 }
 </script>
 <style scoped>
+@media screen and (max-width:768px) {
+    .home-banner{
+        display: none !important;
+    }
+    .home-banner2 {
+        display: block !important;
+    }
+}
+
+.home-banner2 {
+    width: 100%;
+    height: 900px;
+    background: #eef1e8;
+    display: none;
+}
+
+.banner-main-container2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-content-wrap2 {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-text2 {
+    width: 100%;
+}
+
+.banner-text-cover2 {
+    width: 100%;
+}
+
+.banner-text-one2,
+.banner-text-three2,
+.banner-text-two2 {
+    width: 95%;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.banner-text-one2,
+.banner-text-three2 {
+    font-size: 26px;
+    font-weight: 400;
+    color: rgb(33, 37, 41);
+}
+
+.banner-text-two2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(33, 37, 41);
+}
+
+
 .el-collapse-item {
     background: #fff !important;
     border-radius: 10px;
@@ -622,13 +706,61 @@ export default {
         justify-content: flex-start;
         margin-left: 15px;
     }
-    .text-section-cover{
+
+    .text-section-cover {
         width: 100% !important;
         margin-left: 15px;
 
     }
 
+    .faq-cover {
+        width: 100%;
+        margin-left: 15px;
+
+    }
 
 
+}
+
+@media screen and (max-width : 768px) {
+    .registration {
+        width: 738px;
+        height: 197.8px;
+    }
+
+    .input-container {
+        width: 467px;
+        height: 102px;
+    }
+
+    .name-input,
+    .input-telephone {
+        width: 209.99px;
+        height: 54px;
+
+    }
+
+    .form-input {
+        padding: 25px 0 0 !important;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .form-top::before {
+        left: 28.5%;
+    }
+
+    .button-container {
+        width: 233.99px;
+        height: 102px;
+    }
+
+    .button-container button {
+        width: 209.99px;
+        height: 76px;
+
+    }
 }
 </style>

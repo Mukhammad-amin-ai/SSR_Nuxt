@@ -201,7 +201,14 @@ export default {
         top: 5vh;
     }
 }
-
+@media screen and (max-width: 768px) {
+    #bannerSlider{
+        top:70vh !important;
+    }
+    #bannerSlider:after{
+        display: none !important;
+    }
+}
 .sliderToggleBtn {
     background: none;
     border: none;
