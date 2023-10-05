@@ -214,7 +214,6 @@ export default {
             this.dinamic = !this.dinamic;
         },
         activated(id) {
-            // Toggle the isActive state for the clicked item id
             this.isActive[id] = !this.isActive[id];
         },
     },
@@ -271,7 +270,7 @@ export default {
     background-color: #fff;
     border-bottom: 1px solid #ebeef5;
     box-sizing: border-box;
-    height:100%;
+    height: 100%;
 }
 
 .container {
@@ -311,7 +310,7 @@ export default {
 
 .banner-text {
     width: 50%;
-    height: 100%;
+    height: auto;
     display: flex;
     justify-content: flex-end;
     z-index: 1;
@@ -614,5 +613,22 @@ export default {
 .faq-accordion {
     width: 100%;
     height: auto;
+}
+
+@media screen and (max-width : 1024px) {
+
+    .banner-text {
+        width: 100% !important;
+        justify-content: flex-start;
+        margin-left: 15px;
+    }
+    .text-section-cover{
+        width: 100% !important;
+        margin-left: 15px;
+
+    }
+
+
+
 }
 </style>

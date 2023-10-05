@@ -24,7 +24,6 @@
                                 {{ card.name }}
                             </div>
                             <div class="course-desc">
-                                <!-- {{ card.description }} -->
                                 <p v-html="card.description"></p>
                             </div>
                             <div class="courseItemFooter">
@@ -32,22 +31,21 @@
                                     <i class="icon-users">
                                     </i> O`quvchilar: {{ card.customers_count }}
                                 </div>
-                                <!-- <a href="/courses/28" ></a> -->
-                                <nuxt-link :to="'/courses/' + card.category_id" class="btn btn-primary">Ko'rish</nuxt-link>
+                                <nuxt-link :to="'/courses/' + card.id" class="btn btn-primary">Ko'rish</nuxt-link>
                             </div>
                         </div>
-
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </template>
-<script>
+<script >
+
 export default {
     data() {
         return {
-            dataCourses: ''
+            dataCourses: '',
         }
     },
     mounted() {
@@ -55,13 +53,48 @@ export default {
     },
     methods: {
         async getCourses() {
-            this.dataCourses = await $fetch('https://sinfxona.uz/api/api/v1/courses').catch((error) => error.data)
+            this.dataCourses = await $fetch(`https://sinfxona.uz/api/api/v1/courses`).catch((error) => error.data)
             console.log(this.dataCourses);
         }
     }
 }
 </script>
 <style scoped>
+
+@media screen and (max-width:1024px){
+    .courses-content{
+        width: 100% !important;
+        margin-left: 15px;
+    }
+}
+
+
+.courses {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.courses-content {
+    width: 80%;
+    height: auto;
+
+}
+
+.courses-heading {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.courses-heading h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
 .courseItemFooter .btn {
     padding-left: 18px;
     padding-right: 18px;
@@ -147,7 +180,6 @@ export default {
     margin-bottom: 10px;
 }
 
-
 .course-category {
     background: hsla(0, 0%, 100%, .5);
     border-radius: 5px;
@@ -159,8 +191,6 @@ export default {
     text-transform: uppercase;
     top: 10px;
 }
-
-
 
 .c-pointer {
     cursor: pointer;
@@ -176,37 +206,9 @@ export default {
     overflow: hidden;
     position: relative;
 }
-
-
 .courseItem {
     background: #fff;
     border-radius: 10px;
     padding: 12px;
-}
-
-.courses {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.courses-content {
-    width: 80%;
-    height: auto;
-
-}
-
-.courses-heading {
-    width: 100%;
-    height: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.courses-heading h2 {
-    font-size: 26px;
-    font-weight: 700;
 }
 </style>

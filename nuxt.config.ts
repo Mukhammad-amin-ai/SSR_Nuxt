@@ -2,7 +2,13 @@
 import { resolve } from "path";
 
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  // devtools: { enabled: false },
+  runtimeConfig: {
+    public:{
+      BASE_URL: process.env.BASE_URL ,
+    }
+
+  },
   modules:[
     '@pinia/nuxt'
   ],

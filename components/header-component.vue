@@ -22,6 +22,17 @@ export default {
 }
 </script>
 <style scoped>
+
+
+@media screen and (max-width : 1024px) {
+    
+    .header-content {
+        width: 100% !important;
+        margin-left: 15px;
+    }
+}
+
+
 .header {
     width: 100%;
     height: 70px;
