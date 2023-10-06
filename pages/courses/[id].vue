@@ -44,6 +44,117 @@
                             <iframe src="https://sinfxona.uz/api/api/v1/courses/tizervideo/34" frameborder="0" width="100%"
                                 height="460px"></iframe>
                         </div>
+                        <div class="video-info">
+                            <div class="v-info-header">
+                                <div class="v-head-par">
+                                    Kursda o'qiyotganlar: 350
+                                </div>
+                                <div class="v-head-par">
+                                    O'qituvchi: <b>Kozimxon Turayev</b>
+                                </div>
+                            </div>
+                            <div class="v-info-body">
+                                <h1>
+                                    Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
+                                </h1>
+                                <div class="v-descrip">
+                                    <p>
+                                        Mijozlar sadoqatliligini oshirish kompaniyangiz daromadini 2x-3x ga oshirishi
+                                        mumkinligini bilasizmi?
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="videoComments">
+                                <div class="v-info-body">
+                                    <h1>Izohlar</h1>
+                                    <div>
+                                        <div class="text-button">
+                                            <p>Izoh qoldirish uchun tizimga kiring</p>
+                                            <NuxtLink to="/#enterForm" class="btn btn-success">
+                                                Kirish
+                                            </NuxtLink>
+                                        </div>
+                                    </div>
+                                    <div class="comments">
+                                        <div class="comment-item">
+                                            <div class="comment-header">
+                                                <div class="user-name">
+                                                    Dilmurod Sadinov
+                                                </div>
+                                            </div>
+                                            <div class="comment-content">
+                                                Izoh
+                                            </div>
+                                            <div class="flex">
+                                                <div class="data">
+                                                    10.08.2023 17:23
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item">
+                                            <div class="comment-header">
+                                                <div class="user-name">
+                                                    Dilmurod Sadinov
+                                                </div>
+                                            </div>
+                                            <div class="comment-content">
+                                                Izoh
+                                            </div>
+                                            <div class="flex">
+                                                <div class="data">
+                                                    10.08.2023 17:23
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item">
+                                            <div class="comment-header">
+                                                <div class="user-name">
+                                                    Dilmurod Sadinov
+                                                </div>
+                                            </div>
+                                            <div class="comment-content">
+                                                Izoh
+                                            </div>
+                                            <div class="flex">
+                                                <div class="data">
+                                                    10.08.2023 17:23
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item">
+                                            <div class="comment-header">
+                                                <div class="user-name">
+                                                    Dilmurod Sadinov
+                                                </div>
+                                            </div>
+                                            <div class="comment-content">
+                                                Izoh
+                                            </div>
+                                            <div class="flex">
+                                                <div class="data">
+                                                    10.08.2023 17:23
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item">
+                                            <div class="comment-header">
+                                                <div class="user-name">
+                                                    Dilmurod Sadinov
+                                                </div>
+                                            </div>
+                                            <div class="comment-content">
+                                                Izoh
+                                            </div>
+                                            <div class="flex">
+                                                <div class="data">
+                                                    10.08.2023 17:23
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -254,10 +365,109 @@ export default {
     width: 100%;
     height: 200vh;
     margin-top: 10px;
-    background-color: #fff;
 }
 
 .iframe-player {
     margin-bottom: 10px;
+}
 
-}</style>
+.video-info {
+    width: 100%;
+    height: auto;
+}
+
+.v-info-header {
+    background-color: #e2e6ed;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 26px;
+    display: flex;
+    justify-content: space-between !important;
+}
+
+.v-head-par {
+    color: #696984;
+    font-weight: 500;
+}
+
+.v-info-body {
+    background-color: #fff;
+    padding: 20px 26px;
+}
+
+.v-info-body h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.v-descrip {
+    color: rgba(0, 0, 0, .6);
+    font-weight: 500;
+    white-space: pre-line;
+}
+
+#videoComments {
+    width: 100%;
+    height: auto;
+}
+
+.text-button {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.text-button p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.btn {
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 11px 30px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-success {
+    background: #49ba04 !important;
+}
+
+.comments {
+    margin: 30px 0 0;
+}
+
+.comment-item {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    padding: 20px 0;
+}
+
+.comment-header {
+    display: flex;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.comment-content {
+    color: #696984;
+    font-size: 14px;
+    margin-bottom: 4px;
+    white-space: pre-line;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.data {
+    color: #696984;
+    font-size: 14px;
+    padding: 5px 0 0;
+}
+</style>
