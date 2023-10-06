@@ -46,44 +46,67 @@
             </div>
         </div>
         <div class="main-content">
-            <div class="registration">
-                <div class="registration-form">
-                    <div class="form-top" v-if="dinamic">
-                        <h4 style="color: #49ba04 !important; ;">Aloqa ma'lumotlari</h4>
-                        <h4>To'lov formasi</h4>
-                    </div>
-                    <div class="form-top2" v-else>
-                        <h4>Aloqa ma'lumotlari</h4>
-                        <h4 style="color: #49ba04 !important; ;">To'lov formasi</h4>
-                    </div>
-                    <div class="form-input">
-                        <div class="form">
-                            <div class="input-container">
-                                <div class="name-input">
-                                    <input type="text">
-                                    <span>Ismingizni kiriting</span>
-                                </div>
-                                <div class="input-telephone">
-                                    <input type="text">
-                                    <span>Telefon raqam</span>
-                                </div>
-                                <div class="check-box">
-                                    <input type="checkbox">
-                                    <span>
-                                        <nuxt-link to="#" class="link">
-                                            Offerta
-                                        </nuxt-link>
-                                        shartlariga roziman
-                                    </span>
+            <div id="enterForm" class="">
+                <div class="enterFormSteps">
+                    <ul>
+                        <li><a class="active">Aloqa ma'lumotlari</a></li>
+                        <li><a class="">To'lov formasi</a></li>
+                    </ul>
+                </div>
+                <div class="enter-body">
+                    <form class="el-form">
+                        <div class="row">
+                            <div class="column-1">
+                                <div class="row">
+                                    <div class="column-2">
+                                        <div class="elem-item">
+                                            <div class="elem-item-input">
+                                                <div class="elem-suffix ">
+                                                    <input type="text" autocomplete="off" class="elem-input-inner ">
+                                                    <!-- fill -->
+                                                    <span class="elem-suffix-inner ">
+                                                        Ismingizni kiriting</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column-2">
+                                        <div class="elem-item">
+                                            <div class="elem-item-input">
+                                                <div class="elem-suffix">
+                                                    <input type="text" autocomplete="off" class="elem-input-inner"
+                                                        placeholder="+998">
+                                                    <span class="elem-suffix-inner fill">
+                                                        Telefon raqam</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="el-form-item-check">
+                                        <div class="el-form-item-check-content">
+                                            <label class="agree-checkbox">
+                                                <span class="el-checkbox-input">
+                                                    <input type="checkbox" class="el-checkbox-original" value="">
+                                                </span>
+                                                <span class="el-checkbox-label">
+                                                    <nuxt-link to="#" class="link">
+                                                        Offerta
+                                                    </nuxt-link>
+                                                    shartlariga roziman
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="button-container">
-                                <button>
-                                    SINFXONAGA QO'SHILISH
+                            <div class="column-button">
+                                <button class="btn w-100">
+                                    <span class="fs14">SINFXONAGA QO’SHILISH</span>
                                 </button>
                             </div>
                         </div>
-                    </div>
+
+                    </form>
                 </div>
             </div>
             <CoursesComponent />
@@ -394,170 +417,217 @@ export default {
     background-color: #f5f8ff;
 }
 
-.registration {
-    width: 950px;
-    height: 200px;
-    background-color: #fff;
+#enterForm {
+    background: #fff;
     border-radius: 20px;
     box-shadow: 0 25px 25px hsla(214, 4%, 65%, .06);
     margin: -100px auto 0;
+    max-width: 950px;
+    padding: 0 40px 20px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.registration-form {
-    width: 91%;
-    height: 85%;
-
+.enterFormSteps {
+    border-bottom: 1px solid #dadada;
 }
 
-.form-top {
-    width: 100%;
-    height: 40px;
-    border-bottom: 0.5px solid #585f65;
-    display: flex;
-    justify-content: center;
-    gap: 45px;
+.enterFormSteps ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-.form-top h4 {
-    font-size: 16px;
-    font-weight: 600;
+.enterFormSteps ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 20px;
+}
+
+.enterFormSteps ul li a.active {
+    color: #49ba04 !important;
+}
+
+.enterFormSteps ul li a {
     color: rgba(0, 0, 0, .5) !important;
-}
-
-.form-top::before {
-    content: "";
-    width: 160px;
-    height: 3px;
-    position: absolute;
-    top: 51px;
-    left: 33%;
-    border: 1px solid #49ba04 !important;
-    background-color: #49ba04 !important;
-}
-
-.form-top2 {
-    width: 100%;
-    height: 40px;
-    border-bottom: 0.5px solid #585f65;
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-}
-
-.form-top2::before {
-    content: "";
-    width: 160px;
-    height: 3px;
-    position: absolute;
-    top: 51px;
-    left: 52%;
-    border: 1px solid #49ba04 !important;
-    background-color: #49ba04 !important;
-}
-
-.form-top2 h4 {
-    font-size: 16px;
+    display: block;
     font-weight: 600;
-    color: rgba(0, 0, 0, .5) !important;
+    padding: 12px 0 14px;
+    position: relative;
+    -webkit-text-decoration: none;
+    text-decoration: none;
 }
 
-.form-input {
+a {
+    color: #0d6efd;
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+}
+
+.enterFormSteps ul li a.active:after {
     width: 100%;
-    height: 127px;
+}
+
+.enterFormSteps ul li a:after {
+    background: #49ba04;
+    content: "";
+    height: 2px;
+    left: 0;
+    margin-top: -1px;
+    position: absolute;
+    top: 100%;
+    transition: all .2s;
+    width: 0;
+}
+
+.enter-body {
     padding: 25px 30px 0;
 }
 
-.form {
-    width: 810px;
-    height: 102px;
-    display: flex;
+.el-form {
+    width: 100%;
 }
 
-.input-container {
-    width: 65%;
-    height: 100%;
+.row {
+    width: 100%;
+    height: 102px;
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
 }
 
+.column-1 {
+    width: 66.66666667%;
+    padding: 0 12px;
+}
 
-.name-input,
-.input-telephone {
-    width: 254px;
-    height: 54px;
-    position: relative;
-    display: flex;
-    align-items: center;
+.column-button {
+    width: 33.33333333%;
+}
+
+.column-2 {
+    width: 50%;
+    padding: 0 12px;
+}
+
+.elem-item {
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+.elem-item::before {
+    content: "";
+    display: table;
+}
+
+.elem-item-input {
+    width: 100%;
+    height: auto;
 
 }
 
-.name-input span,
-.input-telephone span {
-    display: none;
-    width: 148.63px;
-    height: 16.8px;
-    background-color: #fff;
-    position: absolute;
-    z-index: 99;
-    margin-left: 10px;
+.elem-item-input::after,
+.elem-item-input::before {
+    content: "";
+    display: table;
 }
 
-
-.name-input input[type="text"],
-.input-telephone input[type="text"] {
+.elem-suffix {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    position: relative;
+    font-size: 14px;
+}
+
+.elem-input-inner {
+    width: 90%;
+    padding: 0 15px;
+    height: 54px;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+    border: 1px solid #b4bfd0;
     border-radius: 10px;
     position: absolute;
+
 }
 
+.elem-suffix-inner {
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    background-color: #fff;
+}
 
-.check-box {
+.fill {
+    top: -10px !important;
+}
+
+.el-form-item-check {
     width: 100%;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    height: auto;
+    padding: 30px 12px 0;
 }
 
-.check-box span {
+.el-form-item-check-content {
+    width: 100%;
+    position: relative;
+}
+
+.agree-checkbox {
+    color: #606266;
+    cursor: pointer;
     font-size: 14px;
     font-weight: 500;
-    color: #606266;
 }
 
-.check-box input[type='checkbox'] {
-    width: 24px;
-    height: 24px;
+.el-checkbox-input {
+    cursor: pointer;
+    line-height: 1;
+    outline: 0;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+}
+
+.el-checkbox-original {
+    border: 2px solid rgba(0, 0, 0, .3) !important;
     border-radius: 5px;
+    height: 24px !important;
+    width: 24px !important;
 }
 
-.check-box .link {
+.el-checkbox-label {
+    color: rgba(0, 0, 0, .5) !important;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 19px;
+    padding-left: 10px;
+}
+
+.link {
     text-decoration: none !important;
     color: #006aff !important;
 }
-.button-container {
-    width: 35%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-.button-container button {
-    width: 254px;
-    height: 49px;
-    background-color: #49ba04;
-    color: #fff;
-    font-size: 14px !important;
-    font-weight: 600;
-    border-radius: 50px;
+
+.btn {
     border: none;
-    cursor: pointer;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 11px 30px;
+    background: #49ba04 !important;
+}
+
+.w-100 {
+    width: 100%;
+
+}
+
+.fs14 {
+    font-size: 14px !important;
+    color: #fff;
 }
 
 .text-section {
@@ -590,6 +660,7 @@ export default {
     font-weight: 500;
     color: rgb(33, 37, 41);
 }
+
 .section-button {
     width: 100%;
     height: 50px;
@@ -608,6 +679,7 @@ export default {
     color: #fff;
     border: none;
 }
+
 .faq {
     width: 100%;
     height: auto;
@@ -764,6 +836,26 @@ export default {
     }
 }
 
+/* experiment=================== */
+/* @media (min-width: 768px) {
+    .col-md-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+
+    .col-md-8 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+} */
+
+/* experiment=================== */
+
 @media screen and (max-width:425px) {
     .home-banner2 {
         height: 1200px !important;
@@ -828,10 +920,4 @@ export default {
     .check-box {
         justify-content: center;
     }
-}
-
-
-
-
-
-</style>
+}</style>
