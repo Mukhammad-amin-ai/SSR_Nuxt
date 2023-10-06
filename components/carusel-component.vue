@@ -213,6 +213,7 @@ export default {
     animation-play-state: running;
     animation-timing-function: linear;
     display: flex;
+    padding-top: 10px;
 }
 
 
@@ -245,7 +246,7 @@ export default {
 .sliderToggleBtn {
     background: none;
     border: none;
-    bottom: 0;
+    bottom: 30px;
     padding: 5px;
     position: absolute;
     right: 0;
@@ -272,14 +273,19 @@ export default {
     }
 }
 
+
+
+
 @media screen and (max-width: 900px) {
 
     #bannerSlider {
         position: relative !important;
-        top: 5vh !important;
+        top: -20vh !important;
 
     }
-
+    #bannerSlider:after {
+        display: none !important;
+    }
     .bannerSliderItem {
         flex: 0 0 30vw !important;
         margin: 0 5px !important;

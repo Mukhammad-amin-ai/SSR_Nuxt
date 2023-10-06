@@ -762,6 +762,15 @@ a {
     height: 100%;
 }
 
+@media screen and (max-width:1230px) {
+    .banner-text-cover {
+        width: 100% !important;
+        margin-left: 15px;
+    }
+}
+
+
+
 @media screen and (max-width : 1024px) {
 
     .banner-text {
@@ -785,76 +794,25 @@ a {
 
 }
 
-@media screen and (max-width : 768px) {
-    .registration {
-        width: 738px;
-        height: 197.8px;
-    }
-
-    .input-container {
-        width: 467px;
-        height: 102px;
-    }
-
-    .name-input,
-    .input-telephone {
-        width: 209.99px;
-        height: 54px;
-
-    }
-
-    .form-input {
-        padding: 25px 0 0 !important;
-    }
-
-    .form {
-        width: 100%;
-    }
-
-    .form-top::before {
-        left: 28.5%;
-    }
-
-    .button-container {
-        width: 233.99px;
-        height: 102px;
-    }
-
-    .button-container button {
-        width: 209.99px;
-        height: 76px;
-
-    }
+@media screen and (max-width : 900px) {
 
     .home-banner {
         display: none !important;
     }
 
     .home-banner2 {
-        height: 1200px !important;
+        height: 800px !important;
         display: block !important;
+    }
+
+    .banner-text-one2,
+    .banner-text-two2,
+    .banner-text-three2 {
+        text-align: center;
+        line-height: normal;
     }
 }
 
-/* experiment=================== */
-/* @media (min-width: 768px) {
-    .col-md-8 {
-        flex: 0 0 auto;
-        width: 66.66666667%;
-    }
-
-    .col-md-8 {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-
-    .col-md-4 {
-        flex: 0 0 auto;
-        width: 33.33333333%;
-    }
-} */
-
-/* experiment=================== */
 
 @media screen and (max-width:425px) {
     .home-banner2 {
@@ -863,7 +821,6 @@ a {
 
     .banner-slider2 {
         top: 85vh !important;
-
     }
 
     .registration {
