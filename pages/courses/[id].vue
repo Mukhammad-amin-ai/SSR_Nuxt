@@ -40,7 +40,10 @@
                 </div>
                 <div class="v-player-col2">
                     <div class="v-player-container">
-
+                        <div class="iframe-player">
+                            <iframe src="https://sinfxona.uz/api/api/v1/courses/tizervideo/34" frameborder="0" width="100%"
+                                height="460px"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,7 +182,7 @@ export default {
 
 .sidebar-list ul li {
     list-style: none;
-    transition: .1s  all linear ;
+    transition: .1s all linear;
 }
 
 .sidebar-list ul li:hover {
@@ -204,7 +207,7 @@ export default {
     margin-top: 8px;
     width: 26px;
 }
-/* https://sinfxona.uz/img/icons/lock-2.svg */
+
 .playIco .loc {
     background-color: rgba(0, 0, 0, .25);
     background-image: url('../../assets/svg/lock.svg');
@@ -253,4 +256,8 @@ export default {
     margin-top: 10px;
     background-color: #fff;
 }
-</style>
+
+.iframe-player {
+    margin-bottom: 10px;
+
+}</style>

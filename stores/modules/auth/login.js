@@ -8,7 +8,7 @@ export const useLoginStore = defineStore("login", () => {
   async function logIn(number, password) {
     let data = {
       username: number,
-      password: +password,
+      password: password,
     };
     console.log(data);
     try {
@@ -18,6 +18,7 @@ export const useLoginStore = defineStore("login", () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
+        // console.log();
       });
     } catch (e) {
       console.error(e);
