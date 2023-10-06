@@ -14,7 +14,8 @@
                         <label for="username" class="el-form-item__label">Telefon raqam</label>
                         <div class="el-form-item__content">
                             <div class="v-input el-input fulled ">
-                                <input type="tel" autocomplete="off" placeholder="+998" class="el-input__inner">
+                                <input type="tel" autocomplete="off" placeholder="+998" class="el-input__inner"
+                                    v-model="number">
                             </div>
                         </div>
                     </div>
@@ -23,7 +24,7 @@
                         <div class="el-form-item__content">
                             <div class="el-input">
                                 <input type="password" autocomplete="off" placeholder="Parolingizni kiriting"
-                                    class="el-input__inner">
+                                    class="el-input__inner" v-model="password">
                             </div>
                         </div>
                     </div>
@@ -31,7 +32,7 @@
                         <nuxt-link to="/reset-password" class="link">Parolingizni unutdingizmi?</nuxt-link>
                     </div>
                     <div class="loginPageColFormFooter">
-                        <button class="btn btn-success w-100">Kirish</button>
+                        <button class="btn btn-success w-100" @click.prevent="logIn">Kirish</button>
                     </div>
                     <div class="text-center pt-4">
                         Sizda shaxsiy kabinet mavjud emasmi? <nuxt-link to="/#enterForm" class="link">Ro’yxatdan
@@ -42,8 +43,37 @@
     </div>
 </template>
 <script>
-export default {
+import { useLoginStore } from '~/stores';
+// import { ref,onMounted } from 'vue';
 
+export default {
+    setup() {
+        const number = ref("")
+        const password = ref("")
+        const useLogin = useLoginStore()
+        const logIn = () => {
+            useLogin.logIn(number.value, password.value);
+        };
+        return {
+            useLogin,
+            logIn,
+            number,
+            password
+        }
+    }
+
+
+    // 25391299
+    // methods: {
+    //     async login() {
+    //         let option = {
+    //             number: +this.number,
+    //             password: +this.password
+    //         }
+    //         this.loginn = await $fetch(`https://sinfxona.uz/api/api/v1/auth/login`, { method: "POST", body: option })
+    //         console.log(this.loginn);
+    //     }
+    // }
 }
 </script>
 <style scoped>

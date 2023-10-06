@@ -1,12 +1,12 @@
 <template>
-    <div class="header" :style="{ backgroundColor: bgColor }">
+    <div class="header" :style="{ backgroundColor: bgColor,boxShadow:bgShadow }">
         <div class="header-content">
             <div class="logo">
                 <nuxt-link to="/">
                     <img src="https://sinfxona.uz/img/Sinfxona_logo.png" alt="logo">
                 </nuxt-link>
             </div>
-            <nuxt-link to="login" class="btn btn-success">
+            <nuxt-link to="/login" class="btn btn-success">
                 <button>
                     SINFXONAGA KIRISH
                 </button>
@@ -17,7 +17,8 @@
 <script>
 export default {
     props: {
-        bgColor: String
+        bgColor: String,
+        bgShadow:String
     }
 }
 </script>

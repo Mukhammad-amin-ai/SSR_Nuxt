@@ -4,14 +4,14 @@ import { resolve } from "path";
 export default defineNuxtConfig({
   // devtools: { enabled: false },
   runtimeConfig: {
-    public:{
-      BASE_URL: process.env.BASE_URL ,
-    }
-
+    public: {
+      BASE_URL: process.env.BASE_URL,
+    },
   },
-  modules:[
-    '@pinia/nuxt'
-  ],
+  modules: ["@pinia/nuxt"],
+  pinia: {
+    autoImports: ["defineStore", ["defineStore", "definePiniaStore"]],
+  },
   alias: {
     "@": resolve(__dirname, "/"),
   },
@@ -31,6 +31,10 @@ export default defineNuxtConfig({
         {
           rel: "icon",
           href: "https://sinfxona.uz/favicon.ico",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css",
         },
       ],
     },

@@ -6,7 +6,7 @@
             </div>
             <div class="courses-cards">
                 <ul>
-                    <li v-for="card in dataCourses.data" :key="card">
+                    <li v-for="card in useAuth.state?.courses?.data" :key="card">
                         <div class="courseItem">
                             <div class="course-image c-pointer"
                                 :style="{ backgroundImage: `url(https://sinfxona.uz/api${card.image})` }">
@@ -41,28 +41,28 @@
     </div>
 </template>
 <script >
-
+import { useCourseStore } from '~/stores';
+import { onMounted } from 'vue'
 export default {
-    data() {
+    setup() {
+        const useAuth = useCourseStore()
+        const getAllCourses = async () => {
+            await useAuth.getAllCourses();
+        };
+
+        onMounted(getAllCourses)
         return {
-            dataCourses: '',
-        }
-    },
-    mounted() {
-        this.getCourses()
-    },
-    methods: {
-        async getCourses() {
-            this.dataCourses = await $fetch(`https://sinfxona.uz/api/api/v1/courses`).catch((error) => error.data)
-            console.log(this.dataCourses);
+            useAuth,
+            getAllCourses
         }
     }
+
 }
+
 </script>
 <style scoped>
-
-@media screen and (max-width:1024px){
-    .courses-content{
+@media screen and (max-width:1024px) {
+    .courses-content {
         width: 100% !important;
         margin-left: 15px;
     }
@@ -206,6 +206,7 @@ export default {
     overflow: hidden;
     position: relative;
 }
+
 .courseItem {
     background: #fff;
     border-radius: 10px;
