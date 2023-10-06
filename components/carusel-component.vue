@@ -283,9 +283,11 @@ export default {
         top: -20vh !important;
 
     }
+
     #bannerSlider:after {
         display: none !important;
     }
+
     .bannerSliderItem {
         flex: 0 0 30vw !important;
         margin: 0 5px !important;
@@ -293,6 +295,9 @@ export default {
 
     .bannerSliderItem-top {
         margin-bottom: 10px !important;
+    }
+    .sliderToggleBtn{
+        bottom: 0px !important;
     }
 }
 
@@ -304,9 +309,6 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-    /* #bannerSlider {
-        top: 40vh !important;
-    } */
 
     #bannerSlider:after {
         display: none !important;
@@ -323,16 +325,8 @@ export default {
 }
 
 @media screen and (max-width:425px) {
-    /* #bannerSlider {
-        top: 40vh !important;
-    } */
+
+
 }
 
-/* 
-#bannerSlider:after {
-    background: linear-gradient(78.83deg, #eef1e8 40.15%, transparent 66.93%);
-    bottom: -5px;
-    content: "";
-    top: -5px;
-} */
 </style>

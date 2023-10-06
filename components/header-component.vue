@@ -1,5 +1,5 @@
 <template>
-    <div class="header" :style="{ backgroundColor: bgColor,boxShadow:bgShadow }">
+    <div class="header" :style="{ backgroundColor: bgColor, boxShadow: bgShadow }">
         <div class="header-content">
             <div class="logo">
                 <nuxt-link to="/">
@@ -11,6 +11,11 @@
                     SINFXONAGA KIRISH
                 </button>
             </nuxt-link>
+            <nuxt-link to="/login" class="btn2 btn-success">
+                <button>
+                    Kirish
+                </button>
+            </nuxt-link>
         </div>
     </div>
 </template>
@@ -18,7 +23,7 @@
 export default {
     props: {
         bgColor: String,
-        bgShadow:String
+        bgShadow: String
     }
 }
 </script>
@@ -30,6 +35,18 @@ export default {
     }
 }
 
+@media screen and (max-width:768px) {
+    .btn {
+        display: none;
+    }
+
+    .btn2 {
+        display: block !important;
+    }
+    .header{
+        position: relative !important;
+    }
+}
 
 
 
@@ -50,28 +67,52 @@ export default {
     justify-content: space-between;
     align-items: center;
 }
-.btn{
+
+.btn {
     width: 253.49px;
     height: 49px;
     border: none;
     border-radius: 50px;
     overflow: hidden;
 }
-.btn button{
+
+.btn2 {
+    display: none;
+    width: 112.43px;
+    height: 49px;
+    border: none;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.btn2 button {
     width: 100%;
     height: 100%;
     border: none;
-    background: #49ba04!important;
+    background: #49ba04 !important;
     font-size: 18px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
 }
-.logo{
+
+.btn button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #49ba04 !important;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.logo {
     width: 147px;
     height: 29.4px;
 }
-.logo img{
+
+.logo img {
     width: 100%;
-}
-</style>
+}</style>
