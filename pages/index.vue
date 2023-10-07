@@ -490,10 +490,20 @@ a {
 }
 
 .row {
-    width: 100%;
+    /* width: 100%;
     height: 102px;
     display: flex;
+    flex-wrap: wrap; */
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
     flex-wrap: wrap;
+    margin-left: -0.75rem;
+    margin-left: calc(var(--bs-gutter-x)*-.5);
+    margin-right: -0.75rem;
+    margin-right: calc(var(--bs-gutter-x)*-.5);
+    margin-top: 0;
+    margin-top: calc(var(--bs-gutter-y)*-1);
 }
 
 .column-1 {
@@ -568,6 +578,7 @@ a {
     width: 100%;
     height: auto;
     padding: 30px 12px 0;
+    margin-top: 1rem;
 }
 
 .el-form-item-check-content {
@@ -732,7 +743,6 @@ a {
     height: auto;
     line-height: normal;
     padding: 10px 15px;
-    /* transition: all .2s linear; */
 }
 
 .el-collapse-item__header {
@@ -764,7 +774,7 @@ a {
 }
 
 @media screen and (max-width:1230px) {
-  
+
     .banner-text-cover {
         width: 100% !important;
         margin-left: 15px;
@@ -774,7 +784,8 @@ a {
         width: 100% !important;
         margin-left: 15px;
     }
-    .faq-cover{
+
+    .faq-cover {
         width: 100% !important;
         margin-left: 15px;
 
@@ -807,9 +818,18 @@ a {
 }
 
 @media screen and (max-width : 900px) {
-      .main-content{
-           padding: 0 15px;
+    #enterForm {
+        padding: 0 30px 20px;
     }
+
+    .enterFormBody {
+        padding: 25px 0 0;
+    }
+
+    .main-content {
+        padding: 0 15px;
+    }
+
     .home-banner {
         display: none !important;
     }
@@ -828,68 +848,155 @@ a {
 }
 
 
+@media screen and (max-width: 670px) {
+    .text-section {
+        height: 900px !important;
+    }
+    .faq-header{
+        font-size: 36px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    #enterForm {
+        padding: 0;
+    }
+    .text-section {
+        height: 950px !important;
+    }
+    .enter-body {
+        padding: 15px 20px;
+    }
+
+    .column-1 {
+        width: 100% !important;
+    }
+
+    .row {
+        gap: 50px !important;
+    }
+
+    .column-2 {
+        width: 100% !important;
+    }
+
+    .elem-input-inner {
+        width: 100% !important;
+    }
+
+    .el-form-item-check {
+        padding: 10px 62px 0;
+    }
+
+    .column-button {
+        width: 100%;
+    }
+
+    .banner-text-one2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .banner-text-two2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+
+    }
+
+    .banner-text-three2 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .faq-header{
+        font-size: 30px;
+    }
+}
+
+
+
 @media screen and (max-width:425px) {
     .home-banner2 {
-        height: 1200px !important;
+        height: 800px !important;
+    }
+
+    .banner-text2 {
+        width: 95%;
+    }
+
+    .banner-text-two2 {
+        font-size: 16px;
+    }
+
+    .banner-text-one2 {
+        font-size: 20px;
+
+    }
+    
+    .banner-text-three2 {
+        font-size: 12px;
     }
 
     .banner-slider2 {
-        top: 85vh !important;
+        top: 75vh !important;
     }
 
-    .registration {
-        width: 395.6px !important;
-        height: 327.8px !important;
-    }
-
-    .registration-form {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    .form-top {
-        height: 50px !important;
-        align-items: center;
-    }
-
-    .form-top::before {
-        top: 46px !important;
-        left: 10% !important;
-    }
-
-    .form-input {
-        margin-left: 10px;
-        width: 95% !important;
-        height: 80% !important;
-    }
-
-    .form {
-        width: 100% !important;
-        height: 100% !important;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .input-container {
-        width: 100% !important;
-        height: 50% !important;
-        justify-content: center;
-    }
-
-    .button-container {
-        width: 100% !important;
-        height: 69px !important;
-        align-items: flex-end;
-    }
-
-    .button-container button {
-        width: 90% !important;
-        height: 70% !important;
+    .el-form-item-check {
+        padding: 10px 40px 0;
 
     }
-
-    .check-box {
-        justify-content: center;
+    .text-section {
+        height: 1000px !important;
+    }
+    .faq-header{
+        font-size: 25px;
     }
 }
+
+@media screen and (max-width:375px) {
+    .home-banner2 {
+        height: 700px !important;
+    }
+
+    .banner-slider2 {
+        top: 60vh !important;
+    }
+
+    .el-form-item-check {
+        padding: 10px 30px 0;
+
+    }
+    .text-section {
+        height: 1100px !important;
+    }
+    .faq-header{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .banner-main-container2 {
+        padding-top: 20px;
+    }
+
+    .banner-slider2 {
+        top: 67vh !important;
+    }
+
+    .banner-text-two2 {
+        font-size: 15px;
+    }
+
+    .el-form-item-check {
+        padding: 10px 20px 0;
+
+    }
+    .text-section {
+        height: 1200px !important;
+    }
+
+}
+
 </style>

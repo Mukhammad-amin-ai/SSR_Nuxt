@@ -281,7 +281,6 @@ export default {
     #bannerSlider {
         position: relative !important;
         top: -20vh !important;
-
     }
 
     #bannerSlider:after {
@@ -322,11 +321,19 @@ export default {
     .bannerSliderItem {
         flex: 0 0 50vw !important;
     }
+    #bannerSlider {
+        position: relative !important;
+        top: -20vh !important;
+    }
 }
 
 @media screen and (max-width:425px) {
 
-
+    #bannerSlider {
+        position: relative !important;
+        top: 0vh !important;
+    }
+   
 }
 
 </style>

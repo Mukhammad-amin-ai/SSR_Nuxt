@@ -33,7 +33,7 @@ export default {
         width: 100% !important;
         margin: 0 15px;
     }
-    
+
 }
 
 @media screen and (max-width:768px) {
@@ -44,11 +44,17 @@ export default {
     .btn2 {
         display: block !important;
     }
-    .header{
+
+    .header {
         position: relative !important;
     }
 }
 
+@media screen and (max-width:768px) {
+    .btn2 {
+        margin-right: 0px !important;
+    }
+}
 
 
 .header {

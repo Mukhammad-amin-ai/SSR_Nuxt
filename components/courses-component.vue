@@ -236,4 +236,20 @@ export default {
         flex: 0 0 50%;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .courses ul li {
+        flex: 0 0 100%;
+    }
+    .courses-heading {
+        height: 150px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .courses-heading {
+        height: 200px !important;
+    }
+}
+
 </style>

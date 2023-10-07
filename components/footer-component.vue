@@ -72,18 +72,31 @@ export default {
     height: 72px;
     margin: 20px 0;
 }
-.f-txt-three{
+
+.f-txt-three {
     width: 100%;
     height: 48px;
     margin-bottom: 10px;
-    
+
 }
 
 @media screen and (max-width:1230px) {
-    .footer-wrapper{
+    .footer-wrapper {
         width: 100% !important;
         margin-left: 15px;
     }
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .f-txt-two,
+    .f-txt-three {
+        height: auto !important;
+    }
+
+
+}
+
 
 </style>
