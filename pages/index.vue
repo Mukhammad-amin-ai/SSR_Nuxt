@@ -270,6 +270,7 @@ export default {
     width: 100vw;
     max-width: 100%;
     height: auto;
+    background: #f5f8ff;
 }
 
 .home-banner {
@@ -690,7 +691,7 @@ a {
 .faq-cover {
     width: 80%;
     height: auto;
-
+    margin-bottom: 30px;
 }
 
 .faq-header {
@@ -763,9 +764,20 @@ a {
 }
 
 @media screen and (max-width:1230px) {
+  
     .banner-text-cover {
         width: 100% !important;
         margin-left: 15px;
+    }
+
+    .text-section-cover {
+        width: 100% !important;
+        margin-left: 15px;
+    }
+    .faq-cover{
+        width: 100% !important;
+        margin-left: 15px;
+
     }
 }
 
@@ -795,7 +807,9 @@ a {
 }
 
 @media screen and (max-width : 900px) {
-
+      .main-content{
+           padding: 0 15px;
+    }
     .home-banner {
         display: none !important;
     }
@@ -877,4 +891,5 @@ a {
     .check-box {
         justify-content: center;
     }
-}</style>
+}
+</style>

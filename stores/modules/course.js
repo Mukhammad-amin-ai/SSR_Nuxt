@@ -5,15 +5,15 @@ import { defineStore } from "pinia";
 export const useCourseStore = defineStore("course", () => {
   const state = reactive({
     courses: [],
-    coursesByid:[],
-    myCourses:[]
+    coursesByid: [],
+    myCourses: [],
+    videoById: [],
   });
 
   async function getAllCourses() {
     state.courses = await $fetch(
       `https://sinfxona.uz/api/api/v1/courses`
     ).catch((error) => error.data);
-
   }
   async function getCourseById(courseId) {
     try {
@@ -25,13 +25,21 @@ export const useCourseStore = defineStore("course", () => {
     }
     console.log(state.coursesByid.data.data);
   }
-  
-
-
+  async function getVideoByid(courseId) {
+    try {
+      state.videoById = await axios.get(
+        `https://sinfxona.uz/api/api/v1/courses/tizervideo/${courseId}`
+      );
+      console.log(  state.videoById);
+    } catch (e) {
+      console.error(e);
+    }
+  }
 
   return {
     state,
     getCourseById,
     getAllCourses,
+    getVideoByid
   };
 });

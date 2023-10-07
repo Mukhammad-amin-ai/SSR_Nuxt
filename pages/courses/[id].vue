@@ -48,8 +48,8 @@
                 <div class="v-player-col2">
                     <div class="v-player-container">
                         <div class="iframe-player">
-                            <iframe src="https://sinfxona.uz/api/api/v1/courses/tizervideo/34" frameborder="0" width="100%"
-                                height="460px"></iframe>
+                            <iframe :src="'https://sinfxona.uz/api/api/v1/courses/tizervideo/' + this.$route.params.id"
+                                frameborder="0" width="100%" height="460px"></iframe>
                         </div>
                         <div class="video-info">
                             <div class="v-info-header">
@@ -130,14 +130,22 @@ export default {
         let useCommentId = () => {
             useComment.getAllComments(courseId.value)
         }
-
-        onMounted(() => { useCommentId(), useCourseID() })
+        let videoById = () => {
+            useCourse.getVideoByid(courseId.value)
+            // console.log(useCourse.state.videoById);
+        }
+        onMounted(() => {
+            useCourseID()
+            useCommentId()
+            videoById()
+        })
 
         return {
             useCourse,
             useComment,
             useCommentId,
-            useCourseID
+            useCourseID,
+            videoById
         }
     }
 }

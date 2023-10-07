@@ -31,8 +31,9 @@ export default {
 @media screen and (max-width:1230px) {
     .header-content {
         width: 100% !important;
-        margin-left: 15px;
+        margin: 0 15px;
     }
+    
 }
 
 @media screen and (max-width:768px) {

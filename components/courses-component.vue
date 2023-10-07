@@ -61,14 +61,6 @@ export default {
 
 </script>
 <style scoped>
-@media screen and (max-width:1024px) {
-    .courses-content {
-        width: 100% !important;
-        margin-left: 15px;
-    }
-}
-
-
 .courses {
     width: 100%;
     height: auto;
@@ -211,5 +203,37 @@ export default {
     background: #fff;
     border-radius: 10px;
     padding: 12px;
+}
+
+@media screen and (max-width:1230px) {
+    .courses-content {
+        width: 98% !important;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    .courses ul li {
+        flex: 0 0 33.33333333%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .courses-content {
+        width: 100% !important;
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .courses-heading h2{
+        text-align: center;
+    }
+    .courses-content {
+        margin-left: 0px !important;
+    }
+    .courses ul li {
+        flex: 0 0 50%;
+    }
 }
 </style>

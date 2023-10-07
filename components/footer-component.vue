@@ -78,4 +78,12 @@ export default {
     margin-bottom: 10px;
     
 }
+
+@media screen and (max-width:1230px) {
+    .footer-wrapper{
+        width: 100% !important;
+        margin-left: 15px;
+    }
+}
+
 </style>
