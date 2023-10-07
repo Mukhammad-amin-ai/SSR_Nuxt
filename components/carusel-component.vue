@@ -295,8 +295,14 @@ export default {
     .bannerSliderItem-top {
         margin-bottom: 10px !important;
     }
-    .sliderToggleBtn{
+
+    .sliderToggleBtn {
         bottom: 0px !important;
+    }
+
+    #bannerSlider {
+        position: relative !important;
+        top: -50px !important
     }
 }
 
@@ -312,6 +318,7 @@ export default {
     #bannerSlider:after {
         display: none !important;
     }
+
 }
 
 
@@ -321,19 +328,26 @@ export default {
     .bannerSliderItem {
         flex: 0 0 50vw !important;
     }
-    #bannerSlider {
-        position: relative !important;
-        top: -20vh !important;
-    }
+
 }
 
 @media screen and (max-width:425px) {
 
     #bannerSlider {
         position: relative !important;
-        top: 0vh !important;
+        top: -150px !important
     }
-   
+
+
 }
 
+@media screen and (max-width:375px) {
+
+    #bannerSlider {
+        position: relative !important;
+        top: -30px !important
+    }
+
+
+}
 </style>

@@ -847,6 +847,11 @@ a {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .home-banner2{
+        height: 900px !important;
+    }
+}
 
 @media screen and (max-width: 670px) {
     .text-section {
@@ -957,7 +962,7 @@ a {
 
 @media screen and (max-width:375px) {
     .home-banner2 {
-        height: 700px !important;
+        height: 700px  !important;
     }
 
     .banner-slider2 {
