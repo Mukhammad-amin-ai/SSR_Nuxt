@@ -14,27 +14,34 @@
                     <div class="vp-sidebar">
                         <div class="sidebar-header">
                             <div class="sidebar-title">
-
+                                <h2>
+                                    <span>
+                                        {{ useCourse.state.coursesByid.data?.data.name }}
+                                    </span>
+                                </h2>
                             </div>
                             <div class="sidebar-count">
-
+                                {{ useCourse.state.coursesByid.data?.data.lessons.length }}
                             </div>
                         </div>
                         <div class="sidebar-list">
                             <ul>
-                                <li>
+                                <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
                                     <NuxtLink class="el-tooltip" to="#">
                                         <div class="playIco lock"></div>
                                         <div class="lessonInfo">
-                                            <div class="lessonNumber">1-dars</div>
-                                            <h3 class="lessonTitle">Kirish</h3>
+                                            <div class="lessonNumber">{{ lesson.order }}-dars</div>
+                                            <h3 class="lessonTitle">{{ lesson.theme }}</h3>
                                         </div>
                                     </NuxtLink>
                                 </li>
+
                             </ul>
                         </div>
                         <div class="sidebar-footer">
-
+                            <button>
+                                Obuna bo'lish
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -47,21 +54,19 @@
                         <div class="video-info">
                             <div class="v-info-header">
                                 <div class="v-head-par">
-                                    Kursda o'qiyotganlar: 350
+                                    <i class='bx bx-group'></i> Kursda o'qiyotganlar: {{
+                                        useCourse.state.coursesByid.data?.data.customers_count }}
                                 </div>
                                 <div class="v-head-par">
-                                    O'qituvchi: <b>Kozimxon Turayev</b>
+                                    O'qituvchi: <b>{{ useCourse.state.coursesByid.data?.data.mentor.fullname }}</b>
                                 </div>
                             </div>
                             <div class="v-info-body">
                                 <h1>
-                                    Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
+                                    {{ useCourse.state.coursesByid.data?.data.name }}
                                 </h1>
                                 <div class="v-descrip">
-                                    <p>
-                                        Mijozlar sadoqatliligini oshirish kompaniyangiz daromadini 2x-3x ga oshirishi
-                                        mumkinligini bilasizmi?
-                                    </p>
+                                    <p v-html="useCourse.state.coursesByid.data?.data.description"> </p>
                                 </div>
                             </div>
                             <div id="videoComments">
@@ -76,78 +81,19 @@
                                         </div>
                                     </div>
                                     <div class="comments">
-                                        <div class="comment-item">
+                                        <div class="comment-item" v-for="comment in useComment.state.comments.data?.data"
+                                            :key="comment">
                                             <div class="comment-header">
                                                 <div class="user-name">
-                                                    Dilmurod Sadinov
+                                                    {{ comment.user_fullname }}
                                                 </div>
                                             </div>
                                             <div class="comment-content">
-                                                Izoh
+                                                {{ comment.comment }}
                                             </div>
                                             <div class="flex">
                                                 <div class="data">
-                                                    10.08.2023 17:23
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="comment-item">
-                                            <div class="comment-header">
-                                                <div class="user-name">
-                                                    Dilmurod Sadinov
-                                                </div>
-                                            </div>
-                                            <div class="comment-content">
-                                                Izoh
-                                            </div>
-                                            <div class="flex">
-                                                <div class="data">
-                                                    10.08.2023 17:23
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="comment-item">
-                                            <div class="comment-header">
-                                                <div class="user-name">
-                                                    Dilmurod Sadinov
-                                                </div>
-                                            </div>
-                                            <div class="comment-content">
-                                                Izoh
-                                            </div>
-                                            <div class="flex">
-                                                <div class="data">
-                                                    10.08.2023 17:23
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="comment-item">
-                                            <div class="comment-header">
-                                                <div class="user-name">
-                                                    Dilmurod Sadinov
-                                                </div>
-                                            </div>
-                                            <div class="comment-content">
-                                                Izoh
-                                            </div>
-                                            <div class="flex">
-                                                <div class="data">
-                                                    10.08.2023 17:23
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="comment-item">
-                                            <div class="comment-header">
-                                                <div class="user-name">
-                                                    Dilmurod Sadinov
-                                                </div>
-                                            </div>
-                                            <div class="comment-content">
-                                                Izoh
-                                            </div>
-                                            <div class="flex">
-                                                <div class="data">
-                                                    10.08.2023 17:23
+                                                    {{ comment.created_at }}
                                                 </div>
                                             </div>
                                         </div>
@@ -163,20 +109,35 @@
     <FooterComponent />
 </template>
 <script>
+import { useCourseStore, useCommentStore } from '~/stores';
+
 export default {
     data() {
         return {
             bgProp: '#fff',
             shadow: "0 6px 34px rgba(73,186,4,.09)",
-            dataById: ''
         }
     },
-    mounted() {
-        this.getCourseById()
-    },
-    methods: {
-        async getCourseById() {
-            this.dataById = await $fetch(`https://sinfxona.uz/api/api/v1/customers/${this.$route.params.id}`).catch((error) => error.data)
+    setup() {
+        const route = useRouter()
+        let courseId = ref(route.currentRoute.value.params.id)
+        const useCourse = useCourseStore()
+        const useComment = useCommentStore()
+
+        let useCourseID = () => {
+            useCourse.getCourseById(courseId.value)
+        }
+        let useCommentId = () => {
+            useComment.getAllComments(courseId.value)
+        }
+
+        onMounted(() => { useCommentId(), useCourseID() })
+
+        return {
+            useCourse,
+            useComment,
+            useCommentId,
+            useCourseID
         }
     }
 }
@@ -217,7 +178,7 @@ export default {
 }
 
 .bx {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     vertical-align: middle;
 }
@@ -240,6 +201,7 @@ export default {
 .v-player-col1 {
     flex: 0 0 32.4%;
     padding: 0 14px 0 0;
+    margin-bottom: 50px;
 }
 
 .vp-sidebar {
@@ -264,7 +226,20 @@ export default {
 .sidebar-title {
     width: 80%;
     height: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
+}
+
+.sidebar-title h2 {
+    margin-bottom: 0;
+    max-width: 270px;
+}
+
+.sidebar-title span {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .sidebar-count {
@@ -345,25 +320,37 @@ export default {
 
 
 .sidebar-footer {
-    background: aqua;
+    background: #fff;
     border-top: 1px solid rgba(0, 0, 0, .1);
     bottom: 0;
     padding: 26px;
     position: sticky;
 }
 
-
+.sidebar-footer button {
+    background: none;
+    border: 1px solid #49ba04;
+    border-radius: 28px;
+    color: #49ba04;
+    font-weight: 500;
+    padding: 16px 24px;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    transition: all .2s;
+}
 
 
 /* continue============================== */
 
 .v-player-col2 {
     flex: 0 0 67.6%;
+    margin-bottom: 50px;
+
 }
 
 .v-player-container {
     width: 100%;
-    height: 200vh;
+    height: auto;
     margin-top: 10px;
 }
 
@@ -392,6 +379,7 @@ export default {
 .v-info-body {
     background-color: #fff;
     padding: 20px 26px;
+    margin-bottom: 16px;
 }
 
 .v-info-body h1 {
@@ -409,6 +397,8 @@ export default {
 #videoComments {
     width: 100%;
     height: auto;
+    background-color: #fff;
+    padding: 20px 26px;
 }
 
 .text-button {
@@ -469,5 +459,12 @@ export default {
     color: #696984;
     font-size: 14px;
     padding: 5px 0 0;
+}
+
+
+@media screen and (max-width:1230px) {
+    .content-cover {
+        width: 97% !important;
+    }
 }
 </style>

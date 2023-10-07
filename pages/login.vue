@@ -44,9 +44,33 @@
 </template>
 <script>
 import { useLoginStore } from '~/stores';
-// import { ref,onMounted } from 'vue';
+import { ref,onMounted } from 'vue';
 
 export default {
+
+    // data() {
+    //     return {
+    //         loginn: [],
+    //         number: "+998330060261",
+    //         password: "25391299"
+    //     }
+    // },
+    // methods: {
+    //     async logIn() {
+    //         let option = {
+    //             number: this.number,
+    //             password: this.password
+    //         }
+    //         try {
+    //             this.loginn = await fetch(`https://sinfxona.uz/api/api/v1/auth/login`, { method: "POST", body: option })
+
+    //         } catch (e) {
+    //             console.error(e);
+    //         }
+    //         console.log(this.loginn);
+    //     }
+    // }
+    // 25391299
     setup() {
         const number = ref("")
         const password = ref("")
@@ -63,17 +87,6 @@ export default {
     }
 
 
-    // 25391299
-    // methods: {
-    //     async login() {
-    //         let option = {
-    //             number: +this.number,
-    //             password: +this.password
-    //         }
-    //         this.loginn = await $fetch(`https://sinfxona.uz/api/api/v1/auth/login`, { method: "POST", body: option })
-    //         console.log(this.loginn);
-    //     }
-    // }
 }
 </script>
 <style scoped>

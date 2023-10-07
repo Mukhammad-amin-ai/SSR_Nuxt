@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import { defineStore } from "pinia";
 
 export const useLoginStore = defineStore("login", () => {
@@ -10,20 +12,19 @@ export const useLoginStore = defineStore("login", () => {
       username: number,
       password: password,
     };
-    console.log(data);
     try {
-      state.login = await fetch("https://sinfxona.uz/api/api/v1/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-        // console.log();
-      });
+      state.login = await axios.post(
+        "https://sinfxona.uz/api/api/v1/auth/login",
+        data
+      );
+      // console.log(state.login); 
+      if(state.login.data){
+        localStorage.setItem('access_token',state.login.data.data.access_token)
+        window.location.href='/'
+      }
     } catch (e) {
       console.error(e);
     }
-    console.log(state.login);
   }
   return {
     state,
