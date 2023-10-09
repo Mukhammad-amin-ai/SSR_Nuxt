@@ -6,56 +6,58 @@
                     <img src="https://sinfxona.uz/img/Sinfxona_logo.png" alt="logo">
                 </nuxt-link>
             </div>
-            <nuxt-link to="/login" class="btn btn-success">
+            <nuxt-link to="/login" class="btn btn-success" v-if="useLogin.state.notLogined">
                 <button>
                     SINFXONAGA KIRISH
                 </button>
             </nuxt-link>
-            <nuxt-link to="/login" class="btn2 btn-success">
+            <nuxt-link to="/login" class="btn2 btn-success" v-if="useLogin.state.notLogined">
                 <button>
                     Kirish
                 </button>
             </nuxt-link>
+            <button class="user" v-if="useLogin.state.logined">
+                <i class='bx bx-user'></i>
+                Iskandar
+                <div class="profile-drop">
+                    <ul>
+                        <li>
+                            <div class="profileDropDownItem">
+                                Status: <div>
+                                    <div id="accessDays" class="me-3 success warning"><span>Obuna bo'lgansiz</span></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="/courses" class="profileDropDownItem"><span>Barcha kurslar</span></a></li>
+                        <li><a href="/cabinet/courses" class="profileDropDownItem"><span>Mening kurslarim</span></a></li>
+                        <li><a href="/cabinet/pay-history" class="profileDropDownItem"><span>To'lovlar tarixi</span></a>
+                        </li>
+                        <li><a href="/cabinet/profile" class="profileDropDownItem"><span>Mening Profilim</span></a></li>
+                        <li><a href="#" class="profileDropDownItem logout">Chiqish</a></li>
+                    </ul>
+                </div>
+            </button>
         </div>
     </div>
 </template>
-<script>
-export default {
-    props: {
-        bgColor: String,
-        bgShadow: String
-    }
-}
+<script setup>
+import { useLoginStore } from '~/stores';
+
+const { bgColor, bgShadow } = defineProps({
+    bgColor: String,
+    bgShadow: String
+})
+
+const useLogin = useLoginStore()
+
+
+
 </script>
 <style scoped>
-@media screen and (max-width:1230px) {
-    .header-content {
-        width: 100% !important;
-        margin: 0 15px;
-    }
-
+* {
+    list-style: none;
+    text-decoration: none;
 }
-
-@media screen and (max-width:768px) {
-    .btn {
-        display: none;
-    }
-
-    .btn2 {
-        display: block !important;
-    }
-
-    .header {
-        position: relative !important;
-    }
-}
-
-@media screen and (max-width:768px) {
-    .btn2 {
-        margin-right: 0px !important;
-    }
-}
-
 
 .header {
     width: 100%;
@@ -122,4 +124,82 @@ export default {
 
 .logo img {
     width: 100%;
+}
+
+.user {
+    font-size: 16px;
+    color: rgb(33, 37, 41);
+    font-weight: 500;
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.user:hover {
+    .profile-drop {
+        display: block;
+    }
+}
+
+.bx-user {
+    color: #49ba04;
+    font-size: 20px;
+}
+
+
+.profile-drop {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 34px rgba(73, 186, 4, .12);
+    display: none;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 999;
+    text-align: start;
+}
+
+.profile-drop ul li {
+    list-style: none;
+    margin-bottom: 5px;
+    padding: auto;
+}
+
+.profileDropDownItem {
+    display: block;
+    padding: 5px 10px;
+    white-space: nowrap;
+    color: #000;
+
+}
+
+
+@media screen and (max-width:1230px) {
+    .header-content {
+        width: 100% !important;
+        margin: 0 15px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .btn {
+        display: none;
+    }
+
+    .btn2 {
+        display: block !important;
+    }
+
+    .header {
+        position: relative !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .btn2 {
+        margin-right: 0px !important;
+    }
 }</style>

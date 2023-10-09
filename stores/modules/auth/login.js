@@ -5,6 +5,8 @@ import { defineStore } from "pinia";
 export const useLoginStore = defineStore("login", () => {
   const state = reactive({
     login: [],
+    logined:true,
+    notLogined:false
   });
 
   async function logIn(number, password) {
