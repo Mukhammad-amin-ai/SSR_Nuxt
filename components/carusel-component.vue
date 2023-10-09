@@ -345,7 +345,8 @@ export default {
 
     #bannerSlider {
         position: relative !important;
-        top: -30px !important
+        top: -20% !important;
+    
     }
 
 
