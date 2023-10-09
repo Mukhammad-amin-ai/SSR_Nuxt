@@ -50,6 +50,13 @@ const { bgColor, bgShadow } = defineProps({
 
 const useLogin = useLoginStore()
 
+let checker = ()=>{
+    useLogin.check()
+}
+
+onMounted(() => {
+    checker()
+})
 
 
 </script>

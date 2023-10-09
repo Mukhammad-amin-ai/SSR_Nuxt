@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="main-content">
-            <div id="enterForm" class="">
+            <div id="enterForm" class="" v-if="useLogin.state.logined">
                 <div class="enterFormSteps">
                     <ul>
                         <li><a class="active">Aloqa ma'lumotlari</a></li>
@@ -193,6 +193,7 @@
     </div>
 </template>
 <script>
+import { useLoginStore } from '~/stores'
 export default {
     data() {
         return {
@@ -262,7 +263,22 @@ export default {
             this.isActive[id] = !this.isActive[id];
         },
     },
+    setup() {
+        const useLogin = useLoginStore()
+        let checker = () => {
+            useLogin.check()
+        }
 
+        onMounted(() => {
+            checker()
+        })
+
+
+        return {
+            useLogin,
+            checker
+        }
+    }
 }
 </script>
 <style scoped>
@@ -848,7 +864,7 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-    .home-banner2{
+    .home-banner2 {
         height: 900px !important;
     }
 }
@@ -857,7 +873,8 @@ a {
     .text-section {
         height: 900px !important;
     }
-    .faq-header{
+
+    .faq-header {
         font-size: 36px;
     }
 }
@@ -867,9 +884,11 @@ a {
     #enterForm {
         padding: 0;
     }
+
     .text-section {
         height: 950px !important;
     }
+
     .enter-body {
         padding: 15px 20px;
     }
@@ -914,8 +933,9 @@ a {
         margin-bottom: 10px;
     }
 }
+
 @media screen and (max-width: 670px) {
-    .faq-header{
+    .faq-header {
         font-size: 30px;
     }
 }
@@ -939,7 +959,7 @@ a {
         font-size: 20px;
 
     }
-    
+
     .banner-text-three2 {
         font-size: 12px;
     }
@@ -952,17 +972,19 @@ a {
         padding: 10px 40px 0;
 
     }
+
     .text-section {
         height: 1000px !important;
     }
-    .faq-header{
+
+    .faq-header {
         font-size: 25px;
     }
 }
 
 @media screen and (max-width:375px) {
     .home-banner2 {
-        height: 700px  !important;
+        height: 700px !important;
     }
 
     .banner-slider2 {
@@ -973,10 +995,12 @@ a {
         padding: 10px 30px 0;
 
     }
+
     .text-section {
         height: 1100px !important;
     }
-    .faq-header{
+
+    .faq-header {
         font-size: 20px;
     }
 }
@@ -998,10 +1022,10 @@ a {
         padding: 10px 20px 0;
 
     }
+
     .text-section {
         height: 1200px !important;
     }
 
 }
-
 </style>
