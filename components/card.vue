@@ -1,79 +1,54 @@
 <template >
-    <div class="courses">
-        <div class="courses-content">
-            <div class="courses-heading">
-                <h2>Bugunoq O’rganishni Boshlashingiz Mumkin Bo’lgan Darslar:</h2>
-            </div>
-            <Card/>
+    <div>
+        <div class="courses-cards">
+            <ul>
+                <li v-for="card in useAuth.state?.courses?.data" :key="card">
+                    <div class="courseItem">
+                        <div class="course-image c-pointer"
+                            :style="{ backgroundImage: `url(https://sinfxona.uz/api${card.image})` }">
+                            <div class="course-category">{{ card.category.name }}</div>
+                        </div>
+                        <div class="course-mentor">
+                            <div class="course-mentor-photo"
+                                :style="{ backgroundImage: `url(https://sinfxona.uz/api${card.mentor.image})` }">
+                            </div>
+                            <div class="course-mentor-fullname">
+                                {{ card.mentor.fullname }}
+                            </div>
+                        </div>
+                        <div class="course-name c-pointer">
+                            {{ card.name }}
+                        </div>
+                        <div class="course-desc">
+                            <p v-html="card.description"></p>
+                        </div>
+                        <div class="courseItemFooter">
+                            <div class="courseUsers">
+                                <i class="icon-users">
+                                </i> O`quvchilar: {{ card.customers_count }}
+                            </div>
+                            <nuxt-link :to="'/courses/' + card.id" class="btn btn-primary">Ko'rish</nuxt-link>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
-<script >
+<script setup>
 import { useCourseStore } from '~/stores';
-import { onMounted } from 'vue'
-export default {
-    setup() {
-        const useAuth = useCourseStore()
-        const getAllCourses = async () => {
-            await useAuth.getAllCourses();
-        };
 
-        onMounted(getAllCourses)
-        return {
-            useAuth,
-            getAllCourses
-        }
-    }
+const useAuth = useCourseStore()
+const getAllCourses = async () => {
+    await useAuth.getAllCourses();
+};
 
-}
-
+onMounted(getAllCourses)
 </script>
 <style scoped>
-.courses {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.courses-content {
-    width: 80%;
-    height: auto;
-
-}
-
-.courses-heading {
-    width: 100%;
-    height: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.courses-heading h2 {
-    font-size: 26px;
-    font-weight: 700;
-}
-
-.courseItemFooter .btn {
-    padding-left: 18px;
-    padding-right: 18px;
+*{
     text-decoration: none;
 }
-
-.btn-primary {
-    background: #ebf8e1 !important;
-    color: #49ba04 !important;
-}
-
-.btn {
-    border: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 11px 30px;
-}
-
 .courses-cards ul {
     display: flex;
     flex-wrap: wrap;
@@ -173,14 +148,21 @@ export default {
     padding: 12px;
 }
 
-@media screen and (max-width:1230px) {
-    .courses-content {
-        width: 98% !important;
-    }
+.btn-primary {
+    background: #ebf8e1 !important;
+    color: #49ba04 !important;
+}
+
+.btn {
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 11px 30px;
 }
 
 @media screen and (max-width: 1100px) {
-    .courses ul li {
+    .courses-cards ul li {
         flex: 0 0 33.33333333%;
     }
 }
@@ -193,21 +175,24 @@ export default {
 }
 
 @media screen and (max-width: 900px) {
-    .courses-heading h2{
+    .courses-heading h2 {
         text-align: center;
     }
+
     .courses-content {
         margin-left: 0px !important;
     }
-    .courses ul li {
+
+    .courses-cards ul li {
         flex: 0 0 50%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .courses ul li {
+    .courses-cards ul li {
         flex: 0 0 100%;
     }
+
     .courses-heading {
         height: 150px !important;
     }
@@ -218,5 +203,4 @@ export default {
         height: 200px !important;
     }
 }
-
 </style>

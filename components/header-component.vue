@@ -28,12 +28,29 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="/courses" class="profileDropDownItem"><span>Barcha kurslar</span></a></li>
-                        <li><a href="/cabinet/courses" class="profileDropDownItem"><span>Mening kurslarim</span></a></li>
-                        <li><a href="/cabinet/pay-history" class="profileDropDownItem"><span>To'lovlar tarixi</span></a>
+                        <li>
+                            <nuxt-link to="/courses" class="profileDropDownItem">
+                                <span>Barcha kurslar</span>
+                            </nuxt-link>
                         </li>
-                        <li><a href="/cabinet/profile" class="profileDropDownItem"><span>Mening Profilim</span></a></li>
-                        <li><a href="#" class="profileDropDownItem logout">Chiqish</a></li>
+                        <li>
+                            <nuxt-link to="/cabinet/courses" class="profileDropDownItem">
+                                <span>Mening kurslarim</span>
+                            </nuxt-link>
+                        </li>
+                        <li>
+                            <nuxt-link to="/cabinet/pay-history" class="profileDropDownItem">
+                                <span>To'lovlar tarixi</span>
+                            </nuxt-link>
+                        </li>
+                        <li>
+                            <nuxt-link to="/cabinet/profile" class="profileDropDownItem">
+                                <span>Mening Profilim</span>
+                            </nuxt-link>
+                        </li>
+                        <li>
+                            <a href="#" class="profileDropDownItem logout">Chiqish</a>
+                        </li>
                     </ul>
                 </div>
             </button>
@@ -50,7 +67,7 @@ const { bgColor, bgShadow } = defineProps({
 
 const useLogin = useLoginStore()
 
-let checker = ()=>{
+let checker = () => {
     useLogin.check()
 }
 
@@ -209,4 +226,5 @@ onMounted(() => {
     .btn2 {
         margin-right: 0px !important;
     }
-}</style>
+}
+</style>

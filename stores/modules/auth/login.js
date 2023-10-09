@@ -7,8 +7,8 @@ const token = process.client ? localStorage.getItem("access_token") : null;
 export const useLoginStore = defineStore("login", () => {
   const state = reactive({
     login: [],
-    logined: false,
-    notLogined: true,
+    logined: true,
+    notLogined: false,
   });
 
   async function logIn(number, password) {

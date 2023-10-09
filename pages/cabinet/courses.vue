@@ -3,7 +3,7 @@
     <div class="container">
         <div class="courses-content">
             <div class="card-heading">
-                <h1>Barcha kurslar</h1>
+                <h3>Mening kurslarim</h3>
             </div>
             <Card />
         </div>
@@ -26,25 +26,21 @@ export default {
     height: auto;
     background-color: #f5f8ff;
     padding-bottom: 50px;
-    padding-top: 40px;
     display: flex;
     justify-content: center;
+    padding: 12px 0 50px;
 }
 
 .courses-content {
     width: 80%;
     height: auto;
-
 }
 
-.card-heading {
-    margin-bottom: 20px;
-}
 
-.card-heading h1 {
-    font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 0;
+.card-heading h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 @media screen and (max-width:1230px) {

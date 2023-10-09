@@ -46,11 +46,13 @@
             </div>
         </div>
         <div class="main-content">
-            <div id="enterForm" class="" v-if="useLogin.state.logined">
+            <div id="enterForm" class="" v-if="useLogin.state.notLogined">
                 <div class="enterFormSteps">
                     <ul>
-                        <li><a class="active">Aloqa ma'lumotlari</a></li>
-                        <li><a class="">To'lov formasi</a></li>
+                        <li>
+                        <a class="active">Aloqa ma'lumotlari</a></li>
+                        <li>
+                            <a class="">To'lov formasi</a></li>
                     </ul>
                 </div>
                 <div class="enter-body">
@@ -110,7 +112,7 @@
                 </div>
             </div>
             <CoursesComponent />
-            <div class="text-section">
+            <div class="text-section" v-if="useLogin.state.notLogined">
                 <div class="text-section-cover">
                     <div class="text-header">
                         Har Oy Yangi Darslar Qo’shib Boriladi!
@@ -160,12 +162,12 @@
                     </div>
                 </div>
             </div>
-            <div class="section-button">
+            <div class="section-button" v-if="useLogin.state.notLogined">
                 <button>
                     SINFXONAGA KIRISH
                 </button>
             </div>
-            <div class="faq">
+            <div class="faq" v-if="useLogin.state.notLogined">
                 <div class="faq-cover">
                     <div class="faq-header">
                         Tez so'raladigan savollar
@@ -268,7 +270,6 @@ export default {
         let checker = () => {
             useLogin.check()
         }
-
         onMounted(() => {
             checker()
         })
@@ -432,6 +433,7 @@ export default {
     width: 100%;
     height: auto;
     background-color: #f5f8ff;
+    padding-bottom: 50px;
 }
 
 #enterForm {
@@ -460,7 +462,7 @@ export default {
     padding: 0 20px;
 }
 
-.enterFormSteps ul li a.active {
+.enterFormSteps ul li a .active {
     color: #49ba04 !important;
 }
 
@@ -844,6 +846,7 @@ a {
 
     .main-content {
         padding: 0 15px;
+        
     }
 
     .home-banner {
