@@ -475,4 +475,18 @@ export default {
         width: 97% !important;
     }
 }
+@media screen and (max-width:900px) {
+    .content-cover {
+        width: 100% !important;
+    }
+    .v-player-col1{
+        display: none;
+    }
+    .v-player-col2{
+        flex: 0 0 90%;
+        margin-left: 5%;
+    }
+}
+
+
 </style>
