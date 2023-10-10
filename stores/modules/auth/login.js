@@ -54,10 +54,51 @@ export const useLoginStore = defineStore("login", () => {
     }
   }
 
+  async function register(option) {
+    try {
+      let response = await axios.post(
+        `https://sinfxona.uz/api/api/v1/applications`,
+        option,
+        { header: { Autorization: "Bearer " + token } }
+      );
+      console.log(response);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function cardCreate(option) {
+    try {
+      let response = await axios.post(
+        `https://sinfxona.uz/api/api/v1/applications/card-create`,
+        option,
+        { header: { Autorization: "Bearer " + token } }
+      );
+      console.log(response);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function cardVerify(option) {
+    try {
+      let response = await axios.post(
+        `https://sinfxona.uz/api/api/v1/applications/card-verify`,
+        option,
+        { header: { Autorization: "Bearer " + token } }
+      );
+      console.log(response);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+
   return {
     state,
     logIn,
     check,
-    logOut
+    logOut,
+    register
   };
 });

@@ -66,9 +66,10 @@
                                         <div class="elem-item">
                                             <div class="elem-item-input">
                                                 <div class="elem-suffix ">
-                                                    <input type="text" autocomplete="off" class="elem-input-inner ">
+                                                    <input type="text" autocomplete="off" class="elem-input-inner "
+                                                        @click="nameINput">
                                                     <!-- fill -->
-                                                    <span class="elem-suffix-inner ">
+                                                    <span class="elem-suffix-inner " :class="{ 'clicked': nameInp }">
                                                         Ismingizni kiriting</span>
                                                 </div>
                                             </div>
@@ -119,7 +120,8 @@
                                         <div class="elem-item">
                                             <div class="elem-item-input">
                                                 <div class="elem-suffix ">
-                                                    <input type="text" autocomplete="off" class="elem-input-inner " @click="clicked2">
+                                                    <input type="text" autocomplete="off" class="elem-input-inner "
+                                                        @click="clicked2">
                                                     <!-- fill -->
                                                     <span class="elem-suffix-inner " :class="{ 'clicked': input2 }">
                                                         Karta raqami</span>
@@ -132,7 +134,7 @@
                                             <div class="elem-item-input">
                                                 <div class="elem-suffix">
                                                     <input type="text" autocomplete="off" class="elem-input-inner "
-                                                      @click="clicked" >
+                                                        @click="clicked">
                                                     <!-- fill  -->
                                                     <!-- class that fills input -->
                                                     <span class="elem-suffix-inner " :class="{ 'clicked': input1 }">
@@ -165,21 +167,6 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                            <!-- <label class="agree-checkbox">
-                                                <span class="el-checkbox-input">
-                                                    <input type="checkbox" class="el-checkbox-original" value="">
-
-                                                </span>
-                                                <span class="el-checkbox-label">
-                                                    <nuxt-link to="#" class="link">
-                                                        Offerta
-                                                    </nuxt-link>
-                                                    shartlariga roziman
-                                                </span>
-                                            </label> -->
-
-
-
                                         </div>
                                     </div>
                                 </div>
@@ -340,9 +327,9 @@ export default {
             ],
             isFirstStep: true,
             isSecondStep: false,
-            input1:false,
-            input2:false,
-
+            input1: false,
+            input2: false,
+            nameInp: false
         };
     },
     methods: {
@@ -356,11 +343,14 @@ export default {
             this.isFirstStep = !this.isFirstStep
             this.isSecondStep = !this.isSecondStep
         },
-        clicked(){
+        clicked() {
             this.input1 = !this.input1
         },
-        clicked2(){
+        clicked2() {
             this.input2 = !this.input2
+        },
+        nameINput() {
+            this.nameInp = !this.nameInp
         }
     },
     setup() {
@@ -690,9 +680,11 @@ a {
     background-color: #fff;
     transition: .15s ease-in-out;
 }
+
 .clicked {
     top: -10px !important;
 }
+
 .fill {
     top: -10px !important;
 }
@@ -731,13 +723,14 @@ a {
     gap: 10px;
 }
 
-.card-descipt{
+.card-descipt {
     font-weight: 500;
     display: flex;
     gap: 10px;
     flex-direction: column;
 }
-.choosed{
+
+.choosed {
     color: #49ba04;
     background: #e9f5e2;
 }
@@ -915,7 +908,9 @@ a {
     height: 48px;
     line-height: 48px;
     outline: 0;
-    transition: border-bottom-color .3s;
+    transition: all .15s ease-in-out;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .el-collapse-item .el-collapse-item__wrap {
@@ -929,6 +924,7 @@ a {
     border-bottom: 1px solid #ebeef5;
     box-sizing: border-box;
     height: 100%;
+    transition: .15 all ease-in-out;
 }
 
 @media screen and (max-width:1230px) {
