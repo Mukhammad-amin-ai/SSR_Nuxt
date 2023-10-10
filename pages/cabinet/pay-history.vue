@@ -58,7 +58,12 @@
 <script setup>
 const shadow = reactive('0 6px 34px rgba(73,186,4,.09)')
 const bgProp = reactive("#fff")
-
+useHead({
+    // title: 'SINFXONA',
+    meta: [
+        { name: 'SINFXONA', content: 'SINFXONA' }
+    ],
+})
 
 
 

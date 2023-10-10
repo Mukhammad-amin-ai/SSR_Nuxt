@@ -186,7 +186,12 @@ function thirdInp() {
     secinputt.value = false
     thrdinput.value = true
 }
-
+useHead({
+    // title: 'SINFXONA',
+    meta: [
+        { name: 'SINFXONA', content: 'SINFXONA' }
+    ],
+})
 </script>
 <style scoped>
 * {

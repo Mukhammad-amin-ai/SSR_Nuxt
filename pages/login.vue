@@ -42,16 +42,21 @@
         </div>
     </div>
 </template>
-<script>
+<script setup>
 import { useLoginStore } from '~/stores';
 
 const number = ref("")
 const password = ref("")
-const useLogin = useLoginStore()
+let useLogin = useLoginStore()
 let logIn = () => {
     useLogin.logIn(number.value, password.value);
 };
-
+useHead({
+    // title: 'SINFXONA',
+    meta: [
+        { name: 'SINFXONA', content: 'SINFXONA' }
+    ],
+})
 </script>
 <style scoped>
 #loginpage {

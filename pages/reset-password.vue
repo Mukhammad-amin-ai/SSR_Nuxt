@@ -28,10 +28,13 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-
-}
+<script setup>
+useHead({
+    // title: 'SINFXONA',
+    meta: [
+        { name: 'SINFXONA', content: 'SINFXONA' }
+    ],
+})
 </script>
 <style scoped>
 #loginpage {

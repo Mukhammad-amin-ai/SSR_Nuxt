@@ -361,12 +361,19 @@ export default {
         onMounted(() => {
             checker()
         })
-
+        const head = useHead({
+            // title: 'SINFXONA',
+            meta: [
+                { name: 'SINFXONA', content: 'SINFXONA' }
+            ],
+        })
 
         return {
+            head,
             useLogin,
             checker
         }
+
     }
 }
 </script>

@@ -24,7 +24,7 @@
                         <li>
                             <div class="profileDropDownItem">
                                 Status: <div>
-                                    <div id="accessDays" class="me-3 success warning"><span>Obuna bo'lgansiz</span></div>
+                                    <div id="accessDays" class="me-3 success"><span>Obuna bo'lgansiz</span></div>
                                 </div>
                             </div>
                         </li>
@@ -71,7 +71,7 @@ let checker = () => {
     useLogin.check()
 }
 
-let logOut = () =>{
+let logOut = () => {
     useLogin.logOut()
 }
 
@@ -212,6 +212,21 @@ onMounted(() => {
     cursor: pointer;
 }
 
+.logout {
+    color: red;
+}
+
+#accessDays {
+    background: #49ba04;
+    color: #fff;
+    padding: 5px;
+    font-size: 15px !important;
+    border-radius: 15px;
+}
+
+.me-3 {
+    margin-right: 1.35rem;
+}
 
 @media screen and (max-width:1230px) {
     .header-content {

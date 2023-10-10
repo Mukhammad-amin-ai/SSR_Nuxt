@@ -11,12 +11,14 @@
     <FooterComponent />
 </template>
 <script setup>
-
 const bgProp = ref('#fff')
 const shadow = ref("0 6px 34px rgba(73,186,4,.09)")
-
-
-
+useHead({
+    // title: 'SINFXONA',
+    meta: [
+        { name: 'SINFXONA', content: 'SINFXONA' }
+    ],
+})
 
 </script>
 <style scoped>
