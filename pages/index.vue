@@ -688,6 +688,7 @@ a {
     left: 10px;
     top: 18px;
     background-color: #fff;
+    transition: .15s ease-in-out;
 }
 .clicked {
     top: -10px !important;
