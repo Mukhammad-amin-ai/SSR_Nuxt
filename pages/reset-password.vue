@@ -18,18 +18,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="el-form-item">
-                        <label for="password" class="el-form-item__label">Parol</label>
-                        <div class="el-form-item__content">
-                            <div class="el-input">
-                                <input type="password" autocomplete="off" placeholder="Parolingizni kiriting"
-                                    class="el-input__inner">
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="text-end">
-                        <nuxt-link to="/reset-password" class="link">Parolingizni unutdingizmi?</nuxt-link>
-                    </div> -->
                     <div class="loginPageColFormFooter">
                         <button class="btn btn-success w-100">Kod jo'natish</button>
                     </div>
@@ -98,14 +86,6 @@ export default {
     margin-bottom: 22px;
 }
 
-.loginPageColForm .el-form-item .el-form-item__label {
-    font-family: 'Montserrat';
-    color: #000;
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-    padding: 0 !important;
-}
 
 .el-form-item__content {
     font-size: 14px;
@@ -187,27 +167,13 @@ export default {
     vertical-align: middle;
 }
 
-.el-form-item__content {
-    font-size: 14px;
-    line-height: 40px;
-    position: relative;
-}
-
-.el-input {
-    font-size: 14px;
-    position: relative;
-    font-family: 'Montserrat';
-}
-
 .el-input .el-input__inner {
     border: 1px solid #b4bfd0;
     border-radius: 10px;
     height: 54px;
 }
 
-.text-end {
-    text-align: right !important;
-}
+
 
 .link {
     color: #006aff;

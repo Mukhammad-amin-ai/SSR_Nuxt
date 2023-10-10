@@ -2,32 +2,34 @@
     <div>
         <div class="courses-cards">
             <ul>
-                <li v-for="card in useAuth.state?.courses?.data?.data" :key="card">
+                <li v-for="card in useAuth.state?.courses?.data" :key="card">
                     <div class="courseItem">
                         <div class="course-image c-pointer"
-                            :style="{ backgroundImage: `url(https://sinfxona.uz/api${card?.course.image})` }">
-                            <div class="course-category">
-                                {{ card?.course.category.name }}
+                            :style="{ backgroundImage: `url(https://sinfxona.uz/api${card.image})` }">
+
+                            <div class="course-category" v-if="card && card.category">
+                                {{ card?.category.name }}
                             </div>
                         </div>
                         <div class="course-mentor">
                             <div class="course-mentor-photo"
-                                :style="{ backgroundImage: `url(https://sinfxona.uz/api${card?.course.mentor.image})` }">
+                                :style="{ backgroundImage: `url(https://sinfxona.uz/api${card.mentor.image})` }">
+
                             </div>
                             <div class="course-mentor-fullname">
-                                {{ card?.course.mentor.fullname }}
+                                {{ card.mentor.fullname }}
                             </div>
                         </div>
                         <div class="course-name c-pointer">
-                            {{ card?.course.name }}
+                            {{ card.name }}
                         </div>
                         <div class="course-desc">
-                            <p v-html="card?.course.description"></p>
+                            <p v-html="card.description"></p>
                         </div>
                         <div class="courseItemFooter">
                             <div class="courseUsers">
                                 <i class='bx bx-group'></i>
-                                O`quvchilar: {{ card?.course.customers_count }}
+                                O`quvchilar: {{ card.customers_count }}
                             </div>
                             <nuxt-link :to="'/courses/' + card.id" class="btn btn-primary">Ko'rish</nuxt-link>
                         </div>
@@ -48,20 +50,12 @@ const getAllCourses = async () => {
     console.log(useAuth.state?.courses?.data);
 };
 
-const getMyCourses = async () => {
-    await useAuth.myCourse()
-    console.log(useAuth.state?.courses?.data?.data);
-}
 
 
 
 onMounted(() => {
-    const route = useRoute()
-    // console.log(route.href === '/cabinet/courses');
-    if (route.href === '/cabinet/courses') {
-        getMyCourses()
-    }
 
+    getAllCourses()
 
 
 })

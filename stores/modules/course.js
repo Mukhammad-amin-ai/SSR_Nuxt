@@ -4,8 +4,6 @@ import { defineStore } from "pinia";
 
 const token = process.client ? localStorage.getItem("access_token") : null;
 
-
-
 export const useCourseStore = defineStore("course", () => {
   const state = reactive({
     courses: [],
@@ -42,12 +40,13 @@ export const useCourseStore = defineStore("course", () => {
     }
   }
 
-  async function myCourse(courseId) {
+  async function myCourse() {
     try {
-      state.myCourses = await axios.get(
+      state.courses = await axios.get(
         `https://sinfxona.uz/api/api/v1/courses/customer-courses`,
         { headers: { Authorization: "Bearer " + token } }
       );
+      console.log(state.courses);
     } catch (e) {
       console.error(e);
     }
@@ -69,6 +68,7 @@ export const useCourseStore = defineStore("course", () => {
     getCourseById,
     getAllCourses,
     getVideoByid,
-    VideoByid
+    myCourse,
+    VideoByid,
   };
 });

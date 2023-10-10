@@ -44,50 +44,14 @@
 </template>
 <script>
 import { useLoginStore } from '~/stores';
-import { ref,onMounted } from 'vue';
 
-export default {
+const number = ref("")
+const password = ref("")
+const useLogin = useLoginStore()
+let logIn = () => {
+    useLogin.logIn(number.value, password.value);
+};
 
-    // data() {
-    //     return {
-    //         loginn: [],
-    //         number: "+998330060261",
-    //         password: "25391299"
-    //     }
-    // },
-    // methods: {
-    //     async logIn() {
-    //         let option = {
-    //             number: this.number,
-    //             password: this.password
-    //         }
-    //         try {
-    //             this.loginn = await fetch(`https://sinfxona.uz/api/api/v1/auth/login`, { method: "POST", body: option })
-
-    //         } catch (e) {
-    //             console.error(e);
-    //         }
-    //         console.log(this.loginn);
-    //     }
-    // }
-    // 25391299
-    setup() {
-        const number = ref("")
-        const password = ref("")
-        const useLogin = useLoginStore()
-        const logIn = () => {
-            useLogin.logIn(number.value, password.value);
-        };
-        return {
-            useLogin,
-            logIn,
-            number,
-            password
-        }
-    }
-
-
-}
 </script>
 <style scoped>
 #loginpage {
@@ -173,7 +137,6 @@ export default {
 }
 
 .el-input__inner {
-    /* -webkit-appearance: none; */
     background-color: #fff;
     background-image: none;
     border: 1px solid #dcdfe6;

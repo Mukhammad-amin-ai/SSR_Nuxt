@@ -73,7 +73,7 @@
                     <div class=" sidebar-list">
                         <ul>
                             <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
-                                <nuxt-link  class="el-tooltip" to="#">
+                                <nuxt-link class="el-tooltip" to="#">
                                     <div class="playIco lock">
                                         <div class="lessonInfo">
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
@@ -149,47 +149,34 @@
     </div>
     <FooterComponent />
 </template>
-<script>
+<script setup>
 import { useCourseStore, useCommentStore } from '~/stores';
 
-export default {
-    data() {
-        return {
-            bgProp: '#fff',
-            shadow: "0 6px 34px rgba(73,186,4,.09)",
-        }
-    },
-    setup() {
-        const route = useRouter()
-        let courseId = ref(route.currentRoute.value.params.id)
-        const useCourse = useCourseStore()
-        const useComment = useCommentStore()
+const bgProp = ref('#fff')
+const shadow = ref("0 6px 34px rgba(73,186,4,.09)")
 
-        let useCourseID = () => {
-            useCourse.getCourseById(courseId.value)
-        }
-        let useCommentId = () => {
-            useComment.getAllComments(courseId.value)
-        }
-        let videoById = () => {
-            useCourse.getVideoByid(courseId.value)
-            // console.log(useCourse.state.videoById);
-        }
-        onMounted(() => {
-            useCourseID()
-            useCommentId()
-            videoById()
-        })
 
-        return {
-            useCourse,
-            useComment,
-            useCommentId,
-            useCourseID,
-            videoById
-        }
-    }
+const route = useRouter()
+let courseId = ref(route.currentRoute.value.params.id)
+const useCourse = useCourseStore()
+const useComment = useCommentStore()
+
+let useCourseID = () => {
+    useCourse.getCourseById(courseId.value)
 }
+let useCommentId = () => {
+    useComment.getAllComments(courseId.value)
+}
+let videoById = () => {
+    useCourse.getVideoByid(courseId.value)
+}
+onMounted(() => {
+    useCourseID()
+    useCommentId()
+    videoById()
+})
+
+
 </script>
 <style scoped>
 * {

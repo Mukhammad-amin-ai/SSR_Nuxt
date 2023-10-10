@@ -49,7 +49,7 @@
                             </nuxt-link>
                         </li>
                         <li>
-                            <a href="#" class="profileDropDownItem logout">Chiqish</a>
+                            <button class="profileDropDownItem logout" @click="logOut">Chiqish</button>
                         </li>
                     </ul>
                 </div>
@@ -71,9 +71,16 @@ let checker = () => {
     useLogin.check()
 }
 
+let logOut = () =>{
+    useLogin.logOut()
+}
+
+
+
 onMounted(() => {
     checker()
 })
+
 
 
 </script>
@@ -189,6 +196,7 @@ onMounted(() => {
     list-style: none;
     margin-bottom: 5px;
     padding: auto;
+
 }
 
 .profileDropDownItem {
@@ -196,7 +204,12 @@ onMounted(() => {
     padding: 5px 10px;
     white-space: nowrap;
     color: #000;
-
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: rgb(33, 37, 41);
+    font-weight: 500;
+    cursor: pointer;
 }
 
 

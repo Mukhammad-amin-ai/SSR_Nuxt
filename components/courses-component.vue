@@ -4,7 +4,7 @@
             <div class="courses-heading">
                 <h2>Bugunoq O’rganishni Boshlashingiz Mumkin Bo’lgan Darslar:</h2>
             </div>
-            <Card/>
+            <CardCourses/>
         </div>
     </div>
 </template>

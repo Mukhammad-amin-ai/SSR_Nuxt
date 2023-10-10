@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { defineStore } from "pinia";
 
-const token = process.client ? localStorage.getItem("access_token") : null;
+let token = process.client ? localStorage.getItem("access_token") : null;
 
 export const useLoginStore = defineStore("login", () => {
   const state = reactive({
@@ -42,13 +42,16 @@ export const useLoginStore = defineStore("login", () => {
     }
   }
 
-  async function logOut() {
+  function logOut() {
     try {
-      let response = await axios.post(
-        `https://sinfxona.uz/api/api/v1/auth/logout`,
-        { headers: { Autorization: "Bearer " + token } }
-      );
+      let response = axios.post(`https://sinfxona.uz/api/api/v1/auth/logout`, {
+        headers: { Authorization: "Bearer " + token },
+      });
       console.log(response);
+      // localStorage.removeItem("access_token");
+      // state.login = !state.login;
+      // state.notLogined = !state.notLogined;
+      // window.location.reload();
     } catch (e) {
       console.error(e);
     }
@@ -93,12 +96,13 @@ export const useLoginStore = defineStore("login", () => {
     }
   }
 
-
   return {
     state,
     logIn,
     check,
     logOut,
-    register
+    register,
+    cardCreate,
+    cardVerify,
   };
 });
