@@ -119,9 +119,9 @@
                                         <div class="elem-item">
                                             <div class="elem-item-input">
                                                 <div class="elem-suffix ">
-                                                    <input type="text" autocomplete="off" class="elem-input-inner ">
+                                                    <input type="text" autocomplete="off" class="elem-input-inner " @click="clicked2">
                                                     <!-- fill -->
-                                                    <span class="elem-suffix-inner ">
+                                                    <span class="elem-suffix-inner " :class="{ 'clicked': input2 }">
                                                         Karta raqami</span>
                                                 </div>
                                             </div>
@@ -131,11 +131,11 @@
                                         <div class="elem-item">
                                             <div class="elem-item-input">
                                                 <div class="elem-suffix">
-                                                    <input type="text" autocomplete="off" class="elem-input-inner"
-                                                        placeholder="+998">
+                                                    <input type="text" autocomplete="off" class="elem-input-inner "
+                                                      @click="clicked" >
                                                     <!-- fill  -->
                                                     <!-- class that fills input -->
-                                                    <span class="elem-suffix-inner ">
+                                                    <span class="elem-suffix-inner " :class="{ 'clicked': input1 }">
                                                         Amalqilish muddati</span>
                                                 </div>
                                             </div>
@@ -339,7 +339,10 @@ export default {
 
             ],
             isFirstStep: true,
-            isSecondStep: false
+            isSecondStep: false,
+            input1:false,
+            input2:false,
+
         };
     },
     methods: {
@@ -352,6 +355,12 @@ export default {
         stepsReg() {
             this.isFirstStep = !this.isFirstStep
             this.isSecondStep = !this.isSecondStep
+        },
+        clicked(){
+            this.input1 = !this.input1
+        },
+        clicked2(){
+            this.input2 = !this.input2
         }
     },
     setup() {
@@ -680,7 +689,9 @@ a {
     top: 18px;
     background-color: #fff;
 }
-
+.clicked {
+    top: -10px !important;
+}
 .fill {
     top: -10px !important;
 }
