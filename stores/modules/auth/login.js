@@ -7,8 +7,8 @@ const token = process.client ? localStorage.getItem("access_token") : null;
 export const useLoginStore = defineStore("login", () => {
   const state = reactive({
     login: [],
-    logined: true,
-    notLogined: false,
+    logined: false,
+    notLogined: true,
   });
 
   async function logIn(number, password) {
@@ -42,9 +42,22 @@ export const useLoginStore = defineStore("login", () => {
     }
   }
 
+  async function logOut() {
+    try {
+      let response = await axios.post(
+        `https://sinfxona.uz/api/api/v1/auth/logout`,
+        { headers: { Autorization: "Bearer " + token } }
+      );
+      console.log(response);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   return {
     state,
     logIn,
     check,
+    logOut
   };
 });

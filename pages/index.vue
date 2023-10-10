@@ -50,13 +50,15 @@
                 <div class="enterFormSteps">
                     <ul>
                         <li>
-                        <a class="active">Aloqa ma'lumotlari</a></li>
+                            <a :class="{ 'active': isFirstStep }">Aloqa ma'lumotlari</a>
+                        </li>
                         <li>
-                            <a class="">To'lov formasi</a></li>
+                            <a :class="{ 'active': isSecondStep }">To'lov formasi</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="enter-body">
-                    <form class="el-form">
+                    <form class="el-form" v-if="isFirstStep" @submit.prevent="onSubmit">
                         <div class="row">
                             <div class="column-1">
                                 <div class="row">
@@ -102,7 +104,88 @@
                                 </div>
                             </div>
                             <div class="column-button">
-                                <button class="btn w-100">
+                                <button class="btn w-100" @click="stepsReg">
+                                    <span class="fs14">SINFXONAGA QO’SHILISH</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <form class="el-form" v-if="isSecondStep" @submit.prevent="onSubmit">
+                        <div class="row">
+                            <div class="column-1">
+                                <div class="row">
+                                    <div class="column-2">
+                                        <div class="elem-item">
+                                            <div class="elem-item-input">
+                                                <div class="elem-suffix ">
+                                                    <input type="text" autocomplete="off" class="elem-input-inner ">
+                                                    <!-- fill -->
+                                                    <span class="elem-suffix-inner ">
+                                                        Karta raqami</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column-2">
+                                        <div class="elem-item">
+                                            <div class="elem-item-input">
+                                                <div class="elem-suffix">
+                                                    <input type="text" autocomplete="off" class="elem-input-inner"
+                                                        placeholder="+998">
+                                                    <!-- fill  -->
+                                                    <!-- class that fills input -->
+                                                    <span class="elem-suffix-inner ">
+                                                        Amalqilish muddati</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="el-form-item-check">
+                                        <div class="el-form-item-check-content">
+                                            <ul>
+                                                <li>
+                                                    <!-- choosed -->
+                                                    <div class="card-item ">
+                                                        <input type="radio">
+                                                        <div class="card-descipt">
+                                                            1 oylik obuna - 97 000 so'm
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card-item">
+                                                        <input type="radio">
+                                                        <div class="card-descipt">
+                                                            1 yillik obuna - 814 800 so'm
+                                                            <span>
+                                                                (30% chegirma bilan 349,200 so'm tejab qolasiz)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <!-- <label class="agree-checkbox">
+                                                <span class="el-checkbox-input">
+                                                    <input type="checkbox" class="el-checkbox-original" value="">
+
+                                                </span>
+                                                <span class="el-checkbox-label">
+                                                    <nuxt-link to="#" class="link">
+                                                        Offerta
+                                                    </nuxt-link>
+                                                    shartlariga roziman
+                                                </span>
+                                            </label> -->
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column-button">
+                                <button class="btn w-100" @click="stepsReg">
                                     <span class="fs14">SINFXONAGA QO’SHILISH</span>
                                 </button>
                             </div>
@@ -254,7 +337,9 @@ export default {
                     descript: "Kartangizda yangi oy uchun yetarli mablag’ bo’lmasa Sinfxona akkauntingiz qoladi, lekin darslar yopiladi."
                 },
 
-            ]
+            ],
+            isFirstStep: true,
+            isSecondStep: false
         };
     },
     methods: {
@@ -264,6 +349,10 @@ export default {
         activated(id) {
             this.isActive[id] = !this.isActive[id];
         },
+        stepsReg() {
+            this.isFirstStep = !this.isFirstStep
+            this.isSecondStep = !this.isSecondStep
+        }
     },
     setup() {
         const useLogin = useLoginStore()
@@ -283,6 +372,10 @@ export default {
 }
 </script>
 <style scoped>
+* {
+    list-style: none;
+}
+
 .container {
     width: 100vw;
     max-width: 100%;
@@ -604,6 +697,40 @@ a {
     position: relative;
 }
 
+.el-form-item-check-content ul {
+    margin: -10px;
+    display: block;
+}
+
+.el-form-item-check-content ul li {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+}
+
+.card-item {
+    background: #f6f7fa;
+    border-radius: 20px;
+    padding: 15px 20px 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.card-descipt{
+    font-weight: 500;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.choosed{
+    color: #49ba04;
+    background: #e9f5e2;
+}
+
+
 .agree-checkbox {
     color: #606266;
     cursor: pointer;
@@ -648,6 +775,7 @@ a {
     font-weight: 600;
     padding: 11px 30px;
     background: #49ba04 !important;
+    cursor: pointer;
 }
 
 .w-100 {
@@ -846,7 +974,7 @@ a {
 
     .main-content {
         padding: 0 15px;
-        
+
     }
 
     .home-banner {

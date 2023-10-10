@@ -35,7 +35,6 @@
                                         </div>
                                     </NuxtLink>
                                 </li>
-
                             </ul>
                         </div>
                         <div class="sidebar-footer">
@@ -45,6 +44,48 @@
                         </div>
                     </div>
                 </div>
+                <div class="mobile-menu">
+                    <button class="btn success">
+                        <i class='bx bx-menu'></i>
+                        <span>
+                            Darslar
+                        </span>
+                    </button>
+                </div>
+                <div class="player-list-menu">
+                    <div class="playlist-menu-header">
+                        <h2>
+                            <i class='bx bx-chevron-left'></i>
+                            Ortga
+                        </h2>
+                    </div>
+                    <div class="playlist-head-title">
+                        <h2>
+                            <span>
+                                Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
+                            </span>
+                        </h2>
+                        <div class="sidebar-count">
+
+                        </div>
+                    </div>
+                    <!-- play-list -->
+                    <div class=" sidebar-list">
+                        <ul>
+                            <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
+                                <nuxt-link  class="el-tooltip" to="#">
+                                    <div class="playIco lock">
+                                        <div class="lessonInfo">
+                                            <div class="lessonNumber">{{ lesson.order }}-dars</div>
+                                            <h3 class="lessonTitle">{{ lesson.theme }}</h3>
+                                        </div>
+                                    </div>
+                                </nuxt-link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="v-player-col2">
                     <div class="v-player-container">
                         <div class="iframe-player">
@@ -151,6 +192,10 @@ export default {
 }
 </script>
 <style scoped>
+* {
+    list-style: none;
+}
+
 .content {
     width: 100vw;
     max-width: 100%;
@@ -347,8 +392,94 @@ export default {
     transition: all .2s;
 }
 
+.mobile-menu {
+    width: 98%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 15px;
+    display: none;
+}
 
-/* continue============================== */
+.success {
+    width: 100% !important;
+    background: #49ba04 !important;
+}
+
+.player-list-menu {
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+.playlist-menu-header {
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    height: 76px;
+    justify-content: space-between;
+    padding: 18px 24px;
+}
+
+.playlist-menu-header h2,
+.playlist-menu-header i {
+    max-width: 270px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.playlist-head-title {
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    height: 76px;
+    justify-content: space-between;
+    padding: 18px 24px;
+}
+
+.playlist-head-title h2 {
+    max-width: 270px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.playlist-head-title h2 span {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.play-list {
+    width: 100%;
+    height: calc(100% - 185px);
+    overflow-y: auto;
+}
+
+.play {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: 4px solid rgba(0, 0, 0, .25);
+    border-radius: 50%;
+    float: left;
+    height: 26px;
+    margin-top: 8px;
+    width: 26px;
+}
+
+.lock {
+    background-color: rgba(0, 0, 0, .25);
+    background-image: url('https://sinfxona.uz/img/icons/lock-2.svg');
+    background-position: center 2px;
+    border: none;
+}
 
 .v-player-col2 {
     flex: 0 0 67.6%;
@@ -475,18 +606,43 @@ export default {
         width: 97% !important;
     }
 }
+
 @media screen and (max-width:900px) {
     .content-cover {
         width: 100% !important;
+        display: inline;
     }
-    .v-player-col1{
+
+    .bread-crubs {
+        width: 100%;
+        margin-left: 15px;
+    }
+
+    .v-player-col1 {
         display: none;
     }
-    .v-player-col2{
+
+    .v-player-col2 {
         flex: 0 0 90%;
-        margin-left: 5%;
+        margin-left: 2%;
+    }
+
+    .player-list-menu {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .playlist-menu-header,
+    .playlist-head-title {
+        height: auto;
+    }
+
+    .play-list {
+        height: auto;
+        padding-bottom: 90px;
     }
 }
-
-
 </style>
