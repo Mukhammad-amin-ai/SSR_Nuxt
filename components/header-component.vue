@@ -54,6 +54,47 @@
                     </ul>
                 </div>
             </button>
+            <div class="mobile_menu">
+                <button class="mobile" v-if="useLogin.state.logined">
+                    <i class='bx bx-menu'></i>
+                    <div class="profile-drop">
+                        <ul>
+                            <li>
+                                <div class="profileDropDownItem">
+                                    Status: <div>
+                                        <div id="accessDays" class="me-3 success"><span>Obuna bo'lgansiz</span></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <nuxt-link to="/courses" class="profileDropDownItem">
+                                    <span>Barcha kurslar</span>
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="/cabinet/courses" class="profileDropDownItem">
+                                    <span>Mening kurslarim</span>
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="/cabinet/pay-history" class="profileDropDownItem">
+                                    <span>To'lovlar tarixi</span>
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="/cabinet/profile" class="profileDropDownItem">
+                                    <span>Mening Profilim</span>
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <button class="profileDropDownItem logout" @click="logOut">Chiqish</button>
+                            </li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+
+
         </div>
     </div>
 </template>
@@ -173,6 +214,33 @@ onMounted(() => {
     }
 }
 
+.mobile_menu {
+    display: none;
+}
+
+.mobile {
+    /* display: block; */
+    display: none;
+    font-size: 16px;
+    color: #49ba04;
+    font-weight: 500;
+    font-size: 20px;
+    position: relative;
+    border: none;
+    background: #4aba0432;
+    border-radius: 40%;
+    line-height: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.mobile:hover {
+    .profile-drop {
+        display: block;
+    }
+}
+
+
 .bx-user {
     color: #49ba04;
     font-size: 20px;
@@ -241,6 +309,15 @@ onMounted(() => {
         display: none;
     }
 
+    .user {
+        display: none;
+    }
+
+    .mobile,
+    .mobile_menu {
+        display: block;
+    }
+
     .btn2 {
         display: block !important;
     }
@@ -254,5 +331,4 @@ onMounted(() => {
     .btn2 {
         margin-right: 0px !important;
     }
-}
-</style>
+}</style>

@@ -1,4 +1,5 @@
 <template >
+    <!-- <Dialog/> -->
     <HeaderComponent :bgColor="bgProp" :bgShadow="shadow" />
     <div class="container">
         <div class="container-content">
@@ -31,13 +32,14 @@
                             <div class="form-item">
                                 <div class="elem-item-input">
                                     <div class="elem-suffix ">
-                                        <input type="text" autocomplete="off" class="elem-input-inner " @click="inPutClick">
+                                        <input type="text" autocomplete="off" class="elem-input-inner " v-model="name"
+                                            @click="inPutClick">
                                         <span class="elem-suffix-inner " :class="{ 'clicked': input }">
                                             Ismingizni kiriting</span>
                                     </div>
                                 </div>
                                 <div class="button-submit">
-                                    <button class="btn">
+                                    <button class="btn" @click="user">
                                         Saqlash
                                     </button>
                                 </div>
@@ -49,18 +51,18 @@
                                     <div class="elem-suffix2 ">
                                         <input type="text" autocomplete="off" class="elem-input-inner " @click="inPutClick">
                                         <span class="elem-suffix-inner " :class="{ 'clicked': input }">
-                                            Ismingizni kiriting</span>
+                                            Parol kiriting</span>
                                     </div>
                                 </div>
                                 <div class="elem-item-input">
                                     <div class="elem-suffix ">
                                         <input type="text" autocomplete="off" class="elem-input-inner " @click="inPutClick">
                                         <span class="elem-suffix-inner " :class="{ 'clicked': input }">
-                                            Ismingizni kiriting</span>
+                                            Parolni takrorlang</span>
                                     </div>
                                 </div>
                                 <div class="button-submit">
-                                    <button class="btn">
+                                    <button class="btn" @click="changePassw">
                                         Parolni tasdiqlash
                                     </button>
                                 </div>
@@ -77,51 +79,37 @@
                             <div class="cards">
                                 <div class="cards-list">
                                     <ul>
-                                        <li>
+                                        <li v-for="card in useCard.state.cards.data?.data" :key="card">
                                             <div class="card-item">
                                                 <div class="card-pan-number">
-                                                    860049******8936
+                                                    {{ card.pan_number }}
                                                 </div>
                                                 <label role="radio" tabindex="0" class="el-radio">
-                                                    <!-- <span class="el-radio__input">
-                                                        <span class="el-radio__inner">
-                                                        </span>
-                                                     </span> -->
                                                     <input type="radio" class="el-radio__original" value="true">
                                                     <span class="el-radio__label">
                                                         Asosiy karta</span></label>
                                             </div>
                                         </li>
                                     </ul>
-
-
-
                                 </div>
                             </div>
                             <div class="pt-3">
-                                <button class="btn btn-success btn-sm">Karta qo'shish</button>
+                                <button class="btn btn-success btn-sm">
+                                    Karta qo'shish</button>
                             </div>
                             <div id="tariffs">
                                 <h1 class="pageTitle">Obuna turi</h1>
                                 <div class="cards-list tariffs-list">
                                     <ul>
-                                        <li>
-                                            <div class="card-item c-pointer active">
+                                        <li v-for="tariff in useTarif.state.tariffs.data?.data">
+                                            <div class="card-item c-pointer">
                                                 <input type="radio" aria-hidden="true" tabindex="-1" autocomplete="off"
                                                     class="el-radio__original" value="ONEMONTH">
                                                 <div class="card-pan-number">
-                                                    1 oylik obuna - 97 000 so'm
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="card-item c-pointer">
-                                                <input type="radio" aria-hidden="true" tabindex="-1" autocomplete="off"
-                                                    class="el-radio__original" value="ONEYEAR">
-                                                <div class="card-pan-number">
-                                                    1 yillik obuna - 814 800 so'm
-                                                    <span>(30% chegirma bilan 349,200 so'm tejab qolasiz)</span>
+                                                    {{ tariff.name }} obuna narxi - {{ tariff.amount }} so'm
+                                                    <span v-if="tariff && tariff.description">
+                                                        {{ tariff.description }}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </li>
@@ -159,13 +147,22 @@
     <FooterComponent />
 </template>
 <script setup>
+import { useUserStore } from '~/stores';
+import { useTarifstore } from '~/stores';
+import { useCardStore } from '~/stores';
 const shadow = ref('0 6px 34px rgba(73,186,4,.09)')
 const bgProp = ref("#fff")
-
+const useUser = useUserStore()
+const useTarif = useTarifstore()
+const useCard = useCardStore()
 let input = ref(false)
 let firstinput = ref(true)
 let secinputt = ref(false)
 let thrdinput = ref(false)
+let name = ref('')
+
+
+
 
 function inPutClick() {
     input.value = true
@@ -186,12 +183,44 @@ function thirdInp() {
     secinputt.value = false
     thrdinput.value = true
 }
-useHead({
-    // title: 'SINFXONA',
-    meta: [
-        { name: 'SINFXONA', content: 'SINFXONA' }
-    ],
-})
+
+
+let tarif = () => {
+    useTarif.getAllTriff()
+}
+
+let card = () => {
+    useCard.getMycard()
+}
+
+let user = () => {
+    let option = {
+        fullname: name.value
+    }
+    // useUser.editName(option)
+    console.log(option);
+}
+
+let changePassw = () => {
+    let option = {
+        password: '',
+        password_confirmation: ""
+    }
+    // useUser.changePassword(option)
+    console.log(option);
+}
+
+onMounted(() => {
+    tarif()
+    card()
+}),
+
+    useHead({
+        // title: 'SINFXONA',
+        meta: [
+            { name: 'SINFXONA', content: 'SINFXONA' }
+        ],
+    })
 </script>
 <style scoped>
 * {
@@ -507,7 +536,7 @@ nav ul li {
 }
 
 .tariffs-list ul li {
-    flex: 0 0 50%;
+    flex: 0 0 50% !important;
 }
 
 .tariffs-list ul li {
@@ -523,11 +552,13 @@ nav ul li {
 
 .tariffs-list ul li .card-item {
     padding: 10px 15px;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
 }
 
-.tariffs-list ul li .card-item {
-    height: 100%;
-}
+
 
 .card-item.active {
     background: #e9f5e2;

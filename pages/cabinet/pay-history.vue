@@ -151,6 +151,19 @@ onMounted(() => {
 .table-payment {
     width: 100%;
     height: auto;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #49ba04;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #49ba04;
 }
 
 table {
@@ -218,6 +231,9 @@ td {
     .column {
         flex: 0 0 auto;
         width: 25%;
+    }
+    .table-payment {
+        overflow-x: hidden;
     }
 }
 </style>

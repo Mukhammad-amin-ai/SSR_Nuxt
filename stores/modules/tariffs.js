@@ -16,7 +16,7 @@ export const useTarifstore = defineStore("tariffs", () => {
       state.tariffs = await axios.get(`https://sinfxona.uz/api/api/v1/tariff`, {
         headers: { Authorization: "Bearer " + token },
       });
-      console.log(state.tariffs);
+      // console.log(state.tariffs);
     } catch (e) {
       console.error(e);
     }
