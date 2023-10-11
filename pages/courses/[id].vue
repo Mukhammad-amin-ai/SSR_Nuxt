@@ -28,7 +28,7 @@
                             <ul>
                                 <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
                                     <NuxtLink class="el-tooltip" to="#">
-                                        <div class="playIco lock"></div>
+                                        <div class="playIco " :class="{ 'lock': locked }"></div>
                                         <div class="lessonInfo">
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
@@ -46,9 +46,18 @@
                             </ul>
                         </div>
                         <div class="sidebar-footer">
-                            <button>
+                            <button v-if="loginedController">
                                 Obuna bo'lish
                             </button>
+                          <div v-if="controller">
+                            <button>
+                                <i class='bx bx-arrow-to-left'></i>
+                            </button>
+                            <button>
+                                <i class='bx bx-arrow-to-right'></i>
+                                Keyingi dars
+                            </button>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -176,6 +185,10 @@ import { useCourseStore, useCommentStore } from '~/stores';
 const bgProp = ref('#fff')
 const shadow = ref("0 6px 34px rgba(73,186,4,.09)")
 const showHide = ref(false)
+let locked = ref(true)
+let controller = ref(false)
+let loginedController=ref(true) 
+
 
 const route = useRouter()
 let courseId = ref(route.currentRoute.value.params.id)
@@ -195,8 +208,16 @@ let videoById = () => {
 function showHidee() {
     showHide.value = !showHide.value
 }
+function lockeded() {
+    locked.value = !locked.value
+}
+
+
+
+
 
 onMounted(() => {
+
     useCourseID()
     useCommentId()
     videoById()
