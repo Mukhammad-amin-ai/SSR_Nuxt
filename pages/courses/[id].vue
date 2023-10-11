@@ -27,7 +27,7 @@
                         <div class="sidebar-list">
                             <ul>
                                 <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
-                                    <NuxtLink class="el-tooltip" to="#">
+                                    <a class="el-tooltip" @click="videoId(lesson.id)">
                                         <div class="playIco " :class="{ 'lock': locked }"></div>
                                         <div class="lessonInfo">
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
@@ -41,7 +41,7 @@
                                                 style="left: 171.5px;  top: -5px;">
                                             </div>
                                         </div>
-                                    </NuxtLink>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -49,15 +49,15 @@
                             <button v-if="loginedController">
                                 Obuna bo'lish
                             </button>
-                          <div v-if="controller">
-                            <button>
-                                <i class='bx bx-arrow-to-left'></i>
-                            </button>
-                            <button>
-                                <i class='bx bx-arrow-to-right'></i>
-                                Keyingi dars
-                            </button>
-                          </div>
+                            <div v-if="controller">
+                                <button>
+                                    <i class='bx bx-arrow-to-left'></i>
+                                </button>
+                                <button>
+                                    <i class='bx bx-arrow-to-right'></i>
+                                    Keyingi dars
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,13 +114,13 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="v-player-col2">
                     <div class="v-player-container">
                         <div class="iframe-player">
                             <iframe :src="'https://sinfxona.uz/api/api/v1/courses/tizervideo/' + this.$route.params.id"
-                                frameborder="0" width="100%" height="460px"></iframe>
+                                frameborder="0" width="100%" height="460px" v-if="defaultVideo"></iframe>
+                            <iframe :src="`https://sinfxona.uz/api/api/v1/get-lesson/video/${cutchId}?token=` + reffedToken"
+                                frameborder="0" width="100%" height="460px" v-if="videos"></iframe>
                         </div>
                         <div class="video-info">
                             <div class="v-info-header">
@@ -182,13 +182,19 @@
 <script setup>
 import { useCourseStore, useCommentStore } from '~/stores';
 
+let token = process.client ? localStorage.getItem("access_token") : null;
+let reffedToken = ref(token)
+let cutchId = ref()
+
+
 const bgProp = ref('#fff')
 const shadow = ref("0 6px 34px rgba(73,186,4,.09)")
-const showHide = ref(false)
+let showHide = ref(false)
 let locked = ref(true)
 let controller = ref(false)
-let loginedController=ref(true) 
-
+let loginedController = ref(true)
+let defaultVideo = ref(true)
+let videos = ref(false)
 
 const route = useRouter()
 let courseId = ref(route.currentRoute.value.params.id)
@@ -197,6 +203,7 @@ const useComment = useCommentStore()
 
 let useCourseID = () => {
     useCourse.getCourseById(courseId.value)
+    console.log(useCourse.state.coursesByid.data?.data);
 }
 let useCommentId = () => {
     useComment.getAllComments(courseId.value)
@@ -212,12 +219,24 @@ function lockeded() {
     locked.value = !locked.value
 }
 
+function videoId(lessonId) {
+    if (controller.value) {
+        cutchId.value = lessonId
+        defaultVideo.value = false
+        videos.value = true
+    }
+    // console.log(lessonId);
+}
 
 
 
 
 onMounted(() => {
-
+    if (token) {
+        lockeded()
+        controller.value = !controller.value
+        loginedController.value = !loginedController.value
+    }
     useCourseID()
     useCommentId()
     videoById()
@@ -348,6 +367,26 @@ onMounted(() => {
     height: calc(100% - 185px);
     overflow-y: auto;
     /* background-color: #49ba04; */
+
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #49ba04;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #49ba04;
 }
 
 .sidebar-list ul {
@@ -688,6 +727,11 @@ onMounted(() => {
     .content-cover {
         width: 97% !important;
     }
+
+    .bread-crubs {
+        width: 100%;
+        margin-left: 15px;
+    }
 }
 
 @media screen and (max-width:900px) {
@@ -696,10 +740,7 @@ onMounted(() => {
         display: inline;
     }
 
-    .bread-crubs {
-        width: 100%;
-        margin-left: 15px;
-    }
+
 
     .v-player-col1 {
         display: none;

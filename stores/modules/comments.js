@@ -14,7 +14,7 @@ export const useCommentStore = defineStore("comments", () => {
       state.comments = await axios.get(
         `https://sinfxona.uz/api/api/v1/comments?course_id=${courseID}`
       );
-      console.log(state.comments.data.data);
+      // console.log(state.comments.data.data);
     } catch (e) {
       console.error(e);
     }
@@ -27,7 +27,7 @@ export const useCommentStore = defineStore("comments", () => {
         option,
         { headers: { Authorization: "Bearer " + token } }
       );
-      console.log(response);
+      // console.log(response);
     } catch (e) {
       console.error(e);
     }
