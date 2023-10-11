@@ -28,7 +28,8 @@
                             <ul>
                                 <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
                                     <a class="el-tooltip" @click="videoId(lesson.id)">
-                                        <div class="playIco " :class="{ 'lock': locked }"></div>
+                                        <div class="playIco   "
+                                            :class="{ 'lock': locked, 'vatched': vatched, 'viewed': viewd }"></div>
                                         <div class="lessonInfo">
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
@@ -143,7 +144,7 @@
                             <div id="videoComments">
                                 <div class="v-info-body">
                                     <h1>Izohlar</h1>
-                                    <div>
+                                    <div v-if="loginedController">
                                         <div class="text-button">
                                             <p>Izoh qoldirish uchun tizimga kiring</p>
                                             <NuxtLink to="/#enterForm" class="btn btn-success">
@@ -151,6 +152,54 @@
                                             </NuxtLink>
                                         </div>
                                     </div>
+                                    <div v-if="controller">
+                                        <div role="slider" aria-valuetext="" aria-valuemin="0" aria-valuemax="5"
+                                            tabindex="0" class="el-rate" aria-valuenow="5">
+                                            <span class="el-rate__item" style="cursor: pointer;">
+                                                <!-- <i class="el-rate__icon el-icon-star-off"
+                                                    style="color: rgb(198, 209, 222);">
+                                                  </i> -->
+                                                <i class='bx bx-star'></i>
+
+                                            </span>
+                                            <span class="el-rate__item" style="cursor: pointer;">
+                                                <!-- <i class="el-rate__icon el-icon-star-off"
+                                                    style="color: rgb(198, 209, 222);">
+                                                    </i> -->
+                                                <i class='bx bx-star'></i>
+                                            </span>
+                                            <span class="el-rate__item" style="cursor: pointer;">
+                                                <!-- <i class="el-rate__icon el-icon-star-off"
+                                                    style="color: rgb(198, 209, 222);">
+                                                    </i> -->
+                                                <i class='bx bx-star'></i>
+                                            </span>
+                                            <span class="el-rate__item" style="cursor: pointer;">
+                                                <!-- <i class="el-rate__icon el-icon-star-off"
+                                                    style="color: rgb(198, 209, 222);">
+                                                </i> -->
+                                                <i class='bx bx-star'></i>
+                                            </span>
+                                            <span class="el-rate__item" style="cursor: pointer;">
+                                                <!-- <i class="el-rate__icon el-icon-star-off"
+                                                    style="color: rgb(198, 209, 222);">
+                                                 </i> -->
+                                                <i class='bx bx-star'></i>
+                                            </span><!---->
+                                        </div>
+                                        <div class="el-form-item">
+                                            <label for="comment" class="el-form-item__label">Izoh</label>
+                                            <div class="el-form-item__content">
+                                                <div class="el-textarea">
+                                                    <textarea autocomplete="off" class="el-textarea__inner"
+                                                        style="min-height: 42.6px; height: 42.6px;"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-end" > <button class="btn btn-success" style="cursor: pointer;">Yuborish</button></div>
+                                    </div>
+
+
                                     <div class="comments">
                                         <div class="comment-item" v-for="comment in useComment.state.comments.data?.data"
                                             :key="comment">
@@ -195,6 +244,10 @@ let controller = ref(false)
 let loginedController = ref(true)
 let defaultVideo = ref(true)
 let videos = ref(false)
+let vatched = ref(false)
+let viewd = ref(false)
+
+
 
 const route = useRouter()
 let courseId = ref(route.currentRoute.value.params.id)
@@ -224,8 +277,8 @@ function videoId(lessonId) {
         cutchId.value = lessonId
         defaultVideo.value = false
         videos.value = true
+        viewd.value = true
     }
-    // console.log(lessonId);
 }
 
 
@@ -234,6 +287,7 @@ function videoId(lessonId) {
 onMounted(() => {
     if (token) {
         lockeded()
+        vatched.value = true
         controller.value = !controller.value
         loginedController.value = !loginedController.value
     }
@@ -421,6 +475,17 @@ onMounted(() => {
     margin-top: 8px;
     width: 26px;
 }
+
+.vatched {
+    background-color: #5ec60c !important;
+    background-image: url('https://sinfxona.uz/img/icons/play.svg');
+    border: none !important;
+}
+
+.viewed {
+    background-image: url('https://sinfxona.uz/img/icons/checked.svg') !important;
+}
+
 
 .playIco .loc {
     background-color: rgba(0, 0, 0, .25);
@@ -649,6 +714,110 @@ onMounted(() => {
     margin-bottom: 10px;
 }
 
+.el-rate {
+    height: 20px;
+    line-height: 1;
+}
+
+.el-rate__item {
+    font-size: 0;
+    vertical-align: middle;
+}
+
+.el-rate__icon,
+.el-rate__item {
+    display: inline-block;
+    position: relative;
+}
+
+.el-rate__item i {
+    color: rgb(198, 209, 222);
+    font-size: 30px !important;
+    margin-right: 6px;
+    transition: .3s;
+    display: inline-block;
+    position: relative;
+}
+
+.el-rate__item i:hover {
+    color: rgb(247, 186, 42);
+}
+
+
+.el-form-item {
+    margin-top: 30px;
+}
+
+.el-form-item .el-form-item__label {
+    background: #fff !important;
+    color: rgba(0, 0, 0, .5);
+    font-weight: 500;
+    line-height: normal !important;
+    margin: -10px 0 -20px 10px;
+    padding: 0 10px !important;
+    position: relative;
+    z-index: 1;
+}
+
+.el-form-item__label {
+    box-sizing: border-box;
+    color: #606266;
+    float: left;
+    font-size: 14px;
+    line-height: 40px;
+    padding: 0 12px 0 0;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.el-textarea {
+    font-size: 14px;
+    position: relative;
+    vertical-align: bottom;
+}
+
+.el-color-picker__icon,
+.el-input,
+.el-textarea {
+    display: inline-block;
+    width: 100%;
+}
+
+.el-textarea .el-textarea__inner {
+    border: 1px solid #b4bfd0;
+    border-radius: 10px;
+    min-height: 54px!important;
+    padding: 10px 15px;
+}
+
+.el-textarea__inner {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #606266;
+    display: block;
+    font-size: inherit;
+    line-height: 1.5;
+    padding: 5px 15px;
+    resize: vertical;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+}
+.text-end{
+    margin-top: 10px;
+    text-align: end;
+}
+
+
+
+
+
+
+
+
+
 .v-descrip {
     color: rgba(0, 0, 0, .6);
     font-weight: 500;
@@ -768,5 +937,4 @@ onMounted(() => {
         height: auto;
         padding-bottom: 90px;
     }
-}
-</style>
+}</style>

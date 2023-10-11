@@ -47,7 +47,7 @@ import { useCourseStore } from '~/stores';
 const useAuth = useCourseStore()
 const getAllCourses = async () => {
     await useAuth.getAllCourses();
-    console.log(useAuth.state?.courses?.data);
+    // console.log(useAuth.state?.courses?.data);
 };
 
 
