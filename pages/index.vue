@@ -233,9 +233,9 @@
                 </div>
             </div>
             <div class="section-button" v-if="useLogin.state.notLogined">
-                <button>
+                <nuxt-link to="/login">
                     SINFXONAGA KIRISH
-                </button>
+                </nuxt-link>
             </div>
             <div class="faq" v-if="useLogin.state.notLogined">
                 <div class="faq-cover">
@@ -367,7 +367,11 @@ export default {
                 { name: 'SINFXONA', content: 'SINFXONA' }
             ],
         })
-
+        definePageMeta({
+            middleware: [
+                'authentificated'
+            ]
+        })
         return {
             head,
             useLogin,
@@ -839,7 +843,7 @@ a {
     align-items: center;
 }
 
-.section-button button {
+.section-button>* {
     width: 253.93px;
     height: 49px;
     border-radius: 50px;
@@ -848,6 +852,10 @@ a {
     background: #49ba04 !important;
     color: #fff;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .faq {

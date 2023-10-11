@@ -48,10 +48,10 @@ export const useLoginStore = defineStore("login", () => {
         headers: { Authorization: "Bearer " + token },
       });
       console.log(response);
-      // localStorage.removeItem("access_token");
+      localStorage.removeItem("access_token");
       // state.login = !state.login;
       // state.notLogined = !state.notLogined;
-      // window.location.reload();
+      window.location.reload();
     } catch (e) {
       console.error(e);
     }

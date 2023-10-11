@@ -47,9 +47,9 @@
                             </ul>
                         </div>
                         <div class="sidebar-footer">
-                            <button v-if="loginedController">
+                            <nuxt-link  to="/#enterForm" v-if="loginedController">
                                 Obuna bo'lish
-                            </button>
+                            </nuxt-link>
                             <div v-if="controller">
                                 <button>
                                     <i class='bx bx-arrow-to-left'></i>
@@ -109,9 +109,9 @@
                             </ul>
                         </div>
                         <div class="sidebar-footer">
-                            <button>
+                            <nuxt-link  to="/login">
                                 Obuna bo'lish
-                            </button>
+                            </nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -578,12 +578,15 @@ onMounted(() => {
     position: sticky;
 }
 
-.sidebar-footer button {
+.sidebar-footer >* {
     background: none;
     border: 1px solid #49ba04;
     border-radius: 28px;
     color: #49ba04;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 16px 24px;
     -webkit-text-decoration: none;
     text-decoration: none;

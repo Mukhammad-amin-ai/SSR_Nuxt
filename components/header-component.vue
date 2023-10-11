@@ -93,8 +93,6 @@
                     </div>
                 </button>
             </div>
-
-
         </div>
     </div>
 </template>
@@ -115,8 +113,6 @@ let checker = () => {
 let logOut = () => {
     useLogin.logOut()
 }
-
-
 
 onMounted(() => {
     checker()
