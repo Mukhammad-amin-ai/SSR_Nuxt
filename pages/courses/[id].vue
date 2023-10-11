@@ -33,6 +33,14 @@
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
                                         </div>
+                                        <div role="tooltip" id="el-tooltip-6982" aria-hidden="true"
+                                            class="el-tooltip__popper is-dark"
+                                            style="transform-origin: center top; z-index: 2063; display: none;">Bu darsni
+                                            ochish
+                                            uchun tizimga kiring<div class="popper__arrow"
+                                                style="left: 171.5px;  top: -5px;">
+                                            </div>
+                                        </div>
                                     </NuxtLink>
                                 </li>
                             </ul>
@@ -45,46 +53,59 @@
                     </div>
                 </div>
                 <div class="mobile-menu">
-                    <button class="btn success">
+                    <button class="btn success" @click="showHidee">
                         <i class='bx bx-menu'></i>
                         <span>
                             Darslar
                         </span>
                     </button>
-                </div>
-                <div class="player-list-menu">
-                    <div class="playlist-menu-header">
-                        <h2>
-                            <i class='bx bx-chevron-left'></i>
-                            Ortga
-                        </h2>
-                    </div>
-                    <div class="playlist-head-title">
-                        <h2>
-                            <span>
-                                Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
-                            </span>
-                        </h2>
-                        <div class="sidebar-count">
-
+                    <div class="player-list-menu" v-if="showHide">
+                        <div class="playlist-menu-header" @click="showHidee">
+                            <h2>
+                                <i class='bx bx-chevron-left'></i>
+                                Ortga
+                            </h2>
                         </div>
-                    </div>
-                    <!-- play-list -->
-                    <div class=" sidebar-list">
-                        <ul>
-                            <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
-                                <nuxt-link class="el-tooltip" to="#">
-                                    <div class="playIco lock">
+                        <div class="playlist-head-title">
+                            <h2>
+                                <span>
+                                    {{ useCourse.state.coursesByid.data?.data.name }}
+                                </span>
+                            </h2>
+                            <div class="sidebar-count">
+                                {{ useCourse.state.coursesByid.data?.data.lessons.length }}
+                            </div>
+                        </div>
+                        <!-- play-list -->
+                        <div class=" sidebar-list">
+                            <ul>
+                                <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
+                                    <NuxtLink class="el-tooltip" to="#">
+                                        <div class="playIco lock"></div>
                                         <div class="lessonInfo">
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
                                         </div>
-                                    </div>
-                                </nuxt-link>
-                            </li>
-                        </ul>
+                                        <div role="tooltip" id="el-tooltip-6982" aria-hidden="true"
+                                            class="el-tooltip__popper is-dark"
+                                            style="transform-origin: center top; z-index: 2063; display: none;">Bu darsni
+                                            ochish
+                                            uchun tizimga kiring<div class="popper__arrow"
+                                                style="left: 171.5px;  top: -5px;">
+                                            </div>
+                                        </div>
+                                    </NuxtLink>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-footer">
+                            <button>
+                                Obuna bo'lish
+                            </button>
+                        </div>
                     </div>
                 </div>
+
 
                 <div class="v-player-col2">
                     <div class="v-player-container">
@@ -154,7 +175,7 @@ import { useCourseStore, useCommentStore } from '~/stores';
 
 const bgProp = ref('#fff')
 const shadow = ref("0 6px 34px rgba(73,186,4,.09)")
-
+const showHide = ref(false)
 
 const route = useRouter()
 let courseId = ref(route.currentRoute.value.params.id)
@@ -170,6 +191,11 @@ let useCommentId = () => {
 let videoById = () => {
     useCourse.getVideoByid(courseId.value)
 }
+
+function showHidee() {
+    showHide.value = !showHide.value
+}
+
 onMounted(() => {
     useCourseID()
     useCommentId()
@@ -359,6 +385,53 @@ onMounted(() => {
     font-weight: 600;
     margin-bottom: 0;
 }
+
+.el-tooltip__popper.is-dark {
+    background: #303133;
+    color: #fff;
+}
+
+.el-tooltip:hover .el-tooltip__popper.is-dark {
+    display: block !important;
+    transition: all .15s ease-in-out;
+}
+
+.el-tooltip__popper {
+    word-wrap: break-word;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.2;
+    min-width: 10px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2000;
+}
+
+.el-tooltip__popper {
+    z-index: 9999999 !important;
+}
+
+.el-tooltip__popper .popper__arrow {
+    border-width: 6px;
+}
+
+.el-tooltip__popper .popper__arrow,
+.el-tooltip__popper .popper__arrow:after {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    display: block;
+    position: absolute;
+    border-color: transparent;
+    border-bottom-color: #303133;
+    border-top-width: 0;
+    margin-left: -5px;
+    top: -9px;
+    border-width: 5px;
+}
+
+
 
 
 .sidebar-footer {

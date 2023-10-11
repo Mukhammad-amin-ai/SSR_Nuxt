@@ -26,7 +26,7 @@ export const useCourseStore = defineStore("course", () => {
     } catch (e) {
       console.error(e);
     }
-    console.log(state.coursesByid.data.data);
+    // console.log(state.coursesByid.data.data);
   }
 
   async function getVideoByid(courseId) {
@@ -34,7 +34,7 @@ export const useCourseStore = defineStore("course", () => {
       state.videoById = await axios.get(
         `https://sinfxona.uz/api/api/v1/courses/tizervideo/${courseId}`
       );
-      console.log(state.videoById);
+      // console.log(state.videoById);
     } catch (e) {
       console.error(e);
     }
@@ -46,7 +46,7 @@ export const useCourseStore = defineStore("course", () => {
         `https://sinfxona.uz/api/api/v1/courses/customer-courses`,
         { headers: { Authorization: "Bearer " + token } }
       );
-      console.log(state.courses);
+      // console.log(state.courses);
     } catch (e) {
       console.error(e);
     }
