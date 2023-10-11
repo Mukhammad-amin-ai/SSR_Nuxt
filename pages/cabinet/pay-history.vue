@@ -14,7 +14,7 @@
                             </div>
                             <div class="payment-info">
                                 <i class='bx bxs-hourglass-top'></i>
-                                16.10.2023
+                                {{ useCard.state.invoicesData.data?.data?.data[0].payed_at }}
                             </div>
                         </div>
                     </div>
@@ -38,14 +38,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>16.09.2023 00:00</td>
-                                <td> 97000.00 so'm</td>
-                                <td>860049******8936</td>
+                            <tr v-for="card in  useCard.state.invoicesData.data?.data?.data" :key="card">
+                                <td>{{ card.created_at }}</td>
+                                <td>{{ card.amount }}so'm</td>
+                                <td>{{ card.pan_number }}</td>
                                 <td>
                                     <span class="succed">To'langan</span>
                                 </td>
-
                             </tr>
                         </tbody>
                     </table>
@@ -56,16 +55,26 @@
     <FooterComponent />
 </template>
 <script setup>
-const shadow = reactive('0 6px 34px rgba(73,186,4,.09)')
-const bgProp = reactive("#fff")
+import { useCardStore } from '~/stores';
 useHead({
     // title: 'SINFXONA',
     meta: [
         { name: 'SINFXONA', content: 'SINFXONA' }
     ],
 })
+const shadow = reactive('0 6px 34px rgba(73,186,4,.09)')
+const bgProp = reactive("#fff")
+
+const useCard = useCardStore()
 
 
+let card = () => {
+    useCard.invoices()
+}
+
+onMounted(() => {
+    card()
+})
 
 </script>
 <style scoped>
@@ -210,4 +219,5 @@ td {
         flex: 0 0 auto;
         width: 25%;
     }
-}</style>
+}
+</style>

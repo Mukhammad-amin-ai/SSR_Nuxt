@@ -5,11 +5,21 @@
                 <li v-for="card in useAuth.state?.courses?.data?.data" :key="card">
                     <div class="courseItem">
                         <div class="course-image c-pointer"
-                            :style="{ backgroundImage: `url(https://sinfxona.uz/api${card?.course.image})` }">
+                            :style="{ backgroundImage: `url(https://sinfxona.uz/api${card?.course.image})` }"
+                            v-if="notLogined">
                             <div class="course-category">
                                 {{ card?.course.category.name }}
                             </div>
                         </div>
+                        <nuxt-link class="link" :to="'/courses/' + card?.course.id" v-if="logined">
+                            <div class="course-image c-pointer"
+                                :style="{ backgroundImage: `url(https://sinfxona.uz/api${card?.course.image})` }">
+                                <div class="course-category">
+                                    {{ card?.course.category.name }}
+                                </div>
+                            </div>
+                        </nuxt-link>
+
                         <div class="course-mentor">
                             <div class="course-mentor-photo"
                                 :style="{ backgroundImage: `url(https://sinfxona.uz/api${card?.course.mentor.image})` }">
@@ -24,12 +34,22 @@
                         <div class="course-desc">
                             <p v-html="card?.course.description"></p>
                         </div>
-                        <div class="courseItemFooter">
+                        <div class="courseItemFooter" v-if="notLogined">
                             <div class="courseUsers">
                                 <i class='bx bx-group'></i>
                                 O`quvchilar: {{ card?.course.customers_count }}
                             </div>
-                            <nuxt-link :to="'/courses/' + card.id" class="btn btn-primary">Ko'rish</nuxt-link>
+                            <nuxt-link :to="'/courses/' + card?.course.id" class="btn btn-primary">Ko'rish</nuxt-link>
+                        </div>
+                        <div class="courseItemProcess" v-if="logined">
+                            <div class="courseItemProcessSlide">
+                                <span :style="{
+                                    width: (card?.lessons.length / card?.course.lessons_count) * 100+'%'
+                                }"></span>
+                            </div>
+                            <div class="courseItemProcessPercent">
+                                <span>{{ card?.lessons.length }} ta dars</span> / {{ card?.course.lessons_count }} tadan
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -39,14 +59,16 @@
 </template>
 <script setup>
 import { useCourseStore } from '~/stores';
+let token = process.client ? localStorage.getItem("access_token") : null;
 
-
+let notLogined = ref(true)
+let logined = ref(false)
 
 const useAuth = useCourseStore()
-const getAllCourses = async () => {
-    await useAuth.getAllCourses();
-    console.log(useAuth.state?.courses?.data);
-};
+// const getAllCourses = async () => {
+//     await useAuth.getAllCourses();
+//     console.log(useAuth.state?.courses?.data);
+// };
 
 const getMyCourses = async () => {
     await useAuth.myCourse()
@@ -57,11 +79,13 @@ const getMyCourses = async () => {
 
 onMounted(() => {
     const route = useRoute()
-    // console.log(route.href === '/cabinet/courses');
     if (route.href === '/cabinet/courses') {
         getMyCourses()
     }
-
+    if (token) {
+        notLogined.value = false
+        logined.value = true
+    }
 
 
 })
@@ -153,7 +177,10 @@ onMounted(() => {
     text-transform: uppercase;
     top: 10px;
 }
-
+.link{
+    text-decoration: none;
+    color: #000;
+}
 .c-pointer {
     cursor: pointer;
 }
@@ -191,6 +218,40 @@ onMounted(() => {
 .bx {
     font-size: 20px;
 }
+
+
+.courseItemProcess {
+    padding: 18px 0 0;
+}
+
+.courseItemProcessSlide {
+    background: #ebebeb;
+    border-radius: 5px;
+    height: 5px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.courseItemProcessSlide span {
+    background: #49ba04;
+    border-radius: 5px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.courseItemProcessPercent {
+    color: #696984;
+    font-weight: 500;
+    text-align: right;
+}
+
+.courseItemProcessPercent span {
+    color: #000;
+}
+
+
 
 @media screen and (max-width: 1100px) {
     .courses-cards ul li {

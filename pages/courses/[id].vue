@@ -34,7 +34,7 @@
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
                                         </div>
-                                        <div role="tooltip" id="el-tooltip-6982" aria-hidden="true"
+                                        <div role="tooltip" id="el-tooltip-6982" aria-hidden="true" v-if="loginedController"
                                             class="el-tooltip__popper is-dark"
                                             style="transform-origin: center top; z-index: 2063; display: none;">Bu darsni
                                             ochish
@@ -96,7 +96,7 @@
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
                                         </div>
-                                        <div role="tooltip" id="el-tooltip-6982" aria-hidden="true"
+                                        <div role="tooltip" id="el-tooltip-6982" aria-hidden="true" v-if="loginedController"
                                             class="el-tooltip__popper is-dark"
                                             style="transform-origin: center top; z-index: 2063; display: none;">Bu darsni
                                             ochish
@@ -118,8 +118,12 @@
                 <div class="v-player-col2">
                     <div class="v-player-container">
                         <div class="iframe-player">
+                            <img :src="'https://sinfxona.uz/api' + useCourse.state.coursesByid.data?.data.image"
+                                style="width: 100%;" alt="video" v-if="useCourse.state.successOfvideo">
                             <iframe :src="'https://sinfxona.uz/api/api/v1/courses/tizervideo/' + this.$route.params.id"
-                                frameborder="0" width="100%" height="460px" v-if="defaultVideo"></iframe>
+                                frameborder="0" width="100%" height="460px"
+                                v-if="defaultVideo && useCourse.state.notSuccess"></iframe> 
+
                             <iframe :src="`https://sinfxona.uz/api/api/v1/get-lesson/video/${cutchId}?token=` + reffedToken"
                                 frameborder="0" width="100%" height="460px" v-if="videos"></iframe>
                         </div>
@@ -196,7 +200,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="text-end" > <button class="btn btn-success" style="cursor: pointer;">Yuborish</button></div>
+                                        <div class="text-end"> <button class="btn btn-success"
+                                                style="cursor: pointer;">Yuborish</button></div>
                                     </div>
 
 
@@ -252,18 +257,23 @@ let viewd = ref(false)
 const route = useRouter()
 let courseId = ref(route.currentRoute.value.params.id)
 const useCourse = useCourseStore()
+// const useVideo = useCourseStore()
 const useComment = useCommentStore()
 
 let useCourseID = () => {
     useCourse.getCourseById(courseId.value)
-    console.log(useCourse.state.coursesByid.data?.data);
+    console.log(useCourse.state.coursesByid.data);
 }
 let useCommentId = () => {
     useComment.getAllComments(courseId.value)
 }
 let videoById = () => {
     useCourse.getVideoByid(courseId.value)
+    console.log(useCourse.state.videoById);
 }
+
+
+
 
 function showHidee() {
     showHide.value = !showHide.value
@@ -285,6 +295,7 @@ function videoId(lessonId) {
 
 
 onMounted(() => {
+    videoById()
     if (token) {
         lockeded()
         vatched.value = true
@@ -786,7 +797,7 @@ onMounted(() => {
 .el-textarea .el-textarea__inner {
     border: 1px solid #b4bfd0;
     border-radius: 10px;
-    min-height: 54px!important;
+    min-height: 54px !important;
     padding: 10px 15px;
 }
 
@@ -802,10 +813,11 @@ onMounted(() => {
     line-height: 1.5;
     padding: 5px 15px;
     resize: vertical;
-    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
     width: 100%;
 }
-.text-end{
+
+.text-end {
     margin-top: 10px;
     text-align: end;
 }
@@ -937,4 +949,5 @@ onMounted(() => {
         height: auto;
         padding-bottom: 90px;
     }
-}</style>
+}
+</style>

@@ -10,6 +10,8 @@ export const useCourseStore = defineStore("course", () => {
     coursesByid: [],
     myCourses: [],
     videoById: [],
+    successOfvideo: false,
+    notSuccess: false,
   });
 
   async function getAllCourses() {
@@ -34,9 +36,17 @@ export const useCourseStore = defineStore("course", () => {
       state.videoById = await axios.get(
         `https://sinfxona.uz/api/api/v1/courses/tizervideo/${courseId}`
       );
-      // console.log(state.videoById);
+      // console.log(state.videoById.status);
+      if (state.videoById.status == 200) {
+        state.notSuccess = true;
+      } else {
+        state.successOfvideo = true;
+      }
     } catch (e) {
-      console.error(e);
+      console.error(e.response.data);
+      // if (e.response.data.success === false) {
+      //   state.successOfvideo = true;
+      // }
     }
   }
 
