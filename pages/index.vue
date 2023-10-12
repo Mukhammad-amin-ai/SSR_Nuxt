@@ -253,7 +253,8 @@
                                     {{ faq.name }}<i class="el-collapse-item__arrow el-icon-arrow-right"></i></div>
                             </div>
                             <!-- id="el-collapse-content-2540" -->
-                            <div role="tabpanel" aria-labelledby="el-collapse-head-2540" 
+                            <!-- aria-labelledby="el-collapse-head-2540"  -->
+                            <div role="tabpanel" 
                                 class="el-collapse-item__wrap is-active" v-if="isActive[faq.id]">
                                 <div class="el-collapse-item__content">
                                     <div>{{ faq.descript }}</div>

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       BASE_URL: process.env.BASE_URL,
     },
   },
-  modules: ["@pinia/nuxt"],
+  modules: ["@pinia/nuxt", "@nuxt/image"],
   pinia: {
     autoImports: ["defineStore", ["defineStore", "definePiniaStore"]],
   },
@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title:'SINFXONA',
+      title: "SINFXONA",
       htmlAttrs: {
         lang: "en",
       },

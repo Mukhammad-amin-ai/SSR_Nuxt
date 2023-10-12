@@ -3,7 +3,7 @@
         <div class="footer-wrapper">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="https://sinfxona.uz/img/Sinfxona_logo.png" alt="footer-logo">
+                    <img src="https://sinfxona.uz/img/Sinfxona_logo.png" alt="footer-logo" style="width: 100%; height: 100%">
                 </div>
                 <p>Copyright 2023® – SINFXONA</p>
                 <div class="f-txt-two">
