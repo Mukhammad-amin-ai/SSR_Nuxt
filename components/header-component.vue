@@ -326,5 +326,40 @@ onMounted(() => {
 @media screen and (max-width:768px) {
     .btn2 {
         margin-right: 0px !important;
+        margin-left: 125px;
     }
-}</style>
+}
+
+@media screen and (max-width:500px) {
+    .btn2 {
+        margin-right: 0px !important;
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .header-content {
+        width: 90% !important;
+    }
+    .btn2 {
+        margin-right: 0px !important;
+        margin-left: 120px !important;
+    }
+}
+
+@media screen and (max-width:375px) {
+   
+
+    .btn2 {
+        margin-right: 0px !important;
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .btn2 {
+        margin-right: 0px !important;
+        margin-left: 40px;
+    }
+}
+</style>

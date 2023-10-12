@@ -3,7 +3,7 @@
     <div class="content">
         <div class="content-header">
             <div class="bread-crubs">
-                <nuxt-link to="/" class="link">Bosh sahifa<i class='bx bx-chevron-right'></i> </nuxt-link>
+                <nuxt-link to="/" class="link nuxt-link-active">Bosh sahifa<i class='bx bx-chevron-right'></i> </nuxt-link>
                 <span>Mijozlarga A'lo Darajada Xizmat Ko'rsatishning 11 Texnikalari
                 </span>
             </div>
@@ -47,7 +47,7 @@
                             </ul>
                         </div>
                         <div class="sidebar-footer">
-                            <nuxt-link  to="/#enterForm" v-if="loginedController">
+                            <nuxt-link to="/#enterForm" v-if="loginedController">
                                 Obuna bo'lish
                             </nuxt-link>
                             <div v-if="controller">
@@ -109,7 +109,7 @@
                             </ul>
                         </div>
                         <div class="sidebar-footer">
-                            <nuxt-link  to="/login">
+                            <nuxt-link to="/login">
                                 Obuna bo'lish
                             </nuxt-link>
                         </div>
@@ -120,9 +120,8 @@
                         <div class="iframe-player">
                             <img :src="'https://sinfxona.uz/api' + useCourse.state.coursesByid.data?.data.image"
                                 style="width: 100%;" alt="video" v-if="useCourse.state.successOfvideo">
-                            <iframe :src="'https://sinfxona.uz/api/api/v1/courses/tizervideo/' + courseId"
-                                frameborder="0" width="100%" height="460px"
-                                v-if="defaultVideo && useCourse.state.notSuccess"></iframe> 
+                            <iframe :src="'https://sinfxona.uz/api/api/v1/courses/tizervideo/' + courseId" frameborder="0"
+                                width="100%" height="460px" v-if="defaultVideo && useCourse.state.notSuccess"></iframe>
 
                             <iframe :src="`https://sinfxona.uz/api/api/v1/get-lesson/video/${cutchId}?token=` + reffedToken"
                                 frameborder="0" width="100%" height="460px" v-if="videos"></iframe>
@@ -257,7 +256,6 @@ let viewd = ref(false)
 const route = useRouter()
 let courseId = ref(route.currentRoute.value.params.id)
 const useCourse = useCourseStore()
-// const useVideo = useCourseStore()
 const useComment = useCommentStore()
 
 let useCourseID = () => {
@@ -334,11 +332,10 @@ onMounted(() => {
 }
 
 .bread-crubs {
-    width: 80%;
-    height: 100%;
+    font-size: 14px;
+    font-weight: 500;
     margin-top: 10px;
-    display: flex;
-    align-items: center;
+
 }
 
 .link {
@@ -399,7 +396,6 @@ onMounted(() => {
 .sidebar-title {
     width: 80%;
     height: 100%;
-    /* background-color: aqua; */
 }
 
 .sidebar-title h2 {
@@ -431,7 +427,6 @@ onMounted(() => {
     width: 100%;
     height: calc(100% - 185px);
     overflow-y: auto;
-    /* background-color: #49ba04; */
 
 }
 
@@ -439,17 +434,14 @@ onMounted(() => {
     width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: #49ba04;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #49ba04;
 }
@@ -577,10 +569,12 @@ onMounted(() => {
     padding: 26px;
     position: sticky;
 }
-.sidebar-footer >*{
+
+.sidebar-footer>* {
     display: flex;
     gap: 10px;
 }
+
 .sidebar-footer button {
     background: none;
     border: 1px solid #49ba04;
@@ -829,13 +823,6 @@ onMounted(() => {
 }
 
 
-
-
-
-
-
-
-
 .v-descrip {
     color: rgba(0, 0, 0, .6);
     font-weight: 500;
@@ -927,8 +914,6 @@ onMounted(() => {
         display: inline;
     }
 
-
-
     .v-player-col1 {
         display: none;
     }
@@ -944,6 +929,8 @@ onMounted(() => {
 
     .mobile-menu {
         display: block;
+        margin-left: 6px !important;
+
     }
 
     .playlist-menu-header,
@@ -956,4 +943,36 @@ onMounted(() => {
         padding-bottom: 90px;
     }
 }
+
+@media screen and (max-width:768px) {
+    #videoComments {
+        padding: 20px 0px !important;
+    }
+
+    .v-info-body {
+        padding: 16px 14px !important;
+
+    }
+}
+
+@media screen and (max-width:500px) {
+    .content-header {
+        height: auto;
+    }
+
+    .iframe-player iframe {
+        height: 250px !important;
+    }
+
+    .v-info-header {
+        flex-direction: column !important;
+    }
+    .text-button{
+        line-height: 30px;
+    }
+}
+
+
+
+
 </style>
