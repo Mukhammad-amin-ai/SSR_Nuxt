@@ -120,7 +120,7 @@
                         <div class="iframe-player">
                             <img :src="'https://sinfxona.uz/api' + useCourse.state.coursesByid.data?.data.image"
                                 style="width: 100%;" alt="video" v-if="useCourse.state.successOfvideo">
-                            <iframe :src="'https://sinfxona.uz/api/api/v1/courses/tizervideo/' + this.$route.params.id"
+                            <iframe :src="'https://sinfxona.uz/api/api/v1/courses/tizervideo/' + courseId"
                                 frameborder="0" width="100%" height="460px"
                                 v-if="defaultVideo && useCourse.state.notSuccess"></iframe> 
 
