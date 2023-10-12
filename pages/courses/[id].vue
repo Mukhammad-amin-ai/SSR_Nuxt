@@ -90,8 +90,9 @@
                         <div class=" sidebar-list">
                             <ul>
                                 <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
-                                    <NuxtLink class="el-tooltip" to="#">
-                                        <div class="playIco lock"></div>
+                                    <a class="el-tooltip" @click="videoId(lesson.id)">
+                                        <div class="playIco   "
+                                            :class="{ 'lock': locked, 'vatched': vatched, 'viewed': viewd }"></div>
                                         <div class="lessonInfo">
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
@@ -104,7 +105,7 @@
                                                 style="left: 171.5px;  top: -5px;">
                                             </div>
                                         </div>
-                                    </NuxtLink>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -970,12 +971,9 @@ onMounted(() => {
     .v-info-header {
         flex-direction: column !important;
     }
-    .text-button{
+
+    .text-button {
         line-height: 30px;
     }
 }
-
-
-
-
 </style>
