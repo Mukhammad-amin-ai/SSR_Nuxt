@@ -1,7 +1,7 @@
 <template>
     <div id="bannerSlider">
         <div class="bannerSliderContainer" :style="{ animationPlayState: control }">
-            <!-- <div class="bannerSliderItem">
+            <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top"
                     style="background-image: url('https://sinfxona.uz/img/slider/1.png')">
                 </div>
@@ -159,276 +159,214 @@
                 <div class="bannerSliderItem-image bannerSliderItem-bottom"
                     style="background-image: url('https://sinfxona.uz/img/slider/14.png')"></div>
             </div>
-             -->
-
-
-            <div class="bannerSliderItem">
+            <!-- <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/1.webp');" -->
                     <NuxtImg format="webp" src="../public/images/1.webp" width="100%" height="180px" />
-
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/2.webp');" -->
                     <NuxtImg format="webp" src="../public/images/2.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/3.webp')" -->
                     <NuxtImg format="webp" src="../public/images/3.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/4.webp')" -->
                     <NuxtImg format="webp" src="../public/images/4.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/5.webp')" -->
                     <NuxtImg format="webp" src="../public/images/5.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/6.webp')" -->
                     <NuxtImg format="webp" src="../public/images/6.webp" width="100%" height="180px" />
                 </div>
             </div>
-
-
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    
                     <NuxtImg format="webp" src="../public/images/7.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
                     <NuxtImg format="webp" src="../public/images/8.webp" width="100%" height="180px" />
                 </div>
             </div>
-
-
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/9.webp')" -->
                     <NuxtImg format="webp" src="../public/images/9.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/10.webp')" -->
                     <NuxtImg format="webp" src="../public/images/10.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/13.webp')" -->
                     <NuxtImg format="webp" src="../public/images/13.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/12.webp')" -->
                     <NuxtImg format="webp" src="../public/images/12.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/1.webp')" -->
                     <NuxtImg format="webp" src="../public/images/1.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/14.webp')" -->
                     <NuxtImg format="webp" src="../public/images/14.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/3.webp')" -->
                     <NuxtImg format="webp" src="../public/images/3.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/2.webp')" -->
                     <NuxtImg format="webp" src="../public/images/2.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/5.webp')" -->
                     <NuxtImg format="webp" src="../public/images/5.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/4.webp')" -->
                     <NuxtImg format="webp" src="../public/images/4.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
                     <NuxtImg format="webp" src="../public/images/7.webp" width="100%" height="180px" />
-                    <!-- style="background-image: url('../assets/images/7.webp')" -->
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/6.webp')" -->
                     <NuxtImg format="webp" src="../public/images/6.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/9.webp')" -->
                     <NuxtImg format="webp" src="../public/images/9.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/8.webp')" -->
                     <NuxtImg format="webp" src="../public/images/8.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/10.webp')" -->
                     <NuxtImg format="webp" src="../public/images/10.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/12.webp')" -->
                     <NuxtImg format="webp" src="../public/images/12.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/13.webp')" -->
                     <NuxtImg format="webp" src="../public/images/13.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/14.webp')" -->
                     <NuxtImg format="webp" src="../public/images/14.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/1.webp')" -->
                     <NuxtImg format="webp" src="../public/images/1.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/2.webp')" -->
                     <NuxtImg format="webp" src="../public/images/2.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/3.webp')" -->
                     <NuxtImg format="webp" src="../public/images/3.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/4.webp')" -->
                     <NuxtImg format="webp" src="../public/images/4.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/5.webp')" -->
                     <NuxtImg format="webp" src="../public/images/5.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/6.webp')" -->
                     <NuxtImg format="webp" src="../public/images/6.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/7.webp')" -->
                     <NuxtImg format="webp" src="../public/images/7.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/8.webp')" -->
                     <NuxtImg format="webp" src="../public/images/8.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/9.webp')" -->
                     <NuxtImg format="webp" src="../public/images/9.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/10.webp')" -->
                     <NuxtImg format="webp" src="../public/images/10.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/13.webp')" -->
                     <NuxtImg format="webp" src="../public/images/13.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/12.webp')" -->
                     <NuxtImg format="webp" src="../public/images/12.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/1.webp')" -->
                     <NuxtImg format="webp" src="../public/images/1.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/14.webp')" -->
                     <NuxtImg format="webp" src="../public/images/14.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/3.webp')" -->
                     <NuxtImg format="webp" src="../public/images/3.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/2.webp')" -->
                     <NuxtImg format="webp" src="../public/images/2.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/5.webp')" -->
                     <NuxtImg format="webp" src="../public/images/5.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/4.webp')" -->
                     <NuxtImg format="webp" src="../public/images/4.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/7.webp')" -->
                     <NuxtImg format="webp" src="../public/images/7.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/6.webp')" -->
                     <NuxtImg format="webp" src="../public/images/6.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/9.webp')" -->
                     <NuxtImg format="webp" src="../public/images/9.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/8.webp')" -->
                     <NuxtImg format="webp" src="../public/images/8.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/10.webp')" -->
                     <NuxtImg format="webp" src="../public/images/10.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/12.webp')" -->
                     <NuxtImg format="webp" src="../public/images/12.webp" width="100%" height="180px" />
                 </div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('../assets/images/13.webp')" -->
                     <NuxtImg format="webp" src="../public/images/13.webp" width="100%" height="180px" />
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom">
-                    <!-- style="background-image: url('../assets/images/14.webp')" -->
                     <NuxtImg format="webp" src="../public/images/14.webp" width="100%" height="180px" />
                 </div>
-            </div>
-
-
-
+            </div> -->
         </div>
     </div>
     <button class="sliderToggleBtn" @click="playBtn" v-if="showHide">
@@ -541,7 +479,7 @@ export default {
 @media screen and (max-width: 1550px) {
     .bannerSliderItem-image {
         height: auto;
-        /* padding: 56% 0 0 !important; */
+        padding: 56% 0 0 !important;
     }
 }
 
