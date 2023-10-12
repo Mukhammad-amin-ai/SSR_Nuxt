@@ -3,13 +3,16 @@
         <div class="bannerSliderContainer" :style="{ animationPlayState: control }">
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top"
-                    style="background-image: url('https://sinfxona.uz/img/slider/1.png')"></div>
+                    style="background-image: url('https://sinfxona.uz/img/slider/1.png')">
+                    <nuxtImg src="https://sinfxona.uz/img/slider/1.png" format="webp" />
+                </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom"
                     style="background-image: url('https://sinfxona.uz/img/slider/2.png')"></div>
             </div>
             <div class="bannerSliderItem">
                 <div class="bannerSliderItem-image bannerSliderItem-top"
-                    style="background-image: url('https://sinfxona.uz/img/slider/3.png')"></div>
+                    style="background-image: url('https://sinfxona.uz/img/slider/3.png')">
+                </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom"
                     style="background-image: url('https://sinfxona.uz/img/slider/4.png')"></div>
             </div>
@@ -346,7 +349,7 @@ export default {
     #bannerSlider {
         position: relative !important;
         top: -20% !important;
-    
+
     }
 
 

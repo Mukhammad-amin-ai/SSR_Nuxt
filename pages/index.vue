@@ -244,8 +244,9 @@
                     </div>
                     <div class="faq-accordion">
                         <div class="el-collapse-item" v-for="(faq, index) in frAsQu " :key="faq.id">
-                            <div role="tab" aria-controls="el-collapse-content-1229" @click="activated(faq.id)"
-                                aria-describedby="el-collapse-content-1229">
+                            <!-- aria-controls="el-collapse-content-1229" -->
+                            <div role="tab" @click="activated(faq.id)">
+                                <!-- aria-describedby="el-collapse-content-1229" -->
                                 <div role="button" id="el-collapse-head-2540" tabindex="0"
                                     class="el-collapse-item__header ">
                                     {{ faq.name }}<i class="el-collapse-item__arrow el-icon-arrow-right"></i></div>
@@ -972,21 +973,6 @@ a {
     transition: transform .3s;
 }
 
-[class*=" el-icon-"],
-[class^=el-icon-] {
-    speak: none;
-    font-feature-settings: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
-    font-family: element-icons !important;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 1;
-    text-transform: none;
-    vertical-align: baseline;
-}
 
 
 .el-collapse-item .el-collapse-item__wrap {
