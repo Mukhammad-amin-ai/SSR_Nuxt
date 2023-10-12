@@ -50,10 +50,10 @@
                 <div class="enterFormSteps">
                     <ul>
                         <li>
-                            <a :class="{ 'active': isFirstStep }">Aloqa ma'lumotlari</a>
+                            <p :class="{ 'active': isFirstStep }">Aloqa ma'lumotlari</p>
                         </li>
                         <li>
-                            <a :class="{ 'active': isSecondStep }">To'lov formasi</a>
+                            <p :class="{ 'active': isSecondStep }">To'lov formasi</p>
                         </li>
                     </ul>
                 </div>
@@ -247,11 +247,13 @@
                             <!-- aria-controls="el-collapse-content-1229" -->
                             <div role="tab" @click="activated(faq.id)">
                                 <!-- aria-describedby="el-collapse-content-1229" -->
-                                <div role="button" id="el-collapse-head-2540" tabindex="0"
+                                <!-- id="el-collapse-head-2540" -->
+                                <div role="button"  tabindex="0"
                                     class="el-collapse-item__header ">
                                     {{ faq.name }}<i class="el-collapse-item__arrow el-icon-arrow-right"></i></div>
                             </div>
-                            <div role="tabpanel" aria-labelledby="el-collapse-head-2540" id="el-collapse-content-2540"
+                            <!-- id="el-collapse-content-2540" -->
+                            <div role="tabpanel" aria-labelledby="el-collapse-head-2540" 
                                 class="el-collapse-item__wrap is-active" v-if="isActive[faq.id]">
                                 <div class="el-collapse-item__content">
                                     <div>{{ faq.descript }}</div>
@@ -595,11 +597,11 @@ export default {
     padding: 0 20px;
 }
 
-.enterFormSteps ul li a .active {
+.enterFormSteps ul li p.active {
     color: #49ba04 !important;
 }
 
-.enterFormSteps ul li a {
+.enterFormSteps ul li p {
     color: rgba(0, 0, 0, .5) !important;
     display: block;
     font-weight: 600;
@@ -609,18 +611,18 @@ export default {
     text-decoration: none;
 }
 
-a {
+a{
     color: #0d6efd;
     color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
     -webkit-text-decoration: underline;
     text-decoration: underline;
 }
 
-.enterFormSteps ul li a.active:after {
+.enterFormSteps ul li p.active:after {
     width: 100%;
 }
 
-.enterFormSteps ul li a:after {
+.enterFormSteps ul li p:after {
     background: #49ba04;
     content: "";
     height: 2px;

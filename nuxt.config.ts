@@ -23,6 +23,10 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      title:'SINFXONA',
+      htmlAttrs: {
+        lang: "en",
+      },
       link: [
         {
           rel: "stylesheet",
