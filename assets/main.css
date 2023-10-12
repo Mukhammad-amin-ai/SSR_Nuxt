@@ -4,5 +4,6 @@
     box-sizing: border-box;
     font-family: "Montserrat";
     -webkit-tap-highlight-color: transparent;
+    max-width: 100%;
 
 }
