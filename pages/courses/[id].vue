@@ -577,8 +577,11 @@ onMounted(() => {
     padding: 26px;
     position: sticky;
 }
-
-.sidebar-footer >* {
+.sidebar-footer >*{
+    display: flex;
+    gap: 10px;
+}
+.sidebar-footer button {
     background: none;
     border: 1px solid #49ba04;
     border-radius: 28px;
