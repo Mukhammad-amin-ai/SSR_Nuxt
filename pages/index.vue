@@ -258,6 +258,29 @@
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="faqAccordion">
+                        <div role="tablist" aria-multiselectable="true" class="el-collapse">
+                            is-active
+                            <div class="el-collapse-item " :class="{ 'is-active': active }">
+                                <div role="tab" aria-controls="el-collapse-content-8419"
+                                    aria-describedby="el-collapse-content-8419">
+                                    <div role="button" id="el-collapse-head-9751" tabindex="0"
+                                        class="el-collapse-item__header" @click="myFunction">1. Sinfxona nima?<i
+                                            class="el-collapse-item__arrow el-icon-arrow-right"></i></div>
+                                        </div>
+                                        display: none;
+                                <div role="tabpanel" aria-labelledby="el-collapse-head-9751" id="el-collapse-content-9751"
+                                class="el-collapse-item__wrap" :style="{ display: active ? 'none' : 'unset' }"
+                                data-old-padding-top="" data-old-padding-bottom="" data-old-overflow=""
+                                aria-hidden="true">
+                                <div class="el-collapse-item__content">
+                                    <div>Sinfxona bu sizga O’zbekistonning oldi mutaxassislaridan ta’lim olish
+                                        imkoniyatni beradigan, video darslar jamlangan platforma.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -329,7 +352,10 @@ export default {
             isSecondStep: false,
             input1: false,
             input2: false,
-            nameInp: false
+            nameInp: false,
+            // 
+            active: false,
+            // 
         };
     },
     methods: {
@@ -351,6 +377,9 @@ export default {
         },
         nameINput() {
             this.nameInp = !this.nameInp
+        },
+        myFunction() {
+            this.active = !this.active
         }
     },
     setup() {
@@ -881,6 +910,127 @@ a {
     font-weight: 600;
     color: rgb(33, 37, 41);
 }
+
+
+
+
+/* test================================================ */
+
+.el-collapse {
+    border-bottom: 1px solid #ebeef5;
+    border-top: 1px solid #ebeef5;
+}
+
+.el-collapse {
+    border: none !important;
+}
+
+.el-collapse-item {
+    background: #fff !important;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.el-collapse-item .el-collapse-item__header {
+    background: none;
+    border: none !important;
+    color: #000 !important;
+    font-size: 18px;
+    font-weight: 600;
+    height: auto;
+    line-height: normal;
+    padding: 26px 30px;
+    transition: all .3s;
+}
+
+.el-collapse-item__header {
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ebeef5;
+    color: #303133;
+    cursor: pointer;
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    outline: 0;
+    transition: border-bottom-color .3s;
+}
+
+.el-collapse-item .el-collapse-item__header .el-collapse-item__arrow {
+    color: #49ba04;
+    font-family: "icomoon" !important;
+    font-size: 22px;
+    margin: 0 0 0 auto;
+}
+
+.el-collapse-item__arrow {
+    font-weight: 300;
+    margin: 0 8px 0 auto;
+    transition: transform .3s;
+}
+
+[class*=" el-icon-"],
+[class^=el-icon-] {
+    speak: none;
+    font-feature-settings: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-family: element-icons !important;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: none;
+    vertical-align: baseline;
+}
+
+
+.el-collapse-item .el-collapse-item__wrap {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.el-collapse-item__wrap {
+    background-color: #fff;
+    border-bottom: 1px solid #ebeef5;
+    box-sizing: border-box;
+    overflow: hidden;
+    will-change: height;
+}
+
+.el-collapse-item .el-collapse-item__wrap .el-collapse-item__content {
+    color: rgba(0, 0, 0, .5) !important;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 30px 30px;
+    white-space: pre-line;
+}
+
+.el-collapse-item__content {
+    color: #303133;
+    font-size: 13px;
+    line-height: 1.769230769230769;
+    padding-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* test================================================ */
+
+
 
 .faq-accordion {
     width: 100%;
