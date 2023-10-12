@@ -245,17 +245,15 @@
                     <div class="faq-accordion">
                         <div class="el-collapse-item" v-for="(faq, index) in frAsQu " :key="faq.id">
                             <!-- aria-controls="el-collapse-content-1229" -->
-                            <div role="tab" @click="activated(faq.id)">
+                            <div @click="activated(faq.id)">
                                 <!-- aria-describedby="el-collapse-content-1229" -->
                                 <!-- id="el-collapse-head-2540" -->
-                                <div role="button"  tabindex="0"
-                                    class="el-collapse-item__header ">
+                                <div role="button" tabindex="0" class="el-collapse-item__header ">
                                     {{ faq.name }}<i class="el-collapse-item__arrow el-icon-arrow-right"></i></div>
                             </div>
                             <!-- id="el-collapse-content-2540" -->
                             <!-- aria-labelledby="el-collapse-head-2540"  -->
-                            <div role="tabpanel" 
-                                class="el-collapse-item__wrap is-active" v-if="isActive[faq.id]">
+                            <div role="tabpanel" class="el-collapse-item__wrap is-active" v-if="isActive[faq.id]">
                                 <div class="el-collapse-item__content">
                                     <div>{{ faq.descript }}</div>
                                 </div>
@@ -395,7 +393,6 @@ export default {
             checker()
         })
         const head = useHead({
-            // title: 'SINFXONA',
             meta: [
                 { name: 'SINFXONA', content: 'SINFXONA' }
             ],
@@ -612,7 +609,7 @@ export default {
     text-decoration: none;
 }
 
-a{
+a {
     color: #0d6efd;
     color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
     -webkit-text-decoration: underline;
@@ -644,10 +641,6 @@ a{
 }
 
 .row {
-    /* width: 100%;
-    height: 102px;
-    display: flex;
-    flex-wrap: wrap; */
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     display: flex;
@@ -823,7 +816,7 @@ a{
     font-size: 18px;
     font-weight: 600;
     padding: 11px 30px;
-    background: #49ba04 !important;
+    background-color: #49ba04 !important;
     cursor: pointer;
 }
 
