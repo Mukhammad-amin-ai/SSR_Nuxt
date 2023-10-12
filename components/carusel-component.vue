@@ -2,9 +2,8 @@
     <div id="bannerSlider">
         <div class="bannerSliderContainer" :style="{ animationPlayState: control }">
             <div class="bannerSliderItem">
-                <div class="bannerSliderItem-image bannerSliderItem-top">
-                    <!-- style="background-image: url('https://sinfxona.uz/img/slider/1.png')" -->
-                    <nuxtImg src="https://sinfxona.uz/img/slider/1.png" format="webp" />
+                <div class="bannerSliderItem-image bannerSliderItem-top"
+                    style="background-image: url('https://sinfxona.uz/img/slider/1.png')">
                 </div>
                 <div class="bannerSliderItem-image bannerSliderItem-bottom"
                     style="background-image: url('https://sinfxona.uz/img/slider/2.png')"></div>
