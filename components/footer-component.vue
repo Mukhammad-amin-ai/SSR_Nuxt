@@ -3,7 +3,8 @@
         <div class="footer-wrapper">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="https://sinfxona.uz/img/Sinfxona_logo.png" alt="footer-logo" style="width: 100%; height: 100%">
+                    <img src="https://sinfxona.uz/img/Sinfxona_logo.png" alt="footer-logo"
+                        style="width: 100%; height: 100%">
                 </div>
                 <p>Copyright 2023® – SINFXONA</p>
                 <div class="f-txt-two">
@@ -52,7 +53,7 @@ export default {
 }
 
 .footer-logo {
-    width: 100%;
+    width: 18%;
     height: 29.4px;
     margin-bottom: 20px;
 }
@@ -97,6 +98,4 @@ export default {
 
 
 }
-
-
 </style>
