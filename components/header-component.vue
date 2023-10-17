@@ -16,44 +16,46 @@
                     Kirish
                 </button>
             </nuxt-link>
-            <button class="user" v-if="useLogin.state.logined">
-                <i class='bx bx-user'></i>
-                Iskandar
-                <div class="profile-drop">
-                    <ul>
-                        <li>
-                            <div class="profileDropDownItem">
-                                Status: <div>
-                                    <div id="accessDays" class="me-3 success"><span>Obuna bo'lgansiz</span></div>
+            <div class="loginBtn" v-if="useLogin.state.logined">
+                <button class="user" v-if="useLogin.state.logined">
+                    <i class='bx bx-user'></i>
+                    Iskandar
+                    <div class="profile-drop">
+                        <ul>
+                            <li>
+                                <div class="profileDropDownItem">
+                                    Status: <div>
+                                        <div id="accessDays" class="me-3 success"><span>Obuna bo'lgansiz</span></div>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <nuxt-link to="/courses" class="profileDropDownItem">
-                                <span>Barcha kurslar</span>
-                            </nuxt-link>
-                        </li>
-                        <li>
-                            <nuxt-link to="/cabinet/courses" class="profileDropDownItem">
-                                <span>Mening kurslarim</span>
-                            </nuxt-link>
-                        </li>
-                        <li>
-                            <nuxt-link to="/cabinet/pay-history" class="profileDropDownItem">
-                                <span>To'lovlar tarixi</span>
-                            </nuxt-link>
-                        </li>
-                        <li>
-                            <nuxt-link to="/cabinet/profile" class="profileDropDownItem">
-                                <span>Mening Profilim</span>
-                            </nuxt-link>
-                        </li>
-                        <li>
-                            <button class="profileDropDownItem logout" @click="logOut">Chiqish</button>
-                        </li>
-                    </ul>
-                </div>
-            </button>
+                            </li>
+                            <li>
+                                <nuxt-link to="/courses" class="profileDropDownItem">
+                                    <span>Barcha kurslar</span>
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="/cabinet/courses" class="profileDropDownItem">
+                                    <span>Mening kurslarim</span>
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="/cabinet/pay-history" class="profileDropDownItem">
+                                    <span>To'lovlar tarixi</span>
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="/cabinet/profile" class="profileDropDownItem">
+                                    <span>Mening Profilim</span>
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <button class="profileDropDownItem logout" @click="logOut">Chiqish</button>
+                            </li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
             <div class="mobile_menu">
                 <button class="mobile" v-if="useLogin.state.logined">
                     <i class='bx bx-menu'></i>
@@ -194,6 +196,13 @@ onMounted(() => {
     width: 100%;
 }
 
+.loginBtn {
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content:flex-end;
+}
+
 .user {
     font-size: 16px;
     color: rgb(33, 37, 41);
@@ -202,6 +211,7 @@ onMounted(() => {
     border: none;
     background: transparent;
     cursor: pointer;
+    width: 100%;
 }
 
 .user:hover {
@@ -341,6 +351,7 @@ onMounted(() => {
     .header-content {
         width: 90% !important;
     }
+
     .btn2 {
         margin-right: 0px !important;
         margin-left: 120px !important;
@@ -348,7 +359,7 @@ onMounted(() => {
 }
 
 @media screen and (max-width:375px) {
-   
+
 
     .btn2 {
         margin-right: 0px !important;

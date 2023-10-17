@@ -29,7 +29,7 @@
                                 <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
                                     <a class="el-tooltip" @click="videoId(lesson.id)">
                                         <div class="playIco   "
-                                            :class="{ 'lock': locked, 'vatched': vatched, 'viewed': viewd }"></div>
+                                            :class="{ 'lock': locked, 'vatched': vatched, 'viewed': viewd[lesson.id] }"></div>
                                         <div class="lessonInfo">
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
@@ -92,7 +92,8 @@
                                 <li v-for="lesson in useCourse.state.coursesByid.data?.data.lessons" :key="lesson">
                                     <a class="el-tooltip" @click="videoId(lesson.id)">
                                         <div class="playIco   "
-                                            :class="{ 'lock': locked, 'vatched': vatched, 'viewed': viewd }"></div>
+                                            :class="{ 'lock': locked, 'vatched': vatched, 'viewed': viewd[lesson.id] }">
+                                        </div>
                                         <div class="lessonInfo">
                                             <div class="lessonNumber">{{ lesson.order }}-dars</div>
                                             <h3 class="lessonTitle">{{ lesson.theme }}</h3>
@@ -252,9 +253,8 @@ let loginedController = ref(true)
 let defaultVideo = ref(true)
 let videos = ref(false)
 let vatched = ref(false)
-let viewd = ref(false)
-
-
+let viewd = ref({})
+// false
 
 const route = useRouter()
 let courseId = ref(route.currentRoute.value.params.id)
@@ -263,14 +263,14 @@ const useComment = useCommentStore()
 
 let useCourseID = () => {
     useCourse.getCourseById(courseId.value)
-    console.log(useCourse.state.coursesByid.data);
+    // console.log(useCourse.state.coursesByid.data);
 }
 let useCommentId = () => {
     useComment.getAllComments(courseId.value)
 }
 let videoById = () => {
     useCourse.getVideoByid(courseId.value)
-    console.log(useCourse.state.videoById);
+    // console.log(useCourse.state.videoById);
 }
 
 
@@ -288,7 +288,8 @@ function videoId(lessonId) {
         cutchId.value = lessonId
         defaultVideo.value = false
         videos.value = true
-        viewd.value = true
+        viewd.value[lessonId] = true
+        console.log(viewd.value);
     }
 }
 
@@ -469,6 +470,7 @@ onMounted(() => {
     padding: 16px 25px;
     -webkit-text-decoration: none;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .playIco {

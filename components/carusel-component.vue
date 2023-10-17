@@ -456,7 +456,8 @@ export default {
 .sliderToggleBtn {
     background: none;
     border: none;
-    top: 170px;
+    /* top: 0; */
+    bottom: 15px;
     padding: 5px;
     position: absolute;
     right: 0;
@@ -506,7 +507,7 @@ export default {
         margin-bottom: 10px !important;
     }
 
-    
+
 
     #bannerSlider {
         position: relative !important;

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       BASE_URL: process.env.BASE_URL,
     },
   },
-  modules: ["@pinia/nuxt", "@nuxt/image"],
+   modules: ["@pinia/nuxt", "@nuxt/image"],
   pinia: {
     autoImports: ["defineStore", ["defineStore", "definePiniaStore"]],
   },
@@ -27,6 +27,9 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
+      meta:[
+
+      ],
       link: [
         {
           rel: "stylesheet",

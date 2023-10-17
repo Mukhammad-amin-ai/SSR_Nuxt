@@ -244,15 +244,10 @@
                     </div>
                     <div class="faq-accordion">
                         <div class="el-collapse-item" v-for="(faq, index) in frAsQu " :key="faq.id">
-                            <!-- aria-controls="el-collapse-content-1229" -->
                             <div @click="activated(faq.id)">
-                                <!-- aria-describedby="el-collapse-content-1229" -->
-                                <!-- id="el-collapse-head-2540" -->
                                 <div role="button" tabindex="0" class="el-collapse-item__header ">
                                     {{ faq.name }}<i class="el-collapse-item__arrow el-icon-arrow-right"></i></div>
                             </div>
-                            <!-- id="el-collapse-content-2540" -->
-                            <!-- aria-labelledby="el-collapse-head-2540"  -->
                             <div role="tabpanel" class="el-collapse-item__wrap is-active" v-if="isActive[faq.id]">
                                 <div class="el-collapse-item__content">
                                     <div>{{ faq.descript }}</div>
@@ -260,29 +255,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="faqAccordion">
-                        <div role="tablist" aria-multiselectable="true" class="el-collapse">
-                            is-active
-                            <div class="el-collapse-item " :class="{ 'is-active': active }">
-                                <div role="tab" aria-controls="el-collapse-content-8419"
-                                    aria-describedby="el-collapse-content-8419">
-                                    <div role="button" id="el-collapse-head-9751" tabindex="0"
-                                        class="el-collapse-item__header" @click="myFunction">1. Sinfxona nima?<i
-                                            class="el-collapse-item__arrow el-icon-arrow-right"></i></div>
-                                        </div>
-                                        display: none;
-                                <div role="tabpanel" aria-labelledby="el-collapse-head-9751" id="el-collapse-content-9751"
-                                class="el-collapse-item__wrap" :style="{ display: active ? 'none' : 'unset' }"
-                                data-old-padding-top="" data-old-padding-bottom="" data-old-overflow=""
-                                aria-hidden="true">
-                                <div class="el-collapse-item__content">
-                                    <div>Sinfxona bu sizga O’zbekistonning oldi mutaxassislaridan ta’lim olish
-                                        imkoniyatni beradigan, video darslar jamlangan platforma.</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
